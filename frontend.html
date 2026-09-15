@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>Subhajit Das | Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-color: #0c0b0a; /* Warm dark, like ink */
+            --text-main: #ebe9e4; /* Off-white paper */
+            --text-muted: #9c9993;
+            --accent: #cfa872; /* Subtle muted gold */
+            --border: rgba(235, 233, 228, 0.1);
+        }
+
+        html {
+            scroll-behavior: smooth;
+            background-color: var(--bg-color);
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+            font-weight: 300;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            overflow-x: hidden;
+            line-height: 1.7;
+            /* Subtle grain texture overlay */
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
+        }
+
+        /* Typography */
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 400;
+            margin: 0;
+        }
+
+        h1 {
+            font-size: clamp(3.5rem, 8vw, 6rem);
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+        }
+
+        h2 {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            margin-bottom: 2rem;
+            color: var(--text-main);
+        }
+
+        p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            max-width: 65ch;
+        }
+
+        a {
+            color: var(--text-main);
+            text-decoration: none;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 2px;
+            transition: all 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--accent);
+            border-bottom-color: var(--accent);
+        }
+
+        /* Layout */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 5vw;
+        }
+
+        section {
+            padding: 70px 0;
+            position: relative;
+        }
+
+        .divider {
+            height: 1px;
+            background: var(--border);
+            width: 100%;
+            margin: 40px 0;
+        }
+
+        /* Nav */
+        .nav-header {
+            padding: 40px 5vw;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-style: italic;
+            border: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            border: none;
+        }
+
+        /* Hero */
+        .hero {
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            padding-top: 60px;
+        }
+
+        .hero-grid {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 60px;
+        }
+
+        .hero-image-wrapper {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            width: 240px;
+            height: 240px;
+            flex-shrink: 0;
+        }
+
+        .hero-image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(20%) contrast(1.1); /* slightly moody photo */
+        }
+
+        .hero-subtitle {
+            font-family: 'Inter', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            font-size: 0.85rem;
+            color: var(--accent);
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        /* Marquee */
+        .marquee-container {
+            padding: 40px 0;
+            overflow: hidden;
+            white-space: nowrap;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            margin: 60px 0;
+        }
+        
+        .marquee-content {
+            display: inline-block;
+            animation: marquee 30s linear infinite;
+        }
+
+        .marquee-content span {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 2rem;
+            color: var(--text-muted);
+            margin-right: 60px;
+        }
+
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* About Detailed */
+        .about-text {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            column-count: 2;
+            column-gap: 60px;
+        }
+
+        @media (max-width: 768px) {
+            .about-text { column-count: 1; }
+        }
+
+        /* Projects */
+        .project {
+            margin-bottom: 80px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .project:nth-child(even) {
+            grid-template-columns: 1fr 1fr;
+            direction: rtl; /* reverse layout for even items */
+        }
+        
+        .project:nth-child(even) > * {
+            direction: ltr; /* reset text direction */
+        }
+
+        .project-media {
+            width: 100%;
+            aspect-ratio: 16/9;
+            background: #1a1a1a;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .project-media img, .project-media iframe {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border: none;
+        }
+
+        .project-info h3 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        /* Timeline / Lists */
+        .list-item {
+            border-top: 1px solid var(--border);
+            padding: 40px 0;
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            gap: 40px;
+        }
+
+        .list-meta {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            color: var(--accent);
+            font-size: 1.2rem;
+        }
+
+        .list-content h3 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+        }
+
+        /* Philosophy Quote */
+        .philosophy-section {
+            text-align: center;
+            padding: 80px 0;
+        }
+
+        .quote {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            line-height: 1.3;
+            color: var(--text-main);
+            font-style: italic;
+            max-width: 900px;
+            margin: 0 auto 40px;
+        }
+
+        .quote-author {
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            font-size: 0.9rem;
+            color: var(--accent);
+        }
+
+        /* Skills Tags */
+        .skills-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 40px;
+        }
+
+        .skill-tag {
+            padding: 10px 20px;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        /* Contact */
+        .contact-section h2 {
+            font-size: 4rem;
+        }
+
+        input, textarea {
+            width: 100%;
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid var(--border);
+            padding: 20px 0;
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            outline: none;
+            border-radius: 0;
+        }
+
+        input:focus, textarea:focus {
+            border-bottom-color: var(--accent);
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--text-main);
+            color: var(--bg-color);
+            padding: 16px 40px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-size: 0.9rem;
+            border: none;
+            cursor: pointer;
+            border-radius: 2px;
+            margin-top: 20px;
+            transition: background 0.3s ease;
+        }
+
+        .btn:hover {
+            background: var(--accent);
+            border: none;
+        }
+
+        /* Footer */
+        footer {
+            padding: 60px 0;
+            text-align: center;
+            border-top: 1px solid var(--border);
+            margin-top: 80px;
+            font-size: 0.9rem;
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (max-width: 900px) {
+            .hero-grid {
+                flex-direction: column-reverse;
+                text-align: center;
+                gap: 40px;
+            }
+            .hero-links {
+                justify-content: center;
+            }
+            .project, .list-item {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            .project:nth-child(even) {
+                direction: ltr;
+            }
+            .nav-links {
+                display: none; /* Hide on mobile for simplicity, could add hamburger */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="nav-header">
+        <a href="#" class="nav-logo">Subhajit.</a>
+        <nav class="nav-links">
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#experience">Experience</a>
+            <a href="#education">Education</a>
+            <a href="#skills">Skills</a>
+            <a href="https://canva.link/cpc3vxhkdja03dc" target="_blank">Resume</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        
+        <!-- Hero Section -->
+        <section class="hero" id="about">
+            <div class="hero-grid">
+                <div class="fade-in">
+                    <span class="hero-subtitle">Software Engineering & AI</span>
+                    <h1>Subhajit Das</h1>
+                    <p style="font-size: 1.3rem; margin-top: 30px; color: var(--text-main);">
+                        I build intelligent systems and elegant interfaces. Currently pursuing a B.Tech in CSE (AIML) at Brainware University.
+                    </p>
+                    <div class="hero-links" style="margin-top: 40px; display: flex; gap: 24px; align-items: center; flex-wrap: wrap;">
+                        <a href="#contact" style="font-weight: 500;">Get in touch</a>
+                        <a href="https://canva.link/cpc3vxhkdja03dc" target="_blank" style="color: var(--text-muted);">Resume</a>
+                        <a href="https://github.com/subhajit-io" target="_blank" style="color: var(--text-muted); border: none;"><i class="fa-brands fa-github" style="font-size: 1.2rem;"></i></a>
+                        <a href="https://www.linkedin.com/in/subhajit-das-4a5719345/" target="_blank" style="color: var(--text-muted); border: none;"><i class="fa-brands fa-linkedin" style="font-size: 1.2rem;"></i></a>
+                    </div>
+                </div>
+                <div class="hero-image-wrapper fade-in" style="transition-delay: 0.2s;">
+                    <img src="assets/145341.jpg" alt="Subhajit Das" onerror="this.src='https://images.unsplash.com/photo-1511367461989-f85a21fda167?w=600&auto=format&fit=crop'">
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Marquee full width -->
+    <div class="marquee-container">
+        <div class="marquee-content">
+            <span>Machine Learning</span>
+            <span>Frontend Development</span>
+            <span>Prompt Engineering</span>
+            <span>Python & C++</span>
+            <span>Software Engineering</span>
+            <span>Customer Experience</span>
+            <span>Machine Learning</span>
+            <span>Frontend Development</span>
+            <span>Prompt Engineering</span>
+            <span>Python & C++</span>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <!-- Detailed About -->
+        <section id="details" class="fade-in">
+            <h2>The Details</h2>
+            <div class="about-text">
+                <p style="margin-bottom: 2rem; font-size: 1.1rem; line-height: 1.6;">
+                    <strong>Name:</strong> Subhajit Das (Krish)<br>
+                    <strong>Address:</strong> Arambagh<br>
+                    <strong>Email:</strong> <a href="https://mail.google.com/mail/?view=cm&to=arambaghsubhajitdas0@gmail.com" target="_blank" style="border: none; text-decoration: underline;">arambaghsubhajitdas0@gmail.com</a><br>
+                    <strong>Contact:</strong> <a href="https://wa.me/+917001023356" target="_blank" style="border: none; text-decoration: underline;">+91 7001023356</a>
+                </p>
+                <p>I am deeply fascinated by the intersection of artificial intelligence and human-computer interaction. I learn by building real-world applications and solving complex problems.</p>
+                <p>As a self-taught prompt engineer, I am highly comfortable developing and orchestrating AI agents, and I have a deep understanding of Customer Experience (CX) principles, ensuring that the software I build is not just functional, but genuinely user-centric.</p>
+                <p>My toolkit includes Python, C++, Flutter, and modern web technologies, backed by frameworks like PyTorch and NumPy for machine learning.</p>
+            </div>
+        </section>
+
+        <!-- Projects -->
+        <section id="projects">
+            <h2 class="fade-in">Selected Works</h2>
+            <div class="divider"></div>
+            
+            <div class="project fade-in">
+                <div class="project-media">
+                    <img src="assets/180617.png" alt="Schegent" onerror="this.src='https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600&auto=format&fit=crop'">
+                </div>
+                <div class="project-info">
+                    <h3>Schegent</h3>
+                    <p>A specialized Retrieval-Augmented Generation (RAG) pipeline designed to manage calendar and schedule data with absolute precision. Enables small, local LLMs like Qwen2.5-1.5B to handle complex time-based queries without hallucinating.</p>
+                    <a href="https://github.com/subhajit-io/Schegent" target="_blank">View Repository</a>
+                </div>
+            </div>
+
+            <div class="project fade-in">
+                <div class="project-media">
+                    <iframe src="https://www.youtube.com/embed/ZVqp7z1P8n8" title="Cherm Demo" allowfullscreen></iframe>
+                </div>
+                <div class="project-info">
+                    <h3>Cherm</h3>
+                    <p>A Python-based TUI application bringing IDE-like capabilities to the terminal. Features a keyboard-navigable dashboard equipped with Big-O complexity estimation and automated secret scanning.</p>
+                    <a href="https://github.com/subhajit-io/Cherm" target="_blank">View Repository</a>
+                </div>
+            </div>
+
+            <div class="project fade-in">
+                <div class="project-media">
+                    <iframe src="https://www.youtube.com/embed/e515KjXbNYc" title="Visual Tokenizer Demo" allowfullscreen></iframe>
+                </div>
+                <div class="project-info">
+                    <h3>Visual Tokenizer</h3>
+                    <p>An interactive web application that visualizes the Byte Pair Encoding (BPE) algorithm used by modern LLMs. Users can step through the token-merging process with an interactive slider.</p>
+                    <a href="https://github.com/subhajit-io/Visual-Tokenizer" target="_blank">View Repository</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience -->
+        <section id="experience">
+            <h2 class="fade-in">Experience</h2>
+            
+            <div class="list-item fade-in">
+                <div class="list-meta">2026 &mdash; Present</div>
+                <div class="list-content">
+                    <h3>Smart India Hackathon (SIH)</h3>
+                    <p style="color: var(--accent);">Societal Innovation Collaboration Portal</p>
+                    <p>Building a centralized, AI-enabled digital platform to connect citizens reporting local issues with HEIs and industry partners. Features AI for automatic problem categorization, routing, and workflow management.</p>
+                </div>
+            </div>
+
+            <div class="list-item fade-in">
+                <div class="list-meta">Certification</div>
+                <div class="list-content">
+                    <h3>HP Customer Experience</h3>
+                    <p>Learned to track Net Promoter Scores to protect at-risk accounts and map out buyer journeys to eliminate friction points in business environments.</p>
+                    <a href="https://www.life-global.org/certificate/4438a77d-669b-41f9-ac61-955cb9058235" target="_blank" style="font-size: 0.9rem; margin-top: 10px; display: inline-block;"><i class="fa-solid fa-link" style="margin-right: 8px;"></i>View Credential</a>
+                </div>
+            </div>
+
+            <div class="list-item fade-in">
+                <div class="list-meta">Job Simulation</div>
+                <div class="list-content">
+                    <h3>Partnering with AI (Forage)</h3>
+                    <p>Developed skills in writing effective prompts and partnering with AI tools to research, design, and create content. Gained foundational experience in AI-powered debugging.</p>
+                    <a href="https://www.theforage.com/" target="_blank" style="font-size: 0.9rem; margin-top: 10px; display: inline-block;"><i class="fa-solid fa-link" style="margin-right: 8px;"></i>View Credential</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education -->
+        <section id="education">
+            <h2 class="fade-in">Education</h2>
+            
+            <div class="list-item fade-in">
+                <div class="list-meta">2025 &mdash; 2029</div>
+                <div class="list-content">
+                    <h3>Brainware University</h3>
+                    <p style="color: var(--accent);">B.Tech in Computer Science & Engineering (AIML)</p>
+                    <p>Pursuing a specialization in Artificial Intelligence and Machine Learning. Consistently maintaining a high academic standing with a current CGPA of 8.43.</p>
+                    <a href="https://maps.app.goo.gl/hvu5bNGFRF4MAfDh6" target="_blank" style="font-size: 0.9rem; margin-top: 10px; display: inline-block;"><i class="fa-solid fa-location-dot" style="margin-right: 8px;"></i>View Location</a>
+                </div>
+            </div>
+
+            <div class="list-item fade-in">
+                <div class="list-meta">Higher Secondary</div>
+                <div class="list-content">
+                    <h3>Arambagh High School</h3>
+                    <p>Completed higher secondary education with a focus on science and foundational mathematics.</p>
+                    <a href="https://maps.app.goo.gl/FpSGdfTFCS8upqmZ8" target="_blank" style="font-size: 0.9rem; margin-top: 10px; display: inline-block;"><i class="fa-solid fa-location-dot" style="margin-right: 8px;"></i>View Location</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills & Preferences (Adding length and detail) -->
+        <section id="skills" class="fade-in">
+            <h2>Toolkit & Preferences</h2>
+            <div class="divider"></div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 60px;">
+                <div>
+                    <h3 style="font-family: 'Inter', sans-serif; font-size: 1.2rem; margin-bottom: 20px;">Core Skills & Interests</h3>
+                    <div class="skills-wrapper">
+                        <span class="skill-tag"><i class="fa-solid fa-terminal"></i> Prompt Engineering</span>
+                        <span class="skill-tag"><i class="fa-solid fa-robot"></i> Machine Learning</span>
+                        <span class="skill-tag"><i class="fa-brands fa-github"></i> GitHub</span>
+                        <span class="skill-tag"><i class="fa-solid fa-list-check"></i> Management</span>
+                        <span class="skill-tag"><i class="fa-solid fa-brain"></i> Psychology</span>
+                        <span class="skill-tag"><i class="fa-solid fa-face-smile"></i> Customer Experience</span>
+                        <span class="skill-tag"><i class="fa-solid fa-laptop-code"></i> Front End Dev</span>
+                        <span class="skill-tag">MLA</span>
+                        <span class="skill-tag">Deep Learning</span>
+                        <span class="skill-tag">Quantum Machine Learning</span>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 style="font-family: 'Inter', sans-serif; font-size: 1.2rem; margin-bottom: 20px;">Programming</h3>
+                    <div class="skills-wrapper">
+                        <span class="skill-tag"><i class="devicon-python-plain"></i> Python</span>
+                        <span class="skill-tag"><i class="devicon-c-plain"></i> C</span>
+                        <span class="skill-tag"><i class="devicon-cplusplus-plain"></i> C++</span>
+                        <span class="skill-tag"><i class="devicon-java-plain"></i> Java</span>
+                        <span class="skill-tag"><i class="devicon-flutter-plain"></i> Flutter</span>
+                        <span class="skill-tag"><i class="devicon-numpy-original"></i> NumPy</span>
+                        <span class="skill-tag"><i class="devicon-pytorch-original"></i> PyTorch</span>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 style="font-family: 'Inter', sans-serif; font-size: 1.2rem; margin-bottom: 20px;">Daily Tools</h3>
+                    <div class="skills-wrapper">
+                        <span class="skill-tag">Gemini</span>
+                        <span class="skill-tag">Claude</span>
+                        <span class="skill-tag">LMStudio</span>
+                        <span class="skill-tag">Antigravity</span>
+                        <span class="skill-tag">Android Studio</span>
+                        <span class="skill-tag">VS Code</span>
+                        <span class="skill-tag">GitHub Copilot</span>
+                        <span class="skill-tag">Manus</span>
+                        <span class="skill-tag">Google AI Studio</span>
+                        <span class="skill-tag">DeepSeek</span>
+                        <span class="skill-tag">Nemotron</span>
+                        <span class="skill-tag">Google Labs</span>
+                        <span class="skill-tag">Consensus</span>
+                        <span class="skill-tag">Julius</span>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 style="font-family: 'Inter', sans-serif; font-size: 1.2rem; margin-bottom: 20px;">Work Style</h3>
+                    <p>I thrive in leadership roles within startup environments. I am focused on remote work and currently available for part-time commitments, delivering uncompromising output.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Philosophy Section -->
+        <section class="philosophy-section fade-in">
+            <p class="quote">
+                "I don't follow Ikigai, because tomorrow is never guaranteed. I refuse to let today's work wait for a future that isn't promised."
+            </p>
+            <span class="quote-author">My Personal Philosophy</span>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section fade-in">
+            <h2>Contact Me</h2>
+            <p style="margin-bottom: 60px; font-size: 1.2rem;">I am open to volunteer work, internships, and business collaborations.</p>
+            
+            <form style="max-width: 600px;" onsubmit="submitContactForm(event)">
+                <input id="contact-name" type="text" placeholder="Your Name" required>
+                <input id="contact-email" type="email" placeholder="Your Email" required>
+                <textarea id="contact-message" rows="4" placeholder="How can we collaborate?" required></textarea>
+                <button type="submit" class="btn">Send Message</button>
+            </form>
+            
+            <div style="margin-top: 60px; display: flex; gap: 30px;">
+                <a href="https://github.com/subhajit-io" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
+                <a href="https://www.linkedin.com/in/subhajit-das-4a5719345/" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+                <a href="https://wa.me/+917001023356" target="_blank"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <div class="container">
+            <p style="margin: 0; color: var(--text-muted);">&copy; 2026 Subhajit Das. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Intersection Observer for graceful scroll animations
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.15
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Contact Form Logic
+        function submitContactForm(event) {
+            event.preventDefault();
+            const name = document.getElementById('contact-name').value;
+            const email = document.getElementById('contact-email').value;
+            const message = document.getElementById('contact-message').value;
+            
+            const subject = encodeURIComponent(`Portfolio Contact from ${name}`);
+            const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
+            
+            const mailUrl = `https://mail.google.com/mail/?view=cm&to=arambaghsubhajitdas0@gmail.com&su=${subject}&body=${body}`;
+            window.open(mailUrl, '_blank');
+        }
+    </script>
+</body>
+</html>
