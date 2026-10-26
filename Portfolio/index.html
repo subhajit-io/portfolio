@@ -2195,7 +2195,7 @@
     }
 
     /* ==========================================================================
-       SOVEREIGN TERMINAL ENGINE
+       SOVEREIGN TERMINAL ENGINE (TEXT CLI WITH DEFAULT HELP MENU)
        ========================================================================== */
     const terminalState = {
       isOpen: false,
@@ -2204,96 +2204,132 @@
     };
 
     const terminalCommands = {
-      help: () => `AVAILABLE COMMANDS:
-  about / whoami   - Architect profile, identity & background
-  flagships / proj - Solutions Drawer & Findrr repositories & platforms
-  journey / edu    - Brainware University (AIML) & Arambagh High School
-  skills / stack   - AI/ML, languages & edge cloud infrastructure
-  contact          - Email, WhatsApp, GitHub & LinkedIn direct channels
-  resume           - Open Subhajit's verified PDF resume
-  clear / cls      - Clear current terminal console
-  exit / quit      - Close terminal deck (or press ESC)`,
+      help: () => `SOVEREIGN SHELL v2.6 // AVAILABLE SYSTEM COMMANDS:
+================================================================================
+  about        - Architect profile, background, identity & philosophy
+  flagships    - Solutions Drawer & Findrr sovereign ecosystem & links
+  journey      - Academic foundation: Brainware Univ (AIML) & Arambagh High
+  skills       - Technical toolkit: AI/ML, languages & edge cloud runtimes
+  contact      - Direct communications: Email, WhatsApp, GitHub, LinkedIn
+  resume       - Open Subhajit's verified PDF resume in a new browser tab
+  clear        - Clear console screen (restores clean help menu)
+  exit         - Terminate terminal session (or press ESC)
+================================================================================
+[TIP] Type any command above and press ENTER, or click the quick-chips below.`,
 
-      about: () => `ARCHITECT PROFILE:
-  Name:        Subhajit Das
-  Known As:    Krish
-  Specialty:   Software Engineering & AIML Architecture
-  Roots:       Arambagh, Hooghly, West Bengal
-  Current Base:Kolkata, WB, India
-  Degree:      B.Tech in CSE (AIML), Brainware University (2025-2029)
-  Current GPA: 8.43
-  Philosophy:  "I refuse to let today's work wait for a future that isn't promised."
-  Work Style:  Remote • Sovereign • High Ownership Builder`,
+      about: () => `[ARCHITECT PROFILE]
+--------------------------------------------------------------------------------
+Full Name       : Subhajit Das
+Known As        : Krish
+Specialization  : Software Engineering & AIML Architecture
+Academic Degree : B.Tech CSE (AIML), Brainware University (2025 — 2029)
+Current GPA     : 8.43 / 10.0
+Hometown        : Arambagh, Hooghly, West Bengal, India
+Operating Base  : Kolkata, West Bengal, India
+Languages       : English, Hindi, Bengali
+Work Style      : Remote • Sovereign • High Ownership Builder
+Core Tenet      : "I refuse to let today's work wait for a future that isn't promised."`,
 
       whoami: () => terminalCommands.about(),
 
-      flagships: () => `FEATURED ECOSYSTEM:
-  [1] SOLUTIONS DRAWER
-      Minimalist sovereign Android Web App Store & PWA platform.
-      Features: Drawer Protect client-side SHA-256 scanner, delta OTA updates.
-      Stack:    Next.js 16, TypeScript, Cloudflare D1 edge, AWS S3.
-      Live:     <a href="https://solutionsdrawer.pages.dev" target="_blank" rel="noreferrer">https://solutionsdrawer.pages.dev</a>
-      Source:   <a href="https://github.com/subhajit-io/solutionsdrawer" target="_blank" rel="noreferrer">github.com/subhajit-io/solutionsdrawer</a>
+      flagships: () => `[FLAGSHIP ECOSYSTEM & PIPELINES]
+--------------------------------------------------------------------------------
+01. SOLUTIONS DRAWER
+    Type        : Sovereign Android Web App Store & PWA Platform
+    Description : Minimalist application store built to bypass corporate
+                  app-monopolies and eliminate user tracking telemetry.
+    Security    : "Drawer Protect" client-side SHA-256 binary validation.
+    Stack       : Next.js 16, TypeScript, Cloudflare D1 edge database, AWS S3.
+    Live URL    : <a href="https://solutionsdrawer.pages.dev" target="_blank" rel="noreferrer">https://solutionsdrawer.pages.dev</a>
+    Repository  : <a href="https://github.com/subhajit-io/solutionsdrawer" target="_blank" rel="noreferrer">github.com/subhajit-io/solutionsdrawer</a>
 
-  [2] FINDRR
-      100% on-device personal financial vault and discipline arena.
-      Features: Unified Available Money, 5-Second Mindful QR impulse pause, zero SMS scraping.
-      Stack:    Android Native, SQLite on-device, AES-256 encryption.
-      Live:     <a href="https://letusfindrr.pages.dev" target="_blank" rel="noreferrer">https://letusfindrr.pages.dev</a>
+02. FINDRR
+    Type        : 100% On-Device Financial Discipline Vault
+    Description : Personal money management vault with zero SMS scraping
+                  and zero cloud telemetry. Keeps sensitive logs on-device.
+    Features    : Unified Available Money, 5-Second Mindful QR Impulse Pause.
+    Stack       : Android Native, SQLite on-device, AES-256 encryption.
+    Live URL    : <a href="https://letusfindrr.pages.dev" target="_blank" rel="noreferrer">https://letusfindrr.pages.dev</a>
 
-  [3] ADDITIONAL WORKS:
-      • Schegent (Temporal RAG Local LLM): <a href="https://github.com/subhajit-io/Schegent" target="_blank" rel="noreferrer">github.com/subhajit-io/Schegent</a>
-      • Cherm (Terminal TUI IDE):          <a href="https://github.com/subhajit-io/Cherm" target="_blank" rel="noreferrer">github.com/subhajit-io/Cherm</a>
-      • Visual Tokenizer (BPE Engine):     <a href="https://github.com/subhajit-io/Visual-Tokenizer" target="_blank" rel="noreferrer">github.com/subhajit-io/Visual-Tokenizer</a>`,
+03. ADDITIONAL PIPELINES
+    • Schegent         : Local LLM (Qwen2.5) Calendar RAG System
+                         <a href="https://github.com/subhajit-io/Schegent" target="_blank" rel="noreferrer">github.com/subhajit-io/Schegent</a>
+    • Cherm            : High-Performance Terminal IDE with Big-O Complexity
+                         <a href="https://github.com/subhajit-io/Cherm" target="_blank" rel="noreferrer">github.com/subhajit-io/Cherm</a>
+    • Visual Tokenizer : Interactive Byte Pair Encoding (BPE) Visualizer
+                         <a href="https://github.com/subhajit-io/Visual-Tokenizer" target="_blank" rel="noreferrer">github.com/subhajit-io/Visual-Tokenizer</a>`,
 
       projects: () => terminalCommands.flagships(),
       proj: () => terminalCommands.flagships(),
 
-      journey: () => `ACADEMIC FOUNDATION & MILESTONES:
-  • Brainware University (2025 — 2029)
-    B.Tech Computer Science & Engineering (AIML) | Current CGPA: 8.43
-    Focus: Deep Learning, Neural Architectures, Data Structures & Algorithms
-    Campus: Barasat, Kolkata (<a href="https://maps.app.goo.gl/hvu5bNGFRF4MAfDh6" target="_blank" rel="noreferrer">Google Maps Location</a>)
+      journey: () => `[ACADEMIC FOUNDATION & MILESTONES]
+--------------------------------------------------------------------------------
+• BRAINWARE UNIVERSITY (2025 — 2029)
+  Degree   : Bachelor of Technology (B.Tech)
+  Major    : Computer Science & Engineering (AIML)
+  Status   : In Progress • Current CGPA: 8.43 / 10.0
+  Subjects : Neural Networks, Deep Learning, DSA, Discrete Mathematics, AI Safety
+  Campus   : Barasat, Kolkata, West Bengal
+  Map URL  : <a href="https://maps.app.goo.gl/hvu5bNGFRF4MAfDh6" target="_blank" rel="noreferrer">https://maps.app.goo.gl/hvu5bNGFRF4MAfDh6</a>
 
-  • Arambagh High School (Higher Secondary)
-    Class XI & XII — Pure Science & Advanced Mathematics
-    Foundation: Physics, Chemistry, Mathematics, Computing
-    Location: Arambagh, Hooghly (<a href="https://maps.app.goo.gl/FpSGdfTFCS8upqmZ8" target="_blank" rel="noreferrer">Google Maps Location</a>)
+• ARAMBAGH HIGH SCHOOL (HIGHER SECONDARY)
+  Stage    : Class XI & Class XII
+  Stream   : Pure Science & Advanced Mathematics
+  Subjects : Physics, Chemistry, Advanced Mathematics, Computer Application
+  Location : Arambagh, Hooghly, West Bengal
+  Map URL  : <a href="https://maps.app.goo.gl/FpSGdfTFCS8upqmZ8" target="_blank" rel="noreferrer">https://maps.app.goo.gl/FpSGdfTFCS8upqmZ8</a>
 
-  • Smart India Hackathon (SIH 2026)
-    Societal Innovation Collaboration Portal connecting citizens & HEIs.
+• SMART INDIA HACKATHON (SIH 2026)
+  Project  : Societal Innovation Collaboration Portal connecting citizens & HEIs
 
-  • HP Customer Experience (CX) Certification
-    Customer Journey & Retention Architecture (<a href="https://www.life-global.org/certificate/4438a77d-669b-41f9-ac61-955cb9058235" target="_blank" rel="noreferrer">Verify Credential</a>)
+• HP CUSTOMER EXPERIENCE (CX) CERTIFICATION
+  Role     : Customer Journey & Retention Architecture
+  Verify   : <a href="https://www.life-global.org/certificate/4438a77d-669b-41f9-ac61-955cb9058235" target="_blank" rel="noreferrer">Verify HP CX Credential</a>
 
-  • Partnering with AI (Forage Simulation)
-    Prompt Engineering & AI-Assisted Debugging`,
+• FORAGE AI JOB SIMULATION
+  Track    : Partnering with AI — Prompt Engineering & AI-Assisted Debugging`,
 
       edu: () => terminalCommands.journey(),
       education: () => terminalCommands.journey(),
 
-      skills: () => `TECHNICAL TOOLKIT:
-  • AI & ML:        PyTorch, NumPy, Local LLMs (Qwen2.5, Llama), RAG Pipelines, Prompt Engineering, BPE
-  • Languages:      Python, C++, TypeScript, C, Java, Dart / Flutter
-  • Web & Cloud:    Next.js, PWA / WebAPK, SQLite on-device, Cloudflare D1/Workers, AWS S3, Git
-  • Workstations:   Antigravity IDE, Claude 3.7 Sonnet, Gemini 2.5 Pro, LMStudio, VS Code`,
+      skills: () => `[TECHNICAL TOOLKIT & CAPABILITIES]
+--------------------------------------------------------------------------------
+[AI & MACHINE LEARNING]
+  • Core Frameworks : PyTorch, NumPy
+  • LLM Architecture: Local LLMs (Qwen2.5, Llama), RAG Pipelines
+  • Methodologies   : Prompt Engineering, Tokenization (BPE), Neural Networks
+
+[LANGUAGES & RUNTIMES]
+  • Core Languages  : Python, C++, TypeScript, C, Java, Dart / Flutter
+
+[WEB, CLOUD & EDGE INFRA]
+  • Frameworks      : Next.js, React, PWA / WebAPK
+  • Storage & DB    : SQLite on-device, Cloudflare D1, AWS S3 Presigned
+  • Cloud & Tooling : Git, GitHub, Cloudflare Pages, Linux CLI
+
+[AGENTIC AI WORKSTATIONS]
+  • Environments    : Antigravity IDE, Claude 3.7 Sonnet, Gemini 2.5 Pro, LMStudio`,
 
       stack: () => terminalCommands.skills(),
 
-      contact: () => `COMMUNICATION CHANNELS:
-  • Email:    <a href="https://mail.google.com/mail/?view=cm&to=arambaghsubhajitdas0@gmail.com" target="_blank" rel="noreferrer">arambaghsubhajitdas0@gmail.com</a>
-  • WhatsApp: <a href="https://wa.me/+917001023356" target="_blank" rel="noreferrer">+91 7001023356</a>
-  • GitHub:   <a href="https://github.com/subhajit-io" target="_blank" rel="noreferrer">github.com/subhajit-io</a>
-  • LinkedIn: <a href="https://www.linkedin.com/in/subhajit-das-4a5719345/" target="_blank" rel="noreferrer">linkedin.com/in/subhajit-das-4a5719345</a>
-  • Base:     Arambagh & Kolkata, West Bengal, India`,
+      contact: () => `[COMMUNICATION DIRECTORY]
+--------------------------------------------------------------------------------
+Email    : <a href="https://mail.google.com/mail/?view=cm&to=arambaghsubhajitdas0@gmail.com" target="_blank" rel="noreferrer">arambaghsubhajitdas0@gmail.com</a>
+WhatsApp : <a href="https://wa.me/+917001023356" target="_blank" rel="noreferrer">+91 7001023356 (Click to Chat)</a>
+GitHub   : <a href="https://github.com/subhajit-io" target="_blank" rel="noreferrer">https://github.com/subhajit-io</a>
+LinkedIn : <a href="https://www.linkedin.com/in/subhajit-das-4a5719345/" target="_blank" rel="noreferrer">linkedin.com/in/subhajit-das-4a5719345</a>
+Location : Arambagh & Kolkata, West Bengal, India
+Status   : Open for Software Engineering Roles & AI Collaborations`,
 
       resume: () => {
         window.open('https://canva.link/cpc3vxhkdja03dc', '_blank');
-        return `[SYSTEM] Opening verified resume in external window...\nURL: <a href="https://canva.link/cpc3vxhkdja03dc" target="_blank" rel="noreferrer">https://canva.link/cpc3vxhkdja03dc</a>`;
+        return `[ACTION] Opening Subhajit's verified PDF resume in a new tab...\nURL: <a href="https://canva.link/cpc3vxhkdja03dc" target="_blank" rel="noreferrer">https://canva.link/cpc3vxhkdja03dc</a>`;
       },
 
       clear: () => {
-        document.getElementById('terminal-history').innerHTML = '';
+        const historyDiv = document.getElementById('terminal-history');
+        historyDiv.innerHTML = '';
+        showHelpMenuByDefault();
         return null;
       },
       cls: () => terminalCommands.clear(),
@@ -2305,11 +2341,23 @@
       quit: () => terminalCommands.exit()
     };
 
+    function showHelpMenuByDefault() {
+      const historyDiv = document.getElementById('terminal-history');
+      const helpBlock = document.createElement('div');
+      helpBlock.className = 'terminal-output-block';
+      helpBlock.innerHTML = `
+        <div class="terminal-output-cmd"><span style="color: var(--accent-green);">krish@sovereign:~$</span> help</div>
+        <div class="terminal-output-text">${terminalCommands.help()}</div>
+      `;
+      historyDiv.appendChild(helpBlock);
+    }
+
     function toggleTerminalMode() {
       const overlay = document.getElementById('terminal-overlay');
       const toggleBtn = document.getElementById('terminal-toggle-btn');
       const input = document.getElementById('terminal-input');
       const body = document.getElementById('terminal-body');
+      const historyDiv = document.getElementById('terminal-history');
 
       terminalState.isOpen = !terminalState.isOpen;
 
@@ -2317,6 +2365,12 @@
         overlay.style.display = 'flex';
         toggleBtn.classList.add('active');
         document.body.style.overflow = 'hidden';
+
+        // Open with help menu by default if history is empty
+        if (!historyDiv.hasChildNodes()) {
+          showHelpMenuByDefault();
+        }
+
         setTimeout(() => {
           input.focus();
           body.scrollTop = body.scrollHeight;
@@ -2358,7 +2412,7 @@
 
       const promptEcho = document.createElement('div');
       promptEcho.className = 'terminal-output-cmd';
-      promptEcho.innerHTML = `<span style="color: var(--accent-green);">krish@sovereign:~$</span> ${escapeHtml(cmd)}`;
+      promptEcho.innerHTML = `<span style="color: var(--accent-green);">krish@sovereign:~$</span> <span style="color: #ffffff; font-weight: 700;">${escapeHtml(cmd)}</span>`;
       cmdBlock.appendChild(promptEcho);
 
       let outputContent = '';
@@ -2370,10 +2424,10 @@
         if (arg && terminalCommands[arg]) {
           outputContent = terminalCommands[arg]();
         } else {
-          outputContent = `cat: ${escapeHtml(cmd.replace(/^(cat|echo)\s*/, ''))}: No such file or directory. Try 'help'.`;
+          outputContent = `cat: ${escapeHtml(cmd.replace(/^(cat|echo)\s*/, ''))}: No such file or directory. Type 'help' for command list.`;
         }
       } else {
-        outputContent = `bash: command not found: '${escapeHtml(cmd)}'. Type 'help' for available commands.`;
+        outputContent = `bash: command not found: '${escapeHtml(cmd)}'. Type 'help' to see available commands.`;
       }
 
       if (outputContent !== null) {
@@ -2385,12 +2439,26 @@
       }
 
       input.value = '';
-      body.scrollTop = body.scrollHeight;
+      setTimeout(() => {
+        body.scrollTop = body.scrollHeight;
+        input.focus();
+      }, 10);
     }
 
     function escapeHtml(str) {
       return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
     }
+
+    // Auto-focus input when clicking anywhere inside terminal body
+    document.addEventListener('DOMContentLoaded', () => {
+      const termBody = document.getElementById('terminal-body');
+      if (termBody) {
+        termBody.addEventListener('click', () => {
+          const termInput = document.getElementById('terminal-input');
+          if (termInput) termInput.focus();
+        });
+      }
+    });
 
     // Global keyboard shortcuts for Terminal
     document.addEventListener('keydown', (e) => {
