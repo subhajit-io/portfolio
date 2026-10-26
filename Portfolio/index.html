@@ -635,6 +635,81 @@
     }
 
     /* ==========================================================================
+       WORK PREFERENCES & ENGAGEMENT MODEL
+       ========================================================================== */
+    .work-pref-deck {
+      margin-top: 36px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .pref-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 12px;
+      padding: 24px;
+      position: relative;
+      transition: all 0.25s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .pref-card:hover {
+      border-color: var(--border-medium);
+      background: var(--bg-card-hover);
+      transform: translateY(-2px);
+    }
+
+    .pref-card-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--text-muted);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .pref-card-title {
+      font-family: var(--font-heading);
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 10px;
+      letter-spacing: -0.01em;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .pref-card-desc {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin-bottom: 14px;
+      flex-grow: 1;
+    }
+
+    .pref-card-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .pref-tag {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      padding: 3px 8px;
+      border-radius: 4px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border-subtle);
+      color: #dedede;
+    }
+
+    /* ==========================================================================
        FLAGSHIP PROJECTS (HERO FEATURED CARDS)
        ========================================================================== */
     .flagship-grid {
@@ -1322,9 +1397,9 @@
        RESPONSIVE BREAKPOINTS
        ========================================================================== */
     @media (max-width: 900px) {
-      .hero-grid, .flagship-inner, .about-grid, .journey-card, .contact-grid {
+      .hero-grid, .flagship-inner, .about-grid, .journey-card, .contact-grid, .work-pref-deck {
         grid-template-columns: 1fr;
-        gap: 36px;
+        gap: 24px;
       }
       .hero-visual {
         order: -1;
@@ -1365,7 +1440,7 @@
       </nav>
 
       <div class="nav-right-group">
-        <button id="terminal-toggle-btn" class="terminal-toggle-btn" onclick="toggleTerminalMode()" title="Toggle Sovereign Terminal (Ctrl+` or Click)">
+        <button id="terminal-toggle-btn" class="terminal-toggle-btn" onclick="toggleTerminalMode()" title="Toggle Solutions Drawer Terminal (Ctrl+` or Click)">
           <i class="fa-solid fa-terminal" style="color: var(--nothing-red);"></i>
           <span class="terminal-btn-label">TERMINAL</span>
           <span class="term-led"></span>
@@ -1380,7 +1455,7 @@
   </header>
 
   <!-- ==========================================================================
-       SOVEREIGN TERMINAL OVERLAY DECK (NOTHING OS INDUSTRIAL SHELL)
+       SOLUTIONS DRAWER TERMINAL OVERLAY DECK (NOTHING OS INDUSTRIAL SHELL)
        ========================================================================== -->
   <div id="terminal-overlay" class="terminal-overlay" style="display: none;" onclick="handleTerminalOverlayClick(event)">
     <div class="terminal-window" onclick="event.stopPropagation()">
@@ -1392,7 +1467,7 @@
         </div>
         <div class="terminal-title">
           <i class="fa-solid fa-terminal" style="color: var(--nothing-red);"></i>
-          <span>SUBHAJIT_OS // SOVEREIGN_TERMINAL_V2.6 &bull; BASH</span>
+          <span>SUBHAJIT_OS // SOLUTIONS_DRAWER_TERMINAL_V2.6 &bull; BASH</span>
         </div>
         <button class="terminal-close-btn" onclick="toggleTerminalMode()" title="Close Terminal (ESC)">
           <i class="fa-solid fa-xmark"></i>
@@ -1413,7 +1488,7 @@
                                 |__/                         
 </pre>
           <div class="term-intro-text">
-            <strong>SUBHAJIT DAS [KRISH] &bull; SOVEREIGN ARCHITECT SHELL</strong><br>
+            <strong>SUBHAJIT DAS [KRISH] &bull; SOLUTIONS DRAWER ARCHITECT SHELL</strong><br>
             B.Tech in CSE (AIML) &bull; Brainware University (CGPA 8.43) &bull; Arambagh &amp; Kolkata<br>
             Type <span class="term-highlight">help</span> for command list, or click a quick-chip below. Press <span class="term-highlight">ESC</span> to exit.
           </div>
@@ -1422,7 +1497,7 @@
         <div id="terminal-history"></div>
 
         <div class="terminal-prompt-line">
-          <span class="terminal-prompt-user">krish@sovereign:~$</span>
+          <span class="terminal-prompt-user">krish@solutionsdrawer:~$</span>
           <input type="text" id="terminal-input" class="terminal-input" autocomplete="off" spellcheck="false" autofocus>
         </div>
       </div>
@@ -1431,6 +1506,7 @@
         <span style="letter-spacing: 0.05em; font-weight: 700;">COMMANDS:</span>
         <button class="term-quick-btn" onclick="runTerminalCommand('help')">help</button>
         <button class="term-quick-btn" onclick="runTerminalCommand('about')">about</button>
+        <button class="term-quick-btn" onclick="runTerminalCommand('work')">work</button>
         <button class="term-quick-btn" onclick="runTerminalCommand('flagships')">flagships</button>
         <button class="term-quick-btn" onclick="runTerminalCommand('journey')">journey</button>
         <button class="term-quick-btn" onclick="runTerminalCommand('skills')">skills</button>
@@ -1594,12 +1670,80 @@
             <span class="identity-val">English &bull; Hindi &bull; Bengali</span>
           </div>
           <div class="identity-row">
-            <span class="identity-key">Work Model</span>
-            <span class="identity-val" style="color: var(--accent-green);">Remote &bull; High Ownership</span>
+            <span class="identity-key">Work Style</span>
+            <span class="identity-val" style="color: var(--accent-green);">Remote &bull; Startup Leadership</span>
+          </div>
+          <div class="identity-row">
+            <span class="identity-key">Availability</span>
+            <span class="identity-val">Part-Time (Uncompromising Output)</span>
+          </div>
+          <div class="identity-row">
+            <span class="identity-key">Open For</span>
+            <span class="identity-val" style="color: var(--accent-cyan);">Internships &bull; Volunteer &bull; Collaborations</span>
           </div>
           <div class="identity-row">
             <span class="identity-key">Academic Status</span>
             <span class="identity-val">B.Tech CSE AIML (8.43 CGPA)</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- WORK PREFERENCES & ENGAGEMENT MODEL -->
+      <div class="work-pref-deck">
+        <div class="pref-card">
+          <div class="pref-card-badge">
+            <span class="led" style="background: var(--nothing-red); box-shadow: 0 0 8px var(--nothing-red);"></span>
+            <span>WORK STYLE // ENVIRONMENT</span>
+          </div>
+          <div class="pref-card-title">
+            <i class="fa-solid fa-rocket" style="color: var(--nothing-red); font-size: 1rem;"></i>
+            Startup Leadership
+          </div>
+          <p class="pref-card-desc">
+            I thrive in leadership roles within startup environments. I take end-to-end ownership from problem discovery to deployment, excelling in zero-to-one engineering, high-autonomy teams, and customer-first design.
+          </p>
+          <div class="pref-card-tags">
+            <span class="pref-tag">Startup Environments</span>
+            <span class="pref-tag">Technical Leadership</span>
+            <span class="pref-tag">Full Ownership</span>
+          </div>
+        </div>
+
+        <div class="pref-card">
+          <div class="pref-card-badge">
+            <span class="led" style="background: var(--accent-green); box-shadow: 0 0 8px var(--accent-green);"></span>
+            <span>AVAILABILITY // MODEL</span>
+          </div>
+          <div class="pref-card-title">
+            <i class="fa-solid fa-globe" style="color: var(--accent-green); font-size: 1rem;"></i>
+            Remote &bull; Part-Time
+          </div>
+          <p class="pref-card-desc">
+            100% focused on remote work and currently available for part-time commitments, delivering uncompromising output while sustaining academic rigor in B.Tech CSE AIML (8.43 CGPA).
+          </p>
+          <div class="pref-card-tags">
+            <span class="pref-tag">100% Remote</span>
+            <span class="pref-tag">Part-Time Commitments</span>
+            <span class="pref-tag">Uncompromising Output</span>
+          </div>
+        </div>
+
+        <div class="pref-card">
+          <div class="pref-card-badge">
+            <span class="led" style="background: var(--accent-cyan); box-shadow: 0 0 8px var(--accent-cyan);"></span>
+            <span>COLLABORATION // OPEN ROLES</span>
+          </div>
+          <div class="pref-card-title">
+            <i class="fa-solid fa-handshake" style="color: var(--accent-cyan); font-size: 1rem;"></i>
+            Open For Engagements
+          </div>
+          <p class="pref-card-desc">
+            Actively open to internships, high-impact volunteer work, and startup business collaborations building scalable, sovereign, and privacy-preserving software solutions.
+          </p>
+          <div class="pref-card-tags">
+            <span class="pref-tag">Internships</span>
+            <span class="pref-tag">Volunteer Engineering</span>
+            <span class="pref-tag">Business Collaborations</span>
           </div>
         </div>
       </div>
@@ -2066,7 +2210,7 @@
         </div>
         <h2 class="section-title">START A CONVERSATION</h2>
         <p class="section-subtitle">
-          Open to software engineering roles, AI research collaborations, and startup partnerships.
+          I thrive in startup leadership roles and remote environments. Currently open to part-time commitments, internships, volunteer engineering, and business collaborations.
         </p>
       </div>
 
@@ -2094,6 +2238,18 @@
         </form>
 
         <div class="contact-info-card">
+          <div class="contact-item">
+            <div class="contact-icon-box">
+              <i class="fa-solid fa-briefcase"></i>
+            </div>
+            <div>
+              <div class="form-label">Engagement &amp; Work Style</div>
+              <div style="font-family: var(--font-mono); font-size: 13.5px; color: var(--accent-green);">
+                100% Remote &bull; Startup Leadership &bull; Part-Time
+              </div>
+            </div>
+          </div>
+
           <div class="contact-item">
             <div class="contact-icon-box">
               <i class="fa-solid fa-envelope"></i>
@@ -2204,9 +2360,10 @@
     };
 
     const terminalCommands = {
-      help: () => `SOVEREIGN SHELL v2.6 // AVAILABLE SYSTEM COMMANDS:
+      help: () => `SOLUTIONS DRAWER SHELL v2.6 // AVAILABLE SYSTEM COMMANDS:
 ================================================================================
   about        - Architect profile, background, identity & philosophy
+  work         - Work preferences, remote model, leadership & availability
   flagships    - Solutions Drawer & Findrr sovereign ecosystem & links
   journey      - Academic foundation: Brainware Univ (AIML) & Arambagh High
   skills       - Technical toolkit: AI/ML, languages & edge cloud runtimes
@@ -2227,10 +2384,26 @@ Current GPA     : 8.43 / 10.0
 Hometown        : Arambagh, Hooghly, West Bengal, India
 Operating Base  : Kolkata, West Bengal, India
 Languages       : English, Hindi, Bengali
-Work Style      : Remote • Sovereign • High Ownership Builder
+Work Style      : Remote • Startup Leadership • Part-Time (Uncompromising Output)
+Open For        : Internships • Volunteer Work • Startup Collaborations
 Core Tenet      : "I refuse to let today's work wait for a future that isn't promised."`,
 
       whoami: () => terminalCommands.about(),
+
+      work: () => `[WORK STYLE & ENGAGEMENT PREFERENCES]
+--------------------------------------------------------------------------------
+Work Style    : Startup Leadership & Full-Ownership Engineering
+Location Mode : 100% Remote (Async-first, global collaboration)
+Availability  : Part-Time Commitments (Delivering uncompromising output)
+Open For      : • Startup Business Collaborations
+                • Software & AIML Internships
+                • High-Impact Volunteer Engineering
+Philosophy    : "I thrive in leadership roles within startup environments. I am
+                focused on remote work and currently available for part-time
+                commitments, delivering uncompromising output."`,
+
+      preferences: () => terminalCommands.work(),
+      pref: () => terminalCommands.work(),
 
       flagships: () => `[FLAGSHIP ECOSYSTEM & PIPELINES]
 --------------------------------------------------------------------------------
@@ -2319,7 +2492,7 @@ WhatsApp : <a href="https://wa.me/+917001023356" target="_blank" rel="noreferrer
 GitHub   : <a href="https://github.com/subhajit-io" target="_blank" rel="noreferrer">https://github.com/subhajit-io</a>
 LinkedIn : <a href="https://www.linkedin.com/in/findrrsubhajit/" target="_blank" rel="noreferrer">linkedin.com/in/findrrsubhajit</a>
 Location : Arambagh & Kolkata, West Bengal, India
-Status   : Open for Software Engineering Roles & AI Collaborations`,
+Status   : Open for Remote Part-Time Roles, Internships & Startup Partnerships`,
 
       resume: () => {
         window.open('https://canva.link/cpc3vxhkdja03dc', '_blank');
@@ -2346,7 +2519,7 @@ Status   : Open for Software Engineering Roles & AI Collaborations`,
       const helpBlock = document.createElement('div');
       helpBlock.className = 'terminal-output-block';
       helpBlock.innerHTML = `
-        <div class="terminal-output-cmd"><span style="color: var(--accent-green);">krish@sovereign:~$</span> help</div>
+        <div class="terminal-output-cmd"><span style="color: var(--accent-green);">krish@solutionsdrawer:~$</span> help</div>
         <div class="terminal-output-text">${terminalCommands.help()}</div>
       `;
       historyDiv.appendChild(helpBlock);
@@ -2412,7 +2585,7 @@ Status   : Open for Software Engineering Roles & AI Collaborations`,
 
       const promptEcho = document.createElement('div');
       promptEcho.className = 'terminal-output-cmd';
-      promptEcho.innerHTML = `<span style="color: var(--accent-green);">krish@sovereign:~$</span> <span style="color: #ffffff; font-weight: 700;">${escapeHtml(cmd)}</span>`;
+      promptEcho.innerHTML = `<span style="color: var(--accent-green);">krish@solutionsdrawer:~$</span> <span style="color: #ffffff; font-weight: 700;">${escapeHtml(cmd)}</span>`;
       cmdBlock.appendChild(promptEcho);
 
       let outputContent = '';
