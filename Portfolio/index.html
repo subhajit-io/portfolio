@@ -274,6 +274,55 @@
       color: #ffffff;
     }
 
+    .nav-right-group {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .terminal-toggle-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 4px 11px;
+      border-radius: 999px;
+      background: #0d0d0d;
+      border: 1px solid var(--border-medium);
+      color: #ffffff;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      cursor: pointer;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .terminal-toggle-btn:hover {
+      background: #181818;
+      border-color: #ffffff;
+      transform: translateY(-1px);
+    }
+
+    .terminal-toggle-btn.active {
+      background: rgba(215, 25, 33, 0.16);
+      border-color: var(--nothing-red);
+      color: #ffffff;
+      box-shadow: 0 0 14px var(--nothing-red-glow);
+    }
+
+    .terminal-toggle-btn .term-led {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #444444;
+      transition: all 0.2s ease;
+    }
+
+    .terminal-toggle-btn.active .term-led {
+      background: var(--nothing-red);
+      box-shadow: 0 0 8px var(--nothing-red);
+    }
+
     .status-pill {
       display: inline-flex;
       align-items: center;
@@ -312,7 +361,7 @@
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.05fr 0.95fr;
+      grid-template-columns: 1.15fr 0.85fr;
       gap: 32px;
       align-items: start;
       margin-top: 2px;
@@ -396,7 +445,7 @@
       margin-top: 2px;
     }
 
-    /* Subhajit's Portrait Chassis Frame (ENLARGED & CRISP) */
+    /* Subhajit's Portrait Chassis Frame (BALANCED & CRISP) */
     .hero-visual {
       position: relative;
       display: flex;
@@ -412,7 +461,7 @@
       border: 1px solid var(--border-medium);
       padding: 10px;
       box-shadow: 0 24px 60px rgba(0, 0, 0, 0.95), 0 0 0 1px rgba(255, 255, 255, 0.06);
-      max-width: 490px;
+      max-width: 410px;
       width: 100%;
     }
 
@@ -447,7 +496,7 @@
 
     .chassis-image-box {
       width: 100%;
-      height: 520px;
+      height: 430px;
       border-radius: 8px;
       overflow: hidden;
       background: #141414;
@@ -1047,6 +1096,229 @@
     }
 
     /* ==========================================================================
+       NOTHING OS SOVEREIGN TERMINAL OVERLAY & DECK
+       ========================================================================== */
+    .terminal-overlay {
+      position: fixed;
+      top: 48px;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 9999;
+      background: rgba(0, 0, 0, 0.82);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 18px 16px;
+      animation: termFadeIn 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    @keyframes termFadeIn {
+      from { opacity: 0; transform: translateY(-8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .terminal-window {
+      width: 100%;
+      max-width: 860px;
+      max-height: calc(100vh - 84px);
+      display: flex;
+      flex-direction: column;
+      background: #080808;
+      border: 1px solid var(--border-medium);
+      border-radius: 12px;
+      box-shadow: 0 32px 80px rgba(0, 0, 0, 0.95), 0 0 0 1px rgba(255, 255, 255, 0.08), 0 0 35px rgba(215, 25, 33, 0.12);
+      overflow: hidden;
+      font-family: var(--font-mono);
+    }
+
+    .terminal-titlebar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 8px 14px;
+      background: #0e0e0e;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .terminal-dots {
+      display: flex;
+      gap: 6px;
+      align-items: center;
+    }
+
+    .terminal-dots span {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      display: inline-block;
+      cursor: pointer;
+    }
+
+    .terminal-dots .dot-red {
+      background: var(--nothing-red);
+      box-shadow: 0 0 6px var(--nothing-red);
+    }
+
+    .terminal-dots .dot-yellow {
+      background: #e5a93c;
+    }
+
+    .terminal-dots .dot-green {
+      background: var(--accent-green);
+    }
+
+    .terminal-title {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--text-dim);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .terminal-close-btn {
+      background: transparent;
+      border: none;
+      color: var(--text-dim);
+      font-size: 13px;
+      cursor: pointer;
+      padding: 4px 8px;
+      border-radius: 4px;
+      transition: all 0.15s ease;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      font-family: var(--font-mono);
+    }
+
+    .terminal-close-btn:hover {
+      color: #ffffff;
+      background: #1e1e1e;
+    }
+
+    .terminal-body {
+      padding: 16px 20px;
+      overflow-y: auto;
+      flex: 1;
+      font-family: 'JetBrains Mono', 'Consolas', monospace;
+      font-size: 12.5px;
+      line-height: 1.6;
+      color: #e5e5e5;
+      background: radial-gradient(circle at 50% 50%, rgba(25, 25, 25, 0.4), transparent 85%), #060606;
+    }
+
+    .terminal-ascii {
+      font-size: 10px;
+      line-height: 1.15;
+      color: var(--nothing-red);
+      margin-bottom: 10px;
+      overflow-x: auto;
+      user-select: none;
+    }
+
+    .term-intro-text {
+      color: var(--text-dim);
+      font-size: 11.5px;
+      border-left: 2px solid var(--nothing-red);
+      padding-left: 10px;
+      margin-bottom: 16px;
+      line-height: 1.6;
+    }
+
+    .term-highlight {
+      color: #ffffff;
+      background: #141414;
+      padding: 1px 5px;
+      border-radius: 3px;
+      border: 1px solid #2a2a2a;
+    }
+
+    .terminal-prompt-line {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 8px;
+    }
+
+    .terminal-prompt-user {
+      color: var(--accent-green);
+      font-weight: 700;
+      font-size: 12.5px;
+      white-space: nowrap;
+      font-family: var(--font-mono);
+    }
+
+    .terminal-input {
+      flex: 1;
+      background: transparent;
+      border: none;
+      outline: none;
+      color: #ffffff;
+      font-family: 'JetBrains Mono', 'Consolas', monospace;
+      font-size: 13px;
+      caret-color: var(--nothing-red);
+    }
+
+    .terminal-output-block {
+      margin-bottom: 12px;
+    }
+
+    .terminal-output-cmd {
+      color: var(--accent-cyan);
+      margin-bottom: 3px;
+      font-weight: 600;
+    }
+
+    .terminal-output-text {
+      color: #cccccc;
+      white-space: pre-wrap;
+      word-break: break-word;
+      font-size: 12px;
+      line-height: 1.65;
+    }
+
+    .terminal-output-text a {
+      color: var(--accent-cyan);
+      text-decoration: underline;
+    }
+
+    .terminal-quick-bar {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      background: #0a0a0a;
+      border-top: 1px solid var(--border-subtle);
+      overflow-x: auto;
+      font-size: 10.5px;
+      color: var(--text-muted);
+    }
+
+    .term-quick-btn {
+      background: #121212;
+      border: 1px solid var(--border-medium);
+      color: var(--text-dim);
+      border-radius: 4px;
+      padding: 2px 7px;
+      font-family: inherit;
+      font-size: 10.5px;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      white-space: nowrap;
+    }
+
+    .term-quick-btn:hover {
+      background: #1c1c1c;
+      color: #ffffff;
+      border-color: #555555;
+    }
+
+    /* ==========================================================================
        RESPONSIVE BREAKPOINTS
        ========================================================================== */
     @media (max-width: 900px) {
@@ -1058,10 +1330,10 @@
         order: -1;
       }
       .chassis-wrapper {
-        max-width: 400px;
+        max-width: 320px;
       }
       .chassis-image-box {
-        height: 440px;
+        height: 360px;
       }
       .nav-links {
         display: none;
@@ -1092,12 +1364,83 @@
         <a href="#contact">Contact</a>
       </nav>
 
-      <div class="status-pill">
-        <span class="pulse-dot"></span>
-        <span>OPEN FOR ROLES</span>
+      <div class="nav-right-group">
+        <button id="terminal-toggle-btn" class="terminal-toggle-btn" onclick="toggleTerminalMode()" title="Toggle Sovereign Terminal (Ctrl+` or Click)">
+          <i class="fa-solid fa-terminal" style="color: var(--nothing-red);"></i>
+          <span class="terminal-btn-label">TERMINAL</span>
+          <span class="term-led"></span>
+        </button>
+
+        <div class="status-pill">
+          <span class="pulse-dot"></span>
+          <span>OPEN FOR ROLES</span>
+        </div>
       </div>
     </div>
   </header>
+
+  <!-- ==========================================================================
+       SOVEREIGN TERMINAL OVERLAY DECK (NOTHING OS INDUSTRIAL SHELL)
+       ========================================================================== -->
+  <div id="terminal-overlay" class="terminal-overlay" style="display: none;" onclick="handleTerminalOverlayClick(event)">
+    <div class="terminal-window" onclick="event.stopPropagation()">
+      <div class="terminal-titlebar">
+        <div class="terminal-dots">
+          <span class="dot-red" onclick="toggleTerminalMode()" title="Close Terminal"></span>
+          <span class="dot-yellow"></span>
+          <span class="dot-green"></span>
+        </div>
+        <div class="terminal-title">
+          <i class="fa-solid fa-terminal" style="color: var(--nothing-red);"></i>
+          <span>SUBHAJIT_OS // SOVEREIGN_TERMINAL_V2.6 &bull; BASH</span>
+        </div>
+        <button class="terminal-close-btn" onclick="toggleTerminalMode()" title="Close Terminal (ESC)">
+          <i class="fa-solid fa-xmark"></i>
+          <span>ESC</span>
+        </button>
+      </div>
+
+      <div class="terminal-body" id="terminal-body">
+        <div class="terminal-banner">
+<pre class="terminal-ascii">
+   _____       _     _             _ _ _     ____            
+  / ____|     | |   | |           (_) (_)   |  _ \           
+ | (___  _   _| |__ | |__   __ _   _ _| |_  | | | | __ _ ___ 
+  \___ \| | | | '_ \| '_ \ / _` | | | | __| | | | |/ _` / __|
+  ____) | |_| | |_) | | | | (_| | | | | |_  | |_| | (_| \__ \
+ |_____/ \__,_|_.__/|_| |_|\__,_| |_| |\__| |____/ \__,_|___/
+                                 _/ |                        
+                                |__/                         
+</pre>
+          <div class="term-intro-text">
+            <strong>SUBHAJIT DAS [KRISH] &bull; SOVEREIGN ARCHITECT SHELL</strong><br>
+            B.Tech in CSE (AIML) &bull; Brainware University (CGPA 8.43) &bull; Arambagh &amp; Kolkata<br>
+            Type <span class="term-highlight">help</span> for command list, or click a quick-chip below. Press <span class="term-highlight">ESC</span> to exit.
+          </div>
+        </div>
+
+        <div id="terminal-history"></div>
+
+        <div class="terminal-prompt-line">
+          <span class="terminal-prompt-user">krish@sovereign:~$</span>
+          <input type="text" id="terminal-input" class="terminal-input" autocomplete="off" spellcheck="false" autofocus>
+        </div>
+      </div>
+
+      <div class="terminal-quick-bar">
+        <span style="letter-spacing: 0.05em; font-weight: 700;">COMMANDS:</span>
+        <button class="term-quick-btn" onclick="runTerminalCommand('help')">help</button>
+        <button class="term-quick-btn" onclick="runTerminalCommand('about')">about</button>
+        <button class="term-quick-btn" onclick="runTerminalCommand('flagships')">flagships</button>
+        <button class="term-quick-btn" onclick="runTerminalCommand('journey')">journey</button>
+        <button class="term-quick-btn" onclick="runTerminalCommand('skills')">skills</button>
+        <button class="term-quick-btn" onclick="runTerminalCommand('contact')">contact</button>
+        <button class="term-quick-btn" onclick="runTerminalCommand('resume')">resume</button>
+        <button class="term-quick-btn" onclick="runTerminalCommand('clear')">clear</button>
+        <button class="term-quick-btn" onclick="runTerminalCommand('exit')">exit</button>
+      </div>
+    </div>
+  </div>
 
   <!-- ==========================================================================
        HERO SECTION (TIGHTENED GAP & PROMINENT PORTRAIT)
@@ -1850,6 +2193,251 @@
       const mailtoUrl = `https://mail.google.com/mail/?view=cm&to=arambaghsubhajitdas0@gmail.com&su=${subject}&body=${body}`;
       window.open(mailtoUrl, '_blank');
     }
-  </script>
+
+    /* ==========================================================================
+       SOVEREIGN TERMINAL ENGINE
+       ========================================================================== */
+    const terminalState = {
+      isOpen: false,
+      history: [],
+      historyIndex: -1
+    };
+
+    const terminalCommands = {
+      help: () => `AVAILABLE COMMANDS:
+  about / whoami   - Architect profile, identity & background
+  flagships / proj - Solutions Drawer & Findrr repositories & platforms
+  journey / edu    - Brainware University (AIML) & Arambagh High School
+  skills / stack   - AI/ML, languages & edge cloud infrastructure
+  contact          - Email, WhatsApp, GitHub & LinkedIn direct channels
+  resume           - Open Subhajit's verified PDF resume
+  clear / cls      - Clear current terminal console
+  exit / quit      - Close terminal deck (or press ESC)`,
+
+      about: () => `ARCHITECT PROFILE:
+  Name:        Subhajit Das
+  Known As:    Krish
+  Specialty:   Software Engineering & AIML Architecture
+  Roots:       Arambagh, Hooghly, West Bengal
+  Current Base:Kolkata, WB, India
+  Degree:      B.Tech in CSE (AIML), Brainware University (2025-2029)
+  Current GPA: 8.43
+  Philosophy:  "I refuse to let today's work wait for a future that isn't promised."
+  Work Style:  Remote • Sovereign • High Ownership Builder`,
+
+      whoami: () => terminalCommands.about(),
+
+      flagships: () => `FEATURED ECOSYSTEM:
+  [1] SOLUTIONS DRAWER
+      Minimalist sovereign Android Web App Store & PWA platform.
+      Features: Drawer Protect client-side SHA-256 scanner, delta OTA updates.
+      Stack:    Next.js 16, TypeScript, Cloudflare D1 edge, AWS S3.
+      Live:     <a href="https://solutionsdrawer.pages.dev" target="_blank" rel="noreferrer">https://solutionsdrawer.pages.dev</a>
+      Source:   <a href="https://github.com/subhajit-io/solutionsdrawer" target="_blank" rel="noreferrer">github.com/subhajit-io/solutionsdrawer</a>
+
+  [2] FINDRR
+      100% on-device personal financial vault and discipline arena.
+      Features: Unified Available Money, 5-Second Mindful QR impulse pause, zero SMS scraping.
+      Stack:    Android Native, SQLite on-device, AES-256 encryption.
+      Live:     <a href="https://letusfindrr.pages.dev" target="_blank" rel="noreferrer">https://letusfindrr.pages.dev</a>
+
+  [3] ADDITIONAL WORKS:
+      • Schegent (Temporal RAG Local LLM): <a href="https://github.com/subhajit-io/Schegent" target="_blank" rel="noreferrer">github.com/subhajit-io/Schegent</a>
+      • Cherm (Terminal TUI IDE):          <a href="https://github.com/subhajit-io/Cherm" target="_blank" rel="noreferrer">github.com/subhajit-io/Cherm</a>
+      • Visual Tokenizer (BPE Engine):     <a href="https://github.com/subhajit-io/Visual-Tokenizer" target="_blank" rel="noreferrer">github.com/subhajit-io/Visual-Tokenizer</a>`,
+
+      projects: () => terminalCommands.flagships(),
+      proj: () => terminalCommands.flagships(),
+
+      journey: () => `ACADEMIC FOUNDATION & MILESTONES:
+  • Brainware University (2025 — 2029)
+    B.Tech Computer Science & Engineering (AIML) | Current CGPA: 8.43
+    Focus: Deep Learning, Neural Architectures, Data Structures & Algorithms
+    Campus: Barasat, Kolkata (<a href="https://maps.app.goo.gl/hvu5bNGFRF4MAfDh6" target="_blank" rel="noreferrer">Google Maps Location</a>)
+
+  • Arambagh High School (Higher Secondary)
+    Class XI & XII — Pure Science & Advanced Mathematics
+    Foundation: Physics, Chemistry, Mathematics, Computing
+    Location: Arambagh, Hooghly (<a href="https://maps.app.goo.gl/FpSGdfTFCS8upqmZ8" target="_blank" rel="noreferrer">Google Maps Location</a>)
+
+  • Smart India Hackathon (SIH 2026)
+    Societal Innovation Collaboration Portal connecting citizens & HEIs.
+
+  • HP Customer Experience (CX) Certification
+    Customer Journey & Retention Architecture (<a href="https://www.life-global.org/certificate/4438a77d-669b-41f9-ac61-955cb9058235" target="_blank" rel="noreferrer">Verify Credential</a>)
+
+  • Partnering with AI (Forage Simulation)
+    Prompt Engineering & AI-Assisted Debugging`,
+
+      edu: () => terminalCommands.journey(),
+      education: () => terminalCommands.journey(),
+
+      skills: () => `TECHNICAL TOOLKIT:
+  • AI & ML:        PyTorch, NumPy, Local LLMs (Qwen2.5, Llama), RAG Pipelines, Prompt Engineering, BPE
+  • Languages:      Python, C++, TypeScript, C, Java, Dart / Flutter
+  • Web & Cloud:    Next.js, PWA / WebAPK, SQLite on-device, Cloudflare D1/Workers, AWS S3, Git
+  • Workstations:   Antigravity IDE, Claude 3.7 Sonnet, Gemini 2.5 Pro, LMStudio, VS Code`,
+
+      stack: () => terminalCommands.skills(),
+
+      contact: () => `COMMUNICATION CHANNELS:
+  • Email:    <a href="https://mail.google.com/mail/?view=cm&to=arambaghsubhajitdas0@gmail.com" target="_blank" rel="noreferrer">arambaghsubhajitdas0@gmail.com</a>
+  • WhatsApp: <a href="https://wa.me/+917001023356" target="_blank" rel="noreferrer">+91 7001023356</a>
+  • GitHub:   <a href="https://github.com/subhajit-io" target="_blank" rel="noreferrer">github.com/subhajit-io</a>
+  • LinkedIn: <a href="https://www.linkedin.com/in/subhajit-das-4a5719345/" target="_blank" rel="noreferrer">linkedin.com/in/subhajit-das-4a5719345</a>
+  • Base:     Arambagh & Kolkata, West Bengal, India`,
+
+      resume: () => {
+        window.open('https://canva.link/cpc3vxhkdja03dc', '_blank');
+        return `[SYSTEM] Opening verified resume in external window...\nURL: <a href="https://canva.link/cpc3vxhkdja03dc" target="_blank" rel="noreferrer">https://canva.link/cpc3vxhkdja03dc</a>`;
+      },
+
+      clear: () => {
+        document.getElementById('terminal-history').innerHTML = '';
+        return null;
+      },
+      cls: () => terminalCommands.clear(),
+
+      exit: () => {
+        toggleTerminalMode();
+        return `[SYSTEM] Terminal session closed.`;
+      },
+      quit: () => terminalCommands.exit()
+    };
+
+    function toggleTerminalMode() {
+      const overlay = document.getElementById('terminal-overlay');
+      const toggleBtn = document.getElementById('terminal-toggle-btn');
+      const input = document.getElementById('terminal-input');
+      const body = document.getElementById('terminal-body');
+
+      terminalState.isOpen = !terminalState.isOpen;
+
+      if (terminalState.isOpen) {
+        overlay.style.display = 'flex';
+        toggleBtn.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        setTimeout(() => {
+          input.focus();
+          body.scrollTop = body.scrollHeight;
+        }, 50);
+      } else {
+        overlay.style.display = 'none';
+        toggleBtn.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function handleTerminalOverlayClick(e) {
+      if (e.target.id === 'terminal-overlay') {
+        toggleTerminalMode();
+      }
+    }
+
+    function runTerminalCommand(cmdString) {
+      if (!terminalState.isOpen) {
+        toggleTerminalMode();
+      }
+      executeTerminal(cmdString);
+    }
+
+    function executeTerminal(rawCommand) {
+      const cmd = rawCommand.trim();
+      const historyDiv = document.getElementById('terminal-history');
+      const input = document.getElementById('terminal-input');
+      const body = document.getElementById('terminal-body');
+
+      if (!cmd) return;
+
+      terminalState.history.push(cmd);
+      terminalState.historyIndex = terminalState.history.length;
+
+      const lowerCmd = cmd.toLowerCase().split(' ')[0];
+      const cmdBlock = document.createElement('div');
+      cmdBlock.className = 'terminal-output-block';
+
+      const promptEcho = document.createElement('div');
+      promptEcho.className = 'terminal-output-cmd';
+      promptEcho.innerHTML = `<span style="color: var(--accent-green);">krish@sovereign:~$</span> ${escapeHtml(cmd)}`;
+      cmdBlock.appendChild(promptEcho);
+
+      let outputContent = '';
+      if (terminalCommands[lowerCmd]) {
+        outputContent = terminalCommands[lowerCmd]();
+      } else if (lowerCmd.startsWith('cat') || lowerCmd.startsWith('echo')) {
+        const parts = cmd.split(' ');
+        const arg = parts.length > 1 ? parts[1].toLowerCase() : '';
+        if (arg && terminalCommands[arg]) {
+          outputContent = terminalCommands[arg]();
+        } else {
+          outputContent = `cat: ${escapeHtml(cmd.replace(/^(cat|echo)\s*/, ''))}: No such file or directory. Try 'help'.`;
+        }
+      } else {
+        outputContent = `bash: command not found: '${escapeHtml(cmd)}'. Type 'help' for available commands.`;
+      }
+
+      if (outputContent !== null) {
+        const outDiv = document.createElement('div');
+        outDiv.className = 'terminal-output-text';
+        outDiv.innerHTML = outputContent;
+        cmdBlock.appendChild(outDiv);
+        historyDiv.appendChild(cmdBlock);
+      }
+
+      input.value = '';
+      body.scrollTop = body.scrollHeight;
+    }
+
+    function escapeHtml(str) {
+      return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    }
+
+    // Global keyboard shortcuts for Terminal
+    document.addEventListener('keydown', (e) => {
+      // Toggle terminal on Ctrl+` or ` when not inside a text field
+      if ((e.ctrlKey && e.key === '`') || (e.key === '`' && !['INPUT', 'TEXTAREA'].includes(document.activeElement.tagName))) {
+        e.preventDefault();
+        toggleTerminalMode();
+        return;
+      }
+
+      // Close on ESC
+      if (e.key === 'Escape' && terminalState.isOpen) {
+        e.preventDefault();
+        toggleTerminalMode();
+        return;
+      }
+
+      // Terminal input navigation
+      if (terminalState.isOpen && document.activeElement && document.activeElement.id === 'terminal-input') {
+        const input = document.getElementById('terminal-input');
+        if (e.key === 'Enter') {
+          e.preventDefault();
+          executeTerminal(input.value);
+        } else if (e.key === 'ArrowUp') {
+          e.preventDefault();
+          if (terminalState.history.length > 0 && terminalState.historyIndex > 0) {
+            terminalState.historyIndex--;
+            input.value = terminalState.history[terminalState.historyIndex];
+          }
+        } else if (e.key === 'ArrowDown') {
+          e.preventDefault();
+          if (terminalState.historyIndex < terminalState.history.length - 1) {
+            terminalState.historyIndex++;
+            input.value = terminalState.history[terminalState.historyIndex];
+          } else {
+            terminalState.historyIndex = terminalState.history.length;
+            input.value = '';
+          }
+        } else if (e.key === 'Tab') {
+          e.preventDefault();
+          const current = input.value.trim().toLowerCase();
+          const matches = Object.keys(terminalCommands).filter(c => c.startsWith(current));
+          if (matches.length === 1) {
+            input.value = matches[0];
+          }
+        }
+      }
+    });
 </body>
 </html>
