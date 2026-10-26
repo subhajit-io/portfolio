@@ -1,696 +1,1638 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-    <title>Subhajit Das | Portfolio</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-    
-    <style>
-        :root {
-            --bg-color: #0c0b0a; /* Warm dark, like ink */
-            --text-main: #ebe9e4; /* Off-white paper */
-            --text-muted: #9c9993;
-            --accent: #cfa872; /* Subtle muted gold */
-            --border: rgba(235, 233, 228, 0.1);
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>SUBHAJIT DAS — SOFTWARE ENGINEER & SOVEREIGN SYSTEM ARCHITECT</title>
+  <meta name="description" content="Portfolio of Subhajit Das (Krish) — Software Engineer & AI Builder. Creator of Solutions Drawer & Findrr. Specializing in On-Device AI, Sovereign Systems, and Zero-Trust Architectures.">
+  <meta name="theme-color" content="#000000">
 
-        html {
-            scroll-behavior: smooth;
-            background-color: var(--bg-color);
-        }
+  <!-- Icons -->
+  <link rel="icon" type="image/svg+xml" href="assets/solutionsdrawer_icon.svg">
+  <link rel="apple-touch-icon" href="assets/solutionsdrawer_logo.png">
 
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Inter', sans-serif;
-            font-weight: 300;
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            overflow-x: hidden;
-            line-height: 1.7;
-            /* Subtle grain texture overlay */
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
-        }
+  <!-- Font Awesome & Devicons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
 
-        /* Typography */
-        h1, h2, h3, h4 {
-            font-family: 'Playfair Display', serif;
-            font-weight: 400;
-            margin: 0;
-        }
+  <!-- Google Fonts: Doto (Nothing OS Dot Matrix), Inter, Space Grotesk, JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Doto:wght,ROND@400..900,100&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-        h1 {
-            font-size: clamp(3.5rem, 8vw, 6rem);
-            line-height: 1.1;
-            letter-spacing: -0.02em;
-        }
+  <style>
+    /* ==========================================================================
+       SOLUTIONS DRAWER DESIGN SYSTEM — NOTHING OS MINIMALIST PALETTE
+       ========================================================================== */
+    :root {
+      --bg-primary: #000000;
+      --bg-card: #080808;
+      --bg-card-hover: #0f0f0f;
+      --bg-elevated: #121212;
+      --border-subtle: #1c1c1c;
+      --border-medium: #262626;
+      --border-strong: #383838;
+      
+      --nothing-red: #d71921;
+      --nothing-red-glow: rgba(215, 25, 33, 0.4);
+      --accent-green: #00e676;
+      --accent-cyan: #38bdf8;
+      
+      --text-main: #ffffff;
+      --text-dim: #9e9e9e;
+      --text-muted: #5e5e5e;
 
-        h2 {
-            font-size: clamp(2.5rem, 5vw, 3.5rem);
-            margin-bottom: 2rem;
-            color: var(--text-main);
-        }
+      --font-dots: 'Doto', sans-serif;
+      --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+      --font-heading: 'Space Grotesk', sans-serif;
+    }
 
-        p {
-            font-size: 1.1rem;
-            color: var(--text-muted);
-            margin-bottom: 1.5rem;
-            max-width: 65ch;
-        }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-        a {
-            color: var(--text-main);
-            text-decoration: none;
-            border-bottom: 1px solid var(--border);
-            padding-bottom: 2px;
-            transition: all 0.3s ease;
-        }
+    html {
+      scroll-behavior: smooth;
+      background-color: var(--bg-primary);
+      color-scheme: dark;
+    }
 
-        a:hover {
-            color: var(--accent);
-            border-bottom-color: var(--accent);
-        }
+    body {
+      background-color: var(--bg-primary);
+      color: var(--text-main);
+      font-family: var(--font-body);
+      font-weight: 400;
+      line-height: 1.6;
+      overflow-x: hidden;
+      /* Nothing OS subtle dot-matrix canvas texture */
+      background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+      background-size: 24px 24px;
+      background-attachment: fixed;
+    }
 
-        /* Layout */
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 0 5vw;
-        }
+    ::selection {
+      background: var(--nothing-red);
+      color: #ffffff;
+    }
 
-        section {
-            padding: 70px 0;
-            position: relative;
-        }
+    /* ==========================================================================
+       TYPOGRAPHY UTILITIES
+       ========================================================================== */
+    .font-dots {
+      font-family: var(--font-dots);
+      font-feature-settings: "ss01" on, "cv01" on;
+      letter-spacing: 0.03em;
+    }
 
-        .divider {
-            height: 1px;
-            background: var(--border);
-            width: 100%;
-            margin: 40px 0;
-        }
+    .font-mono {
+      font-family: var(--font-mono);
+    }
 
-        /* Nav */
-        .nav-header {
-            padding: 40px 5vw;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+    .font-heading {
+      font-family: var(--font-heading);
+    }
 
-        .nav-logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            font-style: italic;
-            border: none;
-        }
+    h1, h2, h3, h4, h5 {
+      color: var(--text-main);
+      font-weight: 600;
+      line-height: 1.2;
+    }
 
-        .nav-links {
-            display: flex;
-            gap: 30px;
-        }
+    a {
+      color: var(--text-main);
+      text-decoration: none;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
 
-        .nav-links a {
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            border: none;
-        }
+    p {
+      color: var(--text-dim);
+      font-size: 1rem;
+      line-height: 1.7;
+    }
 
-        /* Hero */
-        .hero {
-            min-height: 70vh;
-            display: flex;
-            align-items: center;
-            padding-top: 60px;
-        }
+    /* ==========================================================================
+       LAYOUT & CONTAINERS
+       ========================================================================== */
+    .container {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
 
-        .hero-grid {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 60px;
-        }
+    section {
+      padding: 90px 0;
+      position: relative;
+    }
 
-        .hero-image-wrapper {
-            position: relative;
-            border-radius: 12px;
-            overflow: hidden;
-            width: 240px;
-            height: 240px;
-            flex-shrink: 0;
-        }
+    .section-header {
+      margin-bottom: 48px;
+    }
 
-        .hero-image-wrapper img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            filter: grayscale(20%) contrast(1.1); /* slightly moody photo */
-        }
+    .section-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--nothing-red);
+      margin-bottom: 12px;
+    }
 
-        .hero-subtitle {
-            font-family: 'Inter', sans-serif;
-            text-transform: uppercase;
-            letter-spacing: 0.2em;
-            font-size: 0.85rem;
-            color: var(--accent);
-            margin-bottom: 20px;
-            display: block;
-        }
+    .section-eyebrow .led {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--nothing-red);
+      box-shadow: 0 0 8px var(--nothing-red);
+    }
 
-        /* Marquee */
-        .marquee-container {
-            padding: 40px 0;
-            overflow: hidden;
-            white-space: nowrap;
-            border-top: 1px solid var(--border);
-            border-bottom: 1px solid var(--border);
-            margin: 60px 0;
-        }
-        
-        .marquee-content {
-            display: inline-block;
-            animation: marquee 30s linear infinite;
-        }
+    .section-title {
+      font-family: var(--font-dots);
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+    }
 
-        .marquee-content span {
-            font-family: 'Playfair Display', serif;
-            font-style: italic;
-            font-size: 2rem;
-            color: var(--text-muted);
-            margin-right: 60px;
-        }
+    .section-subtitle {
+      color: var(--text-dim);
+      font-size: 1.05rem;
+      margin-top: 8px;
+      max-width: 65ch;
+    }
 
-        @keyframes marquee {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-        }
+    /* ==========================================================================
+       NOTHING OS BUTTONS
+       ========================================================================== */
+    .btn-nothing {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 10px 18px;
+      border-radius: 8px;
+      border: 1px solid var(--border-medium);
+      background: #080808;
+      color: #ffffff;
+      font-family: var(--font-dots);
+      font-size: 12.5px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      cursor: pointer;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
 
-        /* About Detailed */
-        .about-text {
-            font-size: 1.2rem;
-            line-height: 1.8;
-            column-count: 2;
-            column-gap: 60px;
-        }
+    .btn-nothing:hover {
+      background: #141414;
+      border-color: #ffffff;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+    }
 
-        @media (max-width: 768px) {
-            .about-text { column-count: 1; }
-        }
+    .btn-nothing-red {
+      background: var(--nothing-red);
+      border-color: var(--nothing-red);
+      color: #ffffff;
+    }
 
-        /* Projects */
-        .project {
-            margin-bottom: 80px;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            align-items: center;
-        }
+    .btn-nothing-red:hover {
+      background: #e51d26;
+      border-color: #ff3840;
+      box-shadow: 0 0 24px var(--nothing-red-glow), 0 4px 14px rgba(0, 0, 0, 0.8);
+      transform: translateY(-2px);
+    }
 
-        .project:nth-child(even) {
-            grid-template-columns: 1fr 1fr;
-            direction: rtl; /* reverse layout for even items */
-        }
-        
-        .project:nth-child(even) > * {
-            direction: ltr; /* reset text direction */
-        }
+    .btn-pill {
+      border-radius: 999px;
+      padding: 6px 14px;
+      font-size: 11px;
+    }
 
-        .project-media {
-            width: 100%;
-            aspect-ratio: 16/9;
-            background: #1a1a1a;
-            border-radius: 4px;
-            overflow: hidden;
-        }
+    /* ==========================================================================
+       NAVBAR
+       ========================================================================== */
+    .navbar-wrap {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(0, 0, 0, 0.82);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border-subtle);
+    }
 
-        .project-media img, .project-media iframe {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border: none;
-        }
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 70px;
+    }
 
-        .project-info h3 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-        }
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-family: var(--font-dots);
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+    }
 
-        /* Timeline / Lists */
-        .list-item {
-            border-top: 1px solid var(--border);
-            padding: 40px 0;
-            display: grid;
-            grid-template-columns: 250px 1fr;
-            gap: 40px;
-        }
+    .nav-brand .brand-logo-badge {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      background: #0d0d0d;
+      border: 1px solid var(--border-medium);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--nothing-red);
+    }
 
-        .list-meta {
-            font-family: 'Playfair Display', serif;
-            font-style: italic;
-            color: var(--accent);
-            font-size: 1.2rem;
-        }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
 
-        .list-content h3 {
-            font-size: 1.8rem;
-            margin-bottom: 10px;
-            font-family: 'Inter', sans-serif;
-            font-weight: 400;
-        }
+    .nav-links a {
+      font-family: var(--font-dots);
+      font-size: 11.5px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-dim);
+    }
 
-        /* Philosophy Quote */
-        .philosophy-section {
-            text-align: center;
-            padding: 80px 0;
-        }
+    .nav-links a:hover {
+      color: #ffffff;
+    }
 
-        .quote {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(2rem, 4vw, 3rem);
-            line-height: 1.3;
-            color: var(--text-main);
-            font-style: italic;
-            max-width: 900px;
-            margin: 0 auto 40px;
-        }
+    .status-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 5px 12px;
+      border-radius: 999px;
+      background: rgba(0, 230, 118, 0.08);
+      border: 1px solid rgba(0, 230, 118, 0.25);
+      color: var(--accent-green);
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 600;
+    }
 
-        .quote-author {
-            text-transform: uppercase;
-            letter-spacing: 0.2em;
-            font-size: 0.9rem;
-            color: var(--accent);
-        }
+    .status-pill .pulse-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent-green);
+      box-shadow: 0 0 8px var(--accent-green);
+      animation: pulse 2s infinite;
+    }
 
-        /* Skills Tags */
-        .skills-wrapper {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            margin-top: 40px;
-        }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.85); }
+    }
 
-        .skill-tag {
-            padding: 10px 20px;
-            border: 1px solid var(--border);
-            border-radius: 4px;
-            font-size: 0.9rem;
-            color: var(--text-muted);
-        }
+    /* ==========================================================================
+       HERO SECTION
+       ========================================================================== */
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.25fr 0.85fr;
+      gap: 60px;
+      align-items: center;
+      min-height: calc(85vh - 70px);
+      padding: 40px 0;
+    }
 
-        /* Contact */
-        .contact-section h2 {
-            font-size: 4rem;
-        }
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(215, 25, 33, 0.12);
+      border: 1px solid rgba(215, 25, 33, 0.3);
+      color: #ff525a;
+      font-family: var(--font-mono);
+      font-size: 11.5px;
+      padding: 4px 12px;
+      border-radius: 999px;
+      margin-bottom: 24px;
+    }
 
-        input, textarea {
-            width: 100%;
-            background: transparent;
-            border: none;
-            border-bottom: 1px solid var(--border);
-            padding: 20px 0;
-            color: var(--text-main);
-            font-family: 'Inter', sans-serif;
-            font-size: 1.1rem;
-            margin-bottom: 30px;
-            outline: none;
-            border-radius: 0;
-        }
+    .hero-title {
+      font-family: var(--font-dots);
+      font-size: clamp(2.8rem, 6.5vw, 4.6rem);
+      line-height: 1.05;
+      letter-spacing: -0.01em;
+      margin-bottom: 24px;
+      text-transform: uppercase;
+    }
 
-        input:focus, textarea:focus {
-            border-bottom-color: var(--accent);
-        }
+    .hero-title span.accent-red {
+      color: var(--nothing-red);
+    }
 
-        .btn {
-            display: inline-block;
-            background: var(--text-main);
-            color: var(--bg-color);
-            padding: 16px 40px;
-            font-family: 'Inter', sans-serif;
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            font-size: 0.9rem;
-            border: none;
-            cursor: pointer;
-            border-radius: 2px;
-            margin-top: 20px;
-            transition: background 0.3s ease;
-        }
+    .hero-lead {
+      font-size: 1.15rem;
+      color: var(--text-dim);
+      margin-bottom: 32px;
+      line-height: 1.7;
+    }
 
-        .btn:hover {
-            background: var(--accent);
-            border: none;
-        }
+    .hero-lead strong {
+      color: #ffffff;
+      font-weight: 500;
+    }
 
-        /* Footer */
-        footer {
-            padding: 60px 0;
-            text-align: center;
-            border-top: 1px solid var(--border);
-            margin-top: 80px;
-            font-size: 0.9rem;
-        }
+    .hero-cta-group {
+      display: flex;
+      gap: 14px;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-bottom: 36px;
+    }
 
-        /* Animations */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 1s ease-out, transform 1s ease-out;
-        }
+    .hero-stats-strip {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      padding-top: 28px;
+      border-top: 1px solid var(--border-subtle);
+    }
 
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
+    .hero-stat-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+      padding: 12px 14px;
+    }
 
-        @media (max-width: 900px) {
-            .hero-grid {
-                flex-direction: column-reverse;
-                text-align: center;
-                gap: 40px;
-            }
-            .hero-links {
-                justify-content: center;
-            }
-            .project, .list-item {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-            .project:nth-child(even) {
-                direction: ltr;
-            }
-            .nav-links {
-                display: none; /* Hide on mobile for simplicity, could add hamburger */
-            }
-        }
-    </style>
+    .hero-stat-number {
+      font-family: var(--font-dots);
+      font-size: 1.25rem;
+      color: #ffffff;
+      font-weight: 700;
+    }
+
+    .hero-stat-label {
+      font-family: var(--font-mono);
+      font-size: 10.5px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      margin-top: 2px;
+    }
+
+    /* Hero Portrait / Chassis Frame */
+    .hero-visual {
+      position: relative;
+      display: flex;
+      justify-content: center;
+    }
+
+    .chassis-wrapper {
+      position: relative;
+      border-radius: 14px;
+      background: #090909;
+      border: 1px solid var(--border-medium);
+      padding: 12px;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.9), 0 0 0 1px rgba(255, 255, 255, 0.05);
+      max-width: 360px;
+      width: 100%;
+    }
+
+    .chassis-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 6px 8px 12px;
+      border-bottom: 1px solid var(--border-subtle);
+      margin-bottom: 12px;
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: var(--text-muted);
+    }
+
+    .chassis-dots {
+      display: flex;
+      gap: 5px;
+    }
+
+    .chassis-dots span {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #222;
+    }
+
+    .chassis-image-box {
+      aspect-ratio: 1/1;
+      border-radius: 8px;
+      overflow: hidden;
+      background: #141414;
+      border: 1px solid var(--border-subtle);
+    }
+
+    .chassis-image-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: grayscale(15%) contrast(1.05);
+      transition: filter 0.3s ease;
+    }
+
+    .chassis-image-box img:hover {
+      filter: grayscale(0%) contrast(1.1);
+    }
+
+    .chassis-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 12px;
+      padding-top: 8px;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--text-dim);
+    }
+
+    /* ==========================================================================
+       NOTHING OS TICKER / MARQUEE
+       ========================================================================== */
+    .ticker-wrap {
+      border-top: 1px solid var(--border-subtle);
+      border-bottom: 1px solid var(--border-subtle);
+      background: #040404;
+      padding: 18px 0;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+    .ticker-track {
+      display: inline-flex;
+      animation: tickerLoop 32s linear infinite;
+    }
+
+    .ticker-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 18px;
+      font-family: var(--font-dots);
+      font-size: 15px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-dim);
+      padding: 0 24px;
+    }
+
+    .ticker-item .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--nothing-red);
+    }
+
+    @keyframes tickerLoop {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* ==========================================================================
+       FLAGSHIP PROJECTS (HERO FEATURED CARDS)
+       ========================================================================== */
+    .flagship-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 36px;
+    }
+
+    .flagship-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-medium);
+      border-radius: 12px;
+      padding: 36px;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .flagship-card:hover {
+      border-color: var(--border-strong);
+      background: var(--bg-card-hover);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
+    }
+
+    .flagship-card.featured-accent {
+      border-color: rgba(215, 25, 33, 0.35);
+    }
+
+    .flagship-card.featured-accent:hover {
+      border-color: var(--nothing-red);
+      box-shadow: 0 16px 48px rgba(215, 25, 33, 0.22);
+    }
+
+    .flagship-inner {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .flagship-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--font-mono);
+      font-size: 10.5px;
+      padding: 3px 10px;
+      border-radius: 999px;
+      background: #141414;
+      border: 1px solid #2b2b2b;
+      color: #fff;
+      margin-bottom: 14px;
+    }
+
+    .flagship-title {
+      font-family: var(--font-dots);
+      font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+    }
+
+    .flagship-desc {
+      font-size: 1.02rem;
+      color: var(--text-dim);
+      margin-bottom: 24px;
+      line-height: 1.7;
+    }
+
+    .flagship-features {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 28px;
+    }
+
+    .flagship-features li {
+      font-size: 13.5px;
+      color: #cccccc;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .flagship-features li i {
+      color: var(--accent-green);
+      margin-top: 3px;
+      font-size: 13px;
+    }
+
+    .tech-pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 28px;
+    }
+
+    .tech-pill {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      padding: 4px 10px;
+      border-radius: 6px;
+      background: #111111;
+      border: 1px solid #262626;
+      color: var(--text-dim);
+    }
+
+    .flagship-preview-box {
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid var(--border-medium);
+      background: #000;
+      aspect-ratio: 16/10;
+      position: relative;
+    }
+
+    .flagship-preview-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+
+    .flagship-card:hover .flagship-preview-box img {
+      transform: scale(1.02);
+    }
+
+    /* Secondary Projects Grid */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+      gap: 24px;
+      margin-top: 36px;
+    }
+
+    .project-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 10px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.2s ease;
+    }
+
+    .project-card:hover {
+      border-color: var(--border-strong);
+      background: var(--bg-card-hover);
+      transform: translateY(-2px);
+    }
+
+    .project-card h3 {
+      font-family: var(--font-dots);
+      font-size: 1.35rem;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+    }
+
+    .project-card p {
+      font-size: 0.95rem;
+      margin-bottom: 20px;
+      flex-grow: 1;
+    }
+
+    .project-media-frame {
+      width: 100%;
+      aspect-ratio: 16/9;
+      background: #000;
+      border-radius: 6px;
+      overflow: hidden;
+      margin-bottom: 18px;
+      border: 1px solid var(--border-subtle);
+    }
+
+    .project-media-frame iframe,
+    .project-media-frame img {
+      width: 100%;
+      height: 100%;
+      border: none;
+      object-fit: cover;
+    }
+
+    /* ==========================================================================
+       TIMELINE & EXPERIENCE / EDUCATION
+       ========================================================================== */
+    .timeline-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      gap: 32px;
+      padding: 24px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+      transition: border-color 0.2s ease;
+    }
+
+    .timeline-item:hover {
+      border-color: var(--border-strong);
+    }
+
+    .timeline-meta {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--nothing-red);
+      font-weight: 600;
+    }
+
+    .timeline-meta span.sub {
+      display: block;
+      color: var(--text-muted);
+      font-size: 11px;
+      margin-top: 4px;
+      font-weight: 400;
+    }
+
+    .timeline-content h3 {
+      font-family: var(--font-heading);
+      font-size: 1.3rem;
+      color: #fff;
+      margin-bottom: 4px;
+    }
+
+    .timeline-role {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--accent-cyan);
+      margin-bottom: 12px;
+    }
+
+    .timeline-content p {
+      font-size: 0.96rem;
+      line-height: 1.6;
+    }
+
+    /* ==========================================================================
+       TOOLKIT & SKILLS (NOTHING OS CHIPS)
+       ========================================================================== */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+    }
+
+    .skills-category-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 10px;
+      padding: 24px;
+    }
+
+    .skills-category-card h3 {
+      font-family: var(--font-dots);
+      font-size: 12.5px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-dim);
+      margin-bottom: 18px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .chips-flex {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
+      background: #101010;
+      border: 1px solid var(--border-medium);
+      border-radius: 6px;
+      font-family: var(--font-mono);
+      font-size: 11.5px;
+      color: #eaeaea;
+      transition: all 0.2s ease;
+    }
+
+    .chip:hover {
+      border-color: #ffffff;
+      background: #181818;
+      color: #ffffff;
+    }
+
+    .chip i {
+      font-size: 13px;
+      color: var(--text-dim);
+    }
+
+    /* ==========================================================================
+       PHILOSOPHY QUOTE
+       ========================================================================== */
+    .quote-card {
+      background: #060606;
+      border-left: 3px solid var(--nothing-red);
+      border-top: 1px solid var(--border-subtle);
+      border-right: 1px solid var(--border-subtle);
+      border-bottom: 1px solid var(--border-subtle);
+      padding: 36px 40px;
+      border-radius: 0 10px 10px 0;
+      margin: 40px 0;
+    }
+
+    .quote-text {
+      font-family: var(--font-heading);
+      font-size: clamp(1.2rem, 2.5vw, 1.7rem);
+      color: #ffffff;
+      line-height: 1.5;
+      font-weight: 500;
+      margin-bottom: 16px;
+    }
+
+    .quote-author {
+      font-family: var(--font-mono);
+      font-size: 11.5px;
+      color: var(--nothing-red);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    /* ==========================================================================
+       CONTACT FORM
+       ========================================================================== */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .form-label {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+    }
+
+    .form-input, .form-textarea {
+      width: 100%;
+      background: #090909;
+      border: 1px solid var(--border-medium);
+      border-radius: 8px;
+      padding: 12px 16px;
+      color: #ffffff;
+      font-family: var(--font-body);
+      font-size: 14px;
+      transition: all 0.2s ease;
+      outline: none;
+    }
+
+    .form-input:focus, .form-textarea:focus {
+      border-color: #ffffff;
+      background: #111111;
+      box-shadow: 0 0 0 1px #ffffff;
+    }
+
+    .contact-info-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 10px;
+      padding: 32px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .contact-item:last-child {
+      border-bottom: none;
+    }
+
+    .contact-icon-box {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      background: #121212;
+      border: 1px solid #282828;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--nothing-red);
+      flex-shrink: 0;
+    }
+
+    /* ==========================================================================
+       FOOTER
+       ========================================================================== */
+    footer {
+      border-top: 1px solid var(--border-subtle);
+      padding: 40px 0;
+      background: #040404;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .footer-copy {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    /* ==========================================================================
+       RESPONSIVE BREAKPOINTS
+       ========================================================================== */
+    @media (max-width: 900px) {
+      .hero-grid, .flagship-inner, .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      .hero-visual {
+        order: -1;
+      }
+      .chassis-wrapper {
+        max-width: 280px;
+      }
+      .timeline-item {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+      .nav-links {
+        display: none;
+      }
+    }
+  </style>
 </head>
 <body>
 
-    <header class="nav-header">
-        <a href="#" class="nav-logo">Subhajit.</a>
-        <nav class="nav-links">
-            <a href="#about">About</a>
-            <a href="#projects">Projects</a>
-            <a href="#experience">Experience</a>
-            <a href="#education">Education</a>
-            <a href="#skills">Skills</a>
-            <a href="https://canva.link/cpc3vxhkdja03dc" target="_blank">Resume</a>
-        </nav>
-    </header>
+  <!-- ==========================================================================
+       STICKY TOP NAVIGATION BAR
+       ========================================================================== -->
+  <header class="navbar-wrap">
+    <div class="container navbar">
+      <a href="#" class="nav-brand">
+        <div class="brand-logo-badge">
+          <i class="fa-solid fa-cube"></i>
+        </div>
+        <span>SUBHAJIT DAS</span>
+      </a>
 
+      <nav class="nav-links">
+        <a href="#about">About</a>
+        <a href="#flagships">Flagships</a>
+        <a href="#projects">Works</a>
+        <a href="#experience">Experience</a>
+        <a href="#toolkit">Toolkit</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="status-pill">
+        <span class="pulse-dot"></span>
+        <span>OPEN FOR ROLES</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       HERO SECTION
+       ========================================================================== */
+  <section class="hero" id="about">
     <div class="container">
+      <div class="hero-grid">
+        <div>
+          <div class="hero-tag">
+            <i class="fa-solid fa-microchip"></i>
+            <span>SOFTWARE ENGINEER &bull; AIML ARCHITECT</span>
+          </div>
+
+          <h1 class="hero-title">
+            BUILDING <span class="accent-red">SOVEREIGN</span><br>
+            INTELLIGENT SYSTEMS.
+          </h1>
+
+          <p class="hero-lead">
+            Hi, I&apos;m <strong>Subhajit Das (Krish)</strong>. I design and build privacy-first, on-device software architectures and intelligent AI pipelines. Creator of <strong>Solutions Drawer</strong> and <strong>Findrr</strong>. Pursuing B.Tech in CSE (AIML) at Brainware University.
+          </p>
+
+          <div class="hero-cta-group">
+            <a href="#flagships" class="btn-nothing btn-nothing-red">
+              <i class="fa-solid fa-layer-group"></i>
+              <span>EXPLORE FLAGSHIPS</span>
+            </a>
+            <a href="https://canva.link/cpc3vxhkdja03dc" target="_blank" rel="noreferrer" class="btn-nothing">
+              <i class="fa-solid fa-file-pdf"></i>
+              <span>VIEW RESUME</span>
+            </a>
+            <a href="#contact" class="btn-nothing">
+              <i class="fa-solid fa-paper-plane"></i>
+              <span>CONTACT</span>
+            </a>
+          </div>
+
+          <div class="hero-stats-strip">
+            <div class="hero-stat-card">
+              <div class="hero-stat-number">8.43</div>
+              <div class="hero-stat-label">B.Tech CGPA</div>
+            </div>
+            <div class="hero-stat-card">
+              <div class="hero-stat-number">2025&ndash;29</div>
+              <div class="hero-stat-label">CSE (AIML) Batch</div>
+            </div>
+            <div class="hero-stat-card">
+              <div class="hero-stat-number">2 SOVEREIGN</div>
+              <div class="hero-stat-label">Live Flagships</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="chassis-wrapper">
+            <div class="chassis-header">
+              <span>SUBHAJIT_PROFILE_CHASSIS</span>
+              <div class="chassis-dots">
+                <span></span><span></span><span></span>
+              </div>
+            </div>
+            <div class="chassis-image-box">
+              <img src="assets/145341.jpg" alt="Subhajit Das" onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&auto=format&fit=crop'">
+            </div>
+            <div class="chassis-footer">
+              <span class="font-mono">&bull; SOVEREIGN_ID_OK</span>
+              <span class="font-dots" style="color: var(--nothing-red);">ONLINE</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       TICKER / MARQUEE STRIP
+       ========================================================================== -->
+  <div class="ticker-wrap">
+    <div class="ticker-track">
+      <div class="ticker-item"><span>Solutions Drawer</span><span class="dot"></span></div>
+      <div class="ticker-item"><span>Findrr Finance Vault</span><span class="dot"></span></div>
+      <div class="ticker-item"><span>Zero-Trust Architecture</span><span class="dot"></span></div>
+      <div class="ticker-item"><span>On-Device Machine Learning</span><span class="dot"></span></div>
+      <div class="ticker-item"><span>Prompt Engineering</span><span class="dot"></span></div>
+      <div class="ticker-item"><span>Customer Experience (CX)</span><span class="dot"></span></div>
+      <div class="ticker-item"><span>Python &bull; C++ &bull; Flutter</span><span class="dot"></span></div>
+      <div class="ticker-item"><span>Cloudflare Edge &bull; SQLite</span><span class="dot"></span></div>
+      <!-- Duplicate for infinite loop -->
+      <div class="ticker-item"><span>Solutions Drawer</span><span class="dot"></span></div>
+      <div class="ticker-item"><span>Findrr Finance Vault</span><span class="dot"></span></div>
+      <div class="ticker-item"><span>Zero-Trust Architecture</span><span class="dot"></span></div>
+      <div class="ticker-item"><span>On-Device Machine Learning</span><span class="dot"></span></div>
+      <div class="ticker-item"><span>Prompt Engineering</span><span class="dot"></span></div>
+      <div class="ticker-item"><span>Customer Experience (CX)</span><span class="dot"></span></div>
+      <div class="ticker-item"><span>Python &bull; C++ &bull; Flutter</span><span class="dot"></span></div>
+      <div class="ticker-item"><span>Cloudflare Edge &bull; SQLite</span><span class="dot"></span></div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       PRIMARY FLAGSHIPS: SOLUTIONS DRAWER & FINDRR
+       ========================================================================== -->
+  <section id="flagships">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-eyebrow">
+          <span class="led"></span>
+          <span>FLAGSHIP ARCHITECTURES</span>
+        </div>
+        <h2 class="section-title">SOVEREIGN ECOSYSTEM</h2>
+        <p class="section-subtitle">
+          Independent software engineering projects built with uncompromising privacy, aesthetic precision, and zero corporate lock-in.
+        </p>
+      </div>
+
+      <div class="flagship-grid">
         
-        <!-- Hero Section -->
-        <section class="hero" id="about">
-            <div class="hero-grid">
-                <div class="fade-in">
-                    <span class="hero-subtitle">Software Engineering & AI</span>
-                    <h1>Subhajit Das</h1>
-                    <p style="font-size: 1.3rem; margin-top: 30px; color: var(--text-main);">
-                        I build intelligent systems and elegant interfaces. Currently pursuing a B.Tech in CSE (AIML) at Brainware University.
-                    </p>
-                    <div class="hero-links" style="margin-top: 40px; display: flex; gap: 24px; align-items: center; flex-wrap: wrap;">
-                        <a href="#contact" style="font-weight: 500;">Get in touch</a>
-                        <a href="https://canva.link/cpc3vxhkdja03dc" target="_blank" style="color: var(--text-muted);">Resume</a>
-                        <a href="https://github.com/subhajit-io" target="_blank" style="color: var(--text-muted); border: none;"><i class="fa-brands fa-github" style="font-size: 1.2rem;"></i></a>
-                        <a href="https://www.linkedin.com/in/subhajit-das-4a5719345/" target="_blank" style="color: var(--text-muted); border: none;"><i class="fa-brands fa-linkedin" style="font-size: 1.2rem;"></i></a>
-                    </div>
-                </div>
-                <div class="hero-image-wrapper fade-in" style="transition-delay: 0.2s;">
-                    <img src="assets/145341.jpg" alt="Subhajit Das" onerror="this.src='https://images.unsplash.com/photo-1511367461989-f85a21fda167?w=600&auto=format&fit=crop'">
-                </div>
+        <!-- FLAGSHIP 1: SOLUTIONS DRAWER -->
+        <article class="flagship-card featured-accent">
+          <div class="flagship-inner">
+            <div>
+              <div class="flagship-badge">
+                <i class="fa-solid fa-shield-halved" style="color: var(--nothing-red);"></i>
+                <span>FLAGSHIP 01 &bull; ANDROID ECOSYSTEM</span>
+              </div>
+              <h3 class="flagship-title">SOLUTIONS DRAWER</h3>
+              <p class="flagship-desc">
+                A minimalist, sovereign Android Web App Store & PWA platform designed to eliminate Big Tech telemetry and monopoly control. Features client-side zero-trust security auditing, Nothing OS dot-matrix design, and high-speed verified binary distribution.
+              </p>
+
+              <ul class="flagship-features">
+                <li>
+                  <i class="fa-solid fa-circle-check"></i>
+                  <span><strong>Drawer Protect:</strong> Client-side Web Crypto SHA-256 binary scanner cross-verifying signatures and malware signatures.</span>
+                </li>
+                <li>
+                  <i class="fa-solid fa-circle-check"></i>
+                  <span><strong>Over-The-Air Mini Updates:</strong> Full PWA service worker with delta update notifications that don&apos;t waste user cellular data.</span>
+                </li>
+                <li>
+                  <i class="fa-solid fa-circle-check"></i>
+                  <span><strong>Distributed Storage Architecture:</strong> Resilient binary routing backed by AWS S3 public buckets and Cloudflare D1 edge database.</span>
+                </li>
+              </ul>
+
+              <div class="tech-pill-row">
+                <span class="tech-pill">Next.js 16</span>
+                <span class="tech-pill">TypeScript</span>
+                <span class="tech-pill">PWA / WebAPK</span>
+                <span class="tech-pill">Cloudflare D1</span>
+                <span class="tech-pill">AWS S3</span>
+                <span class="tech-pill">Android 8.0+ Oreo</span>
+              </div>
+
+              <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+                <a href="https://solutionsdrawer.pages.dev" target="_blank" rel="noreferrer" class="btn-nothing btn-nothing-red">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                  <span>LAUNCH STORE</span>
+                </a>
+                <a href="https://github.com/subhajit-io/solutionsdrawer" target="_blank" rel="noreferrer" class="btn-nothing">
+                  <i class="fa-brands fa-github"></i>
+                  <span>SOURCE CODE</span>
+                </a>
+              </div>
             </div>
-        </section>
 
+            <div>
+              <div class="flagship-preview-box">
+                <img src="assets/solutionsdrawer_logo.png" alt="Solutions Drawer Platform Logo" onerror="this.src='assets/solutionsdrawer_icon.svg'">
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- FLAGSHIP 2: FINDRR -->
+        <article class="flagship-card">
+          <div class="flagship-inner">
+            <div>
+              <div class="flagship-badge">
+                <i class="fa-solid fa-wallet" style="color: var(--accent-green);"></i>
+                <span>FLAGSHIP 02 &bull; ON-DEVICE PRIVACY</span>
+              </div>
+              <h3 class="flagship-title">FINDRR</h3>
+              <p class="flagship-desc">
+                A 100% on-device personal financial vault and discipline arena engineered to eliminate money tracking anxiety. Built with zero SMS scraping permissions and zero cloud lock-in, keeping financial records encrypted solely on the phone.
+              </p>
+
+              <ul class="flagship-features">
+                <li>
+                  <i class="fa-solid fa-circle-check"></i>
+                  <span><strong>Unified Available Money:</strong> Real-time aggregated balance of bank accounts, digital wallets &amp; physical cash with 1-Tap UPI quick launcher.</span>
+                </li>
+                <li>
+                  <i class="fa-solid fa-circle-check"></i>
+                  <span><strong>5-Second Mindful QR Pause:</strong> Behavioral impulse pause vault converting shopping urges into wealth compounding.</span>
+                </li>
+                <li>
+                  <i class="fa-solid fa-circle-check"></i>
+                  <span><strong>Zero-SMS Encryption:</strong> On-device SQLite ledger encrypted client-side with AES-256; zero external data leaks.</span>
+                </li>
+              </ul>
+
+              <div class="tech-pill-row">
+                <span class="tech-pill">Android Native / Kotlin</span>
+                <span class="tech-pill">SQLite On-Device</span>
+                <span class="tech-pill">AES-256</span>
+                <span class="tech-pill">Zero Cloud Telemetry</span>
+                <span class="tech-pill">UPI Deep Link</span>
+              </div>
+
+              <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+                <a href="https://letusfindrr.pages.dev" target="_blank" rel="noreferrer" class="btn-nothing btn-nothing-red">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                  <span>EXPLORE FINDRR</span>
+                </a>
+                <a href="https://solutionsdrawer.pages.dev/app/com.solutionsdrawer.findrr/" target="_blank" rel="noreferrer" class="btn-nothing">
+                  <i class="fa-solid fa-download"></i>
+                  <span>STORE LISTING</span>
+                </a>
+              </div>
+            </div>
+
+            <div>
+              <div class="flagship-preview-box">
+                <img src="assets/findrr_dashboard.jpg" alt="Findrr Dashboard Screenshot" onerror="this.src='assets/findrr_logo.png'">
+              </div>
+            </div>
+          </div>
+        </article>
+
+      </div>
     </div>
+  </section>
 
-    <!-- Marquee full width -->
-    <div class="marquee-container">
-        <div class="marquee-content">
-            <span>Machine Learning</span>
-            <span>Frontend Development</span>
-            <span>Prompt Engineering</span>
-            <span>Python & C++</span>
-            <span>Software Engineering</span>
-            <span>Customer Experience</span>
-            <span>Machine Learning</span>
-            <span>Frontend Development</span>
-            <span>Prompt Engineering</span>
-            <span>Python & C++</span>
-        </div>
-    </div>
-
+  <!-- ==========================================================================
+       ADDITIONAL WORKS & AI SYSTEMS
+       ========================================================================== -->
+  <section id="projects">
     <div class="container">
-
-        <!-- Detailed About -->
-        <section id="details" class="fade-in">
-            <h2>The Details</h2>
-            <div class="about-text">
-                <p style="margin-bottom: 2rem; font-size: 1.1rem; line-height: 1.6;">
-                    <strong>Name:</strong> Subhajit Das (Krish)<br>
-                    <strong>Address:</strong> Arambagh<br>
-                    <strong>Email:</strong> <a href="https://mail.google.com/mail/?view=cm&to=arambaghsubhajitdas0@gmail.com" target="_blank" style="border: none; text-decoration: underline;">arambaghsubhajitdas0@gmail.com</a><br>
-                    <strong>Contact:</strong> <a href="https://wa.me/+917001023356" target="_blank" style="border: none; text-decoration: underline;">+91 7001023356</a>
-                </p>
-                <p>I am deeply fascinated by the intersection of artificial intelligence and human-computer interaction. I learn by building real-world applications and solving complex problems.</p>
-                <p>As a self-taught prompt engineer, I am highly comfortable developing and orchestrating AI agents, and I have a deep understanding of Customer Experience (CX) principles, ensuring that the software I build is not just functional, but genuinely user-centric.</p>
-                <p>My toolkit includes Python, C++, Flutter, and modern web technologies, backed by frameworks like PyTorch and NumPy for machine learning.</p>
-            </div>
-        </section>
-
-        <!-- Projects -->
-        <section id="projects">
-            <h2 class="fade-in">Selected Works</h2>
-            <div class="divider"></div>
-            
-            <div class="project fade-in">
-                <div class="project-media">
-                    <img src="assets/180617.png" alt="Schegent" onerror="this.src='https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600&auto=format&fit=crop'">
-                </div>
-                <div class="project-info">
-                    <h3>Schegent</h3>
-                    <p>A specialized Retrieval-Augmented Generation (RAG) pipeline designed to manage calendar and schedule data with absolute precision. Enables small, local LLMs like Qwen2.5-1.5B to handle complex time-based queries without hallucinating.</p>
-                    <a href="https://github.com/subhajit-io/Schegent" target="_blank">View Repository</a>
-                </div>
-            </div>
-
-            <div class="project fade-in">
-                <div class="project-media">
-                    <iframe src="https://www.youtube.com/embed/ZVqp7z1P8n8" title="Cherm Demo" allowfullscreen></iframe>
-                </div>
-                <div class="project-info">
-                    <h3>Cherm</h3>
-                    <p>A Python-based TUI application bringing IDE-like capabilities to the terminal. Features a keyboard-navigable dashboard equipped with Big-O complexity estimation and automated secret scanning.</p>
-                    <a href="https://github.com/subhajit-io/Cherm" target="_blank">View Repository</a>
-                </div>
-            </div>
-
-            <div class="project fade-in">
-                <div class="project-media">
-                    <iframe src="https://www.youtube.com/embed/e515KjXbNYc" title="Visual Tokenizer Demo" allowfullscreen></iframe>
-                </div>
-                <div class="project-info">
-                    <h3>Visual Tokenizer</h3>
-                    <p>An interactive web application that visualizes the Byte Pair Encoding (BPE) algorithm used by modern LLMs. Users can step through the token-merging process with an interactive slider.</p>
-                    <a href="https://github.com/subhajit-io/Visual-Tokenizer" target="_blank">View Repository</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Experience -->
-        <section id="experience">
-            <h2 class="fade-in">Experience</h2>
-            
-            <div class="list-item fade-in">
-                <div class="list-meta">2026 &mdash; Present</div>
-                <div class="list-content">
-                    <h3>Smart India Hackathon (SIH)</h3>
-                    <p style="color: var(--accent);">Societal Innovation Collaboration Portal</p>
-                    <p>Building a centralized, AI-enabled digital platform to connect citizens reporting local issues with HEIs and industry partners. Features AI for automatic problem categorization, routing, and workflow management.</p>
-                </div>
-            </div>
-
-            <div class="list-item fade-in">
-                <div class="list-meta">Certification</div>
-                <div class="list-content">
-                    <h3>HP Customer Experience</h3>
-                    <p>Learned to track Net Promoter Scores to protect at-risk accounts and map out buyer journeys to eliminate friction points in business environments.</p>
-                    <a href="https://www.life-global.org/certificate/4438a77d-669b-41f9-ac61-955cb9058235" target="_blank" style="font-size: 0.9rem; margin-top: 10px; display: inline-block;"><i class="fa-solid fa-link" style="margin-right: 8px;"></i>View Credential</a>
-                </div>
-            </div>
-
-            <div class="list-item fade-in">
-                <div class="list-meta">Job Simulation</div>
-                <div class="list-content">
-                    <h3>Partnering with AI (Forage)</h3>
-                    <p>Developed skills in writing effective prompts and partnering with AI tools to research, design, and create content. Gained foundational experience in AI-powered debugging.</p>
-                    <a href="https://www.theforage.com/" target="_blank" style="font-size: 0.9rem; margin-top: 10px; display: inline-block;"><i class="fa-solid fa-link" style="margin-right: 8px;"></i>View Credential</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Education -->
-        <section id="education">
-            <h2 class="fade-in">Education</h2>
-            
-            <div class="list-item fade-in">
-                <div class="list-meta">2025 &mdash; 2029</div>
-                <div class="list-content">
-                    <h3>Brainware University</h3>
-                    <p style="color: var(--accent);">B.Tech in Computer Science & Engineering (AIML)</p>
-                    <p>Pursuing a specialization in Artificial Intelligence and Machine Learning. Consistently maintaining a high academic standing with a current CGPA of 8.43.</p>
-                    <a href="https://maps.app.goo.gl/hvu5bNGFRF4MAfDh6" target="_blank" style="font-size: 0.9rem; margin-top: 10px; display: inline-block;"><i class="fa-solid fa-location-dot" style="margin-right: 8px;"></i>View Location</a>
-                </div>
-            </div>
-
-            <div class="list-item fade-in">
-                <div class="list-meta">Higher Secondary</div>
-                <div class="list-content">
-                    <h3>Arambagh High School</h3>
-                    <p>Completed higher secondary education with a focus on science and foundational mathematics.</p>
-                    <a href="https://maps.app.goo.gl/FpSGdfTFCS8upqmZ8" target="_blank" style="font-size: 0.9rem; margin-top: 10px; display: inline-block;"><i class="fa-solid fa-location-dot" style="margin-right: 8px;"></i>View Location</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Skills & Preferences (Adding length and detail) -->
-        <section id="skills" class="fade-in">
-            <h2>Toolkit & Preferences</h2>
-            <div class="divider"></div>
-            
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 60px;">
-                <div>
-                    <h3 style="font-family: 'Inter', sans-serif; font-size: 1.2rem; margin-bottom: 20px;">Core Skills & Interests</h3>
-                    <div class="skills-wrapper">
-                        <span class="skill-tag"><i class="fa-solid fa-terminal"></i> Prompt Engineering</span>
-                        <span class="skill-tag"><i class="fa-solid fa-robot"></i> Machine Learning</span>
-                        <span class="skill-tag"><i class="fa-brands fa-github"></i> GitHub</span>
-                        <span class="skill-tag"><i class="fa-solid fa-list-check"></i> Management</span>
-                        <span class="skill-tag"><i class="fa-solid fa-brain"></i> Psychology</span>
-                        <span class="skill-tag"><i class="fa-solid fa-face-smile"></i> Customer Experience</span>
-                        <span class="skill-tag"><i class="fa-solid fa-laptop-code"></i> Front End Dev</span>
-                        <span class="skill-tag">MLA</span>
-                        <span class="skill-tag">Deep Learning</span>
-                        <span class="skill-tag">Quantum Machine Learning</span>
-                    </div>
-                </div>
-
-                <div>
-                    <h3 style="font-family: 'Inter', sans-serif; font-size: 1.2rem; margin-bottom: 20px;">Programming</h3>
-                    <div class="skills-wrapper">
-                        <span class="skill-tag"><i class="devicon-python-plain"></i> Python</span>
-                        <span class="skill-tag"><i class="devicon-c-plain"></i> C</span>
-                        <span class="skill-tag"><i class="devicon-cplusplus-plain"></i> C++</span>
-                        <span class="skill-tag"><i class="devicon-java-plain"></i> Java</span>
-                        <span class="skill-tag"><i class="devicon-flutter-plain"></i> Flutter</span>
-                        <span class="skill-tag"><i class="devicon-numpy-original"></i> NumPy</span>
-                        <span class="skill-tag"><i class="devicon-pytorch-original"></i> PyTorch</span>
-                    </div>
-                </div>
-                
-                <div>
-                    <h3 style="font-family: 'Inter', sans-serif; font-size: 1.2rem; margin-bottom: 20px;">Daily Tools</h3>
-                    <div class="skills-wrapper">
-                        <span class="skill-tag">Gemini</span>
-                        <span class="skill-tag">Claude</span>
-                        <span class="skill-tag">LMStudio</span>
-                        <span class="skill-tag">Antigravity</span>
-                        <span class="skill-tag">Android Studio</span>
-                        <span class="skill-tag">VS Code</span>
-                        <span class="skill-tag">GitHub Copilot</span>
-                        <span class="skill-tag">Manus</span>
-                        <span class="skill-tag">Google AI Studio</span>
-                        <span class="skill-tag">DeepSeek</span>
-                        <span class="skill-tag">Nemotron</span>
-                        <span class="skill-tag">Google Labs</span>
-                        <span class="skill-tag">Consensus</span>
-                        <span class="skill-tag">Julius</span>
-                    </div>
-                </div>
-                
-                <div>
-                    <h3 style="font-family: 'Inter', sans-serif; font-size: 1.2rem; margin-bottom: 20px;">Work Style</h3>
-                    <p>I thrive in leadership roles within startup environments. I am focused on remote work and currently available for part-time commitments, delivering uncompromising output.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Philosophy Section -->
-        <section class="philosophy-section fade-in">
-            <p class="quote">
-                "I don't follow Ikigai, because tomorrow is never guaranteed. I refuse to let today's work wait for a future that isn't promised."
-            </p>
-            <span class="quote-author">My Personal Philosophy</span>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact" class="contact-section fade-in">
-            <h2>Contact Me</h2>
-            <p style="margin-bottom: 60px; font-size: 1.2rem;">I am open to volunteer work, internships, and business collaborations.</p>
-            
-            <form style="max-width: 600px;" onsubmit="submitContactForm(event)">
-                <input id="contact-name" type="text" placeholder="Your Name" required>
-                <input id="contact-email" type="email" placeholder="Your Email" required>
-                <textarea id="contact-message" rows="4" placeholder="How can we collaborate?" required></textarea>
-                <button type="submit" class="btn">Send Message</button>
-            </form>
-            
-            <div style="margin-top: 60px; display: flex; gap: 30px;">
-                <a href="https://github.com/subhajit-io" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
-                <a href="https://www.linkedin.com/in/subhajit-das-4a5719345/" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
-                <a href="https://wa.me/+917001023356" target="_blank"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
-            </div>
-        </section>
-
-    </div>
-
-    <footer>
-        <div class="container">
-            <p style="margin: 0; color: var(--text-muted);">&copy; 2026 Subhajit Das. All rights reserved.</p>
+      <div class="section-header">
+        <div class="section-eyebrow">
+          <span class="led"></span>
+          <span>SPECIALIZED PIPELINES</span>
         </div>
-    </footer>
+        <h2 class="section-title">SELECTED WORKS</h2>
+        <p class="section-subtitle">
+          Intelligent systems, developer terminal interfaces, and machine learning visualizers.
+        </p>
+      </div>
 
-    <script>
-        // Intersection Observer for graceful scroll animations
-        const observerOptions = {
-            root: null,
-            rootMargin: '0px',
-            threshold: 0.15
-        };
+      <div class="projects-grid">
+        
+        <!-- WORK 1: SCHEGENT -->
+        <div class="project-card">
+          <div>
+            <div class="project-media-frame">
+              <img src="assets/180617.png" alt="Schegent" onerror="this.src='https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600&auto=format&fit=crop'">
+            </div>
+            <h3>SCHEGENT</h3>
+            <p>
+              A specialized Retrieval-Augmented Generation (RAG) pipeline designed to manage calendar and schedule data with absolute precision. Enables small, local LLMs like Qwen2.5-1.5B to resolve complex temporal queries without hallucination.
+            </p>
+          </div>
+          <div>
+            <div class="tech-pill-row" style="margin-bottom: 16px;">
+              <span class="tech-pill">Python</span>
+              <span class="tech-pill">RAG</span>
+              <span class="tech-pill">Qwen2.5-1.5B</span>
+              <span class="tech-pill">Local LLM</span>
+            </div>
+            <a href="https://github.com/subhajit-io/Schegent" target="_blank" rel="noreferrer" class="btn-nothing" style="width: 100%;">
+              <i class="fa-brands fa-github"></i>
+              <span>VIEW REPO</span>
+            </a>
+          </div>
+        </div>
 
-        const observer = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, observerOptions);
+        <!-- WORK 2: CHERM -->
+        <div class="project-card">
+          <div>
+            <div class="project-media-frame">
+              <iframe src="https://www.youtube.com/embed/ZVqp7z1P8n8" title="Cherm Demo" allowfullscreen loading="lazy"></iframe>
+            </div>
+            <h3>CHERM</h3>
+            <p>
+              A high-performance Python-based TUI application bringing IDE-like capabilities to the terminal. Features a keyboard-navigable dashboard equipped with real-time Big-O complexity estimation and automated secret scanning.
+            </p>
+          </div>
+          <div>
+            <div class="tech-pill-row" style="margin-bottom: 16px;">
+              <span class="tech-pill">Python</span>
+              <span class="tech-pill">TUI Engine</span>
+              <span class="tech-pill">Big-O Analyzer</span>
+              <span class="tech-pill">Secret Scan</span>
+            </div>
+            <a href="https://github.com/subhajit-io/Cherm" target="_blank" rel="noreferrer" class="btn-nothing" style="width: 100%;">
+              <i class="fa-brands fa-github"></i>
+              <span>VIEW REPO</span>
+            </a>
+          </div>
+        </div>
 
-        document.querySelectorAll('.fade-in').forEach(el => {
-            observer.observe(el);
-        });
+        <!-- WORK 3: VISUAL TOKENIZER -->
+        <div class="project-card">
+          <div>
+            <div class="project-media-frame">
+              <iframe src="https://www.youtube.com/embed/e515KjXbNYc" title="Visual Tokenizer Demo" allowfullscreen loading="lazy"></iframe>
+            </div>
+            <h3>VISUAL TOKENIZER</h3>
+            <p>
+              An interactive web application that visualizes the Byte Pair Encoding (BPE) algorithm used by modern Large Language Models. Users can step through the token-merging process with an interactive slider in real-time.
+            </p>
+          </div>
+          <div>
+            <div class="tech-pill-row" style="margin-bottom: 16px;">
+              <span class="tech-pill">JavaScript</span>
+              <span class="tech-pill">NLP Tokenization</span>
+              <span class="tech-pill">BPE Algorithm</span>
+              <span class="tech-pill">Interactive</span>
+            </div>
+            <a href="https://github.com/subhajit-io/Visual-Tokenizer" target="_blank" rel="noreferrer" class="btn-nothing" style="width: 100%;">
+              <i class="fa-brands fa-github"></i>
+              <span>VIEW REPO</span>
+            </a>
+          </div>
+        </div>
 
-        // Contact Form Logic
-        function submitContactForm(event) {
-            event.preventDefault();
-            const name = document.getElementById('contact-name').value;
-            const email = document.getElementById('contact-email').value;
-            const message = document.getElementById('contact-message').value;
-            
-            const subject = encodeURIComponent(`Portfolio Contact from ${name}`);
-            const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
-            
-            const mailUrl = `https://mail.google.com/mail/?view=cm&to=arambaghsubhajitdas0@gmail.com&su=${subject}&body=${body}`;
-            window.open(mailUrl, '_blank');
-        }
-    </script>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       PHILOSOPHY QUOTE
+       ========================================================================== -->
+  <div class="container">
+    <div class="quote-card">
+      <p class="quote-text">
+        &ldquo;I don&apos;t follow Ikigai, because tomorrow is never guaranteed. I refuse to let today&apos;s work wait for a future that isn&apos;t promised.&rdquo;
+      </p>
+      <div class="quote-author">&mdash; Subhajit Das &bull; Personal Engineering Philosophy</div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       EXPERIENCE & EDUCATION TIMELINE
+       ========================================================================== -->
+  <section id="experience">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-eyebrow">
+          <span class="led"></span>
+          <span>MILESTONES &amp; JOURNEY</span>
+        </div>
+        <h2 class="section-title">EXPERIENCE &amp; EDUCATION</h2>
+        <p class="section-subtitle">
+          Academic foundation in Artificial Intelligence coupled with practical hackathons and customer experience leadership.
+        </p>
+      </div>
+
+      <div class="timeline-wrap">
+        
+        <div class="timeline-item">
+          <div class="timeline-meta">
+            2026 &mdash; PRESENT
+            <span class="sub">National Initiative</span>
+          </div>
+          <div class="timeline-content">
+            <h3>Smart India Hackathon (SIH)</h3>
+            <div class="timeline-role">Societal Innovation Collaboration Portal</div>
+            <p>
+              Building a centralized, AI-enabled digital platform to connect citizens reporting local community issues with Higher Education Institutions (HEIs) and industry partners. Features automated problem categorization, intelligent routing, and workflow verification.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-meta">
+            2025 &mdash; 2029
+            <span class="sub">Higher Education</span>
+          </div>
+          <div class="timeline-content">
+            <h3>Brainware University</h3>
+            <div class="timeline-role">B.Tech in Computer Science &amp; Engineering (AIML) &bull; CGPA 8.43</div>
+            <p>
+              Pursuing a rigorous degree specializing in Artificial Intelligence and Machine Learning. Consistently maintaining high academic excellence with in-depth study of algorithms, neural architectures, and software engineering principles.
+            </p>
+            <a href="https://maps.app.goo.gl/hvu5bNGFRF4MAfDh6" target="_blank" rel="noreferrer" style="font-family: var(--font-mono); font-size: 11px; color: var(--accent-cyan); display: inline-block; margin-top: 8px;">
+              <i class="fa-solid fa-location-dot" style="margin-right: 6px;"></i>View Campus Location
+            </a>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-meta">
+            CERTIFICATION
+            <span class="sub">Enterprise Simulation</span>
+          </div>
+          <div class="timeline-content">
+            <h3>HP Customer Experience (CX)</h3>
+            <div class="timeline-role">Customer Journey &amp; Retention Architecture</div>
+            <p>
+              Mastered Net Promoter Score (NPS) telemetry to protect at-risk client accounts, mapping friction points across user touchpoints to design software that delivers empathetic, effortless customer journeys.
+            </p>
+            <a href="https://www.life-global.org/certificate/4438a77d-669b-41f9-ac61-955cb9058235" target="_blank" rel="noreferrer" style="font-family: var(--font-mono); font-size: 11px; color: var(--accent-cyan); display: inline-block; margin-top: 8px;">
+              <i class="fa-solid fa-link" style="margin-right: 6px;"></i>View Credential
+            </a>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-meta">
+            JOB SIMULATION
+            <span class="sub">AI Collaboration</span>
+          </div>
+          <div class="timeline-content">
+            <h3>Partnering with AI (Forage)</h3>
+            <div class="timeline-role">Prompt Engineering &amp; AI-Assisted Debugging</div>
+            <p>
+              Developed advanced competencies in writing high-leverage prompts, orchestrating multimodal AI tools for design synthesis, and leveraging AI models for automated code review and debugging.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       TECHNICAL TOOLKIT
+       ========================================================================== -->
+  <section id="toolkit">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-eyebrow">
+          <span class="led"></span>
+          <span>STACK &amp; CAPABILITIES</span>
+        </div>
+        <h2 class="section-title">TECHNICAL TOOLKIT</h2>
+        <p class="section-subtitle">
+          Technologies, frameworks, and agentic environments I operate on a daily basis.
+        </p>
+      </div>
+
+      <div class="skills-grid">
+        
+        <div class="skills-category-card">
+          <h3><i class="fa-solid fa-brain" style="color: var(--nothing-red);"></i> AI &amp; MACHINE LEARNING</h3>
+          <div class="chips-flex">
+            <span class="chip"><i class="devicon-python-plain"></i> PyTorch</span>
+            <span class="chip"><i class="devicon-numpy-original"></i> NumPy</span>
+            <span class="chip">Prompt Engineering</span>
+            <span class="chip">RAG Pipelines</span>
+            <span class="chip">Local LLMs (Qwen/Llama)</span>
+            <span class="chip">Deep Learning</span>
+            <span class="chip">Tokenization (BPE)</span>
+          </div>
+        </div>
+
+        <div class="skills-category-card">
+          <h3><i class="fa-solid fa-code" style="color: var(--accent-cyan);"></i> LANGUAGES &amp; RUNTIMES</h3>
+          <div class="chips-flex">
+            <span class="chip"><i class="devicon-python-plain"></i> Python</span>
+            <span class="chip"><i class="devicon-cplusplus-plain"></i> C++</span>
+            <span class="chip"><i class="devicon-c-plain"></i> C</span>
+            <span class="chip"><i class="devicon-java-plain"></i> Java</span>
+            <span class="chip"><i class="devicon-typescript-plain"></i> TypeScript</span>
+            <span class="chip"><i class="devicon-flutter-plain"></i> Flutter / Dart</span>
+          </div>
+        </div>
+
+        <div class="skills-category-card">
+          <h3><i class="fa-solid fa-server" style="color: var(--accent-green);"></i> WEB &amp; CLOUD INFRA</h3>
+          <div class="chips-flex">
+            <span class="chip"><i class="devicon-nextjs-plain"></i> Next.js</span>
+            <span class="chip">PWA / WebAPK</span>
+            <span class="chip"><i class="devicon-sqlite-plain"></i> SQLite On-Device</span>
+            <span class="chip">Cloudflare D1 / Workers</span>
+            <span class="chip">AWS S3 Presigned</span>
+            <span class="chip"><i class="devicon-git-plain"></i> Git &bull; GitHub</span>
+          </div>
+        </div>
+
+        <div class="skills-category-card">
+          <h3><i class="fa-solid fa-terminal" style="color: #ffb703;"></i> AGENTIC AI WORKSTATION</h3>
+          <div class="chips-flex">
+            <span class="chip">Antigravity IDE</span>
+            <span class="chip">Claude 3.7 Sonnet</span>
+            <span class="chip">Google Gemini 2.5 Pro</span>
+            <span class="chip">Google AI Studio</span>
+            <span class="chip">LMStudio</span>
+            <span class="chip">VS Code</span>
+            <span class="chip">Android Studio</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       CONTACT SECTION
+       ========================================================================== -->
+  <section id="contact">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-eyebrow">
+          <span class="led"></span>
+          <span>GET IN TOUCH</span>
+        </div>
+        <h2 class="section-title">START A CONVERSATION</h2>
+        <p class="section-subtitle">
+          Open to software engineering roles, AI research collaborations, and startup partnerships.
+        </p>
+      </div>
+
+      <div class="contact-grid">
+        <form class="contact-form" onsubmit="handleContactSubmit(event)">
+          <div class="form-group">
+            <label class="form-label">Full Name</label>
+            <input type="text" id="contact-name" class="form-input" placeholder="Your name or organization" required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Email Address</label>
+            <input type="email" id="contact-email" class="form-input" placeholder="you@domain.com" required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Message / Proposal</label>
+            <textarea id="contact-message" class="form-textarea" rows="5" placeholder="How can we collaborate on intelligent systems?" required></textarea>
+          </div>
+
+          <button type="submit" class="btn-nothing btn-nothing-red" style="align-self: flex-start;">
+            <i class="fa-solid fa-paper-plane"></i>
+            <span>SEND TRANSMISSION</span>
+          </button>
+        </form>
+
+        <div class="contact-info-card">
+          <div class="contact-item">
+            <div class="contact-icon-box">
+              <i class="fa-solid fa-envelope"></i>
+            </div>
+            <div>
+              <div class="form-label">Primary Communication</div>
+              <a href="https://mail.google.com/mail/?view=cm&to=arambaghsubhajitdas0@gmail.com" target="_blank" rel="noreferrer" style="font-family: var(--font-mono); font-size: 13.5px; color: #fff;">
+                arambaghsubhajitdas0@gmail.com
+              </a>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon-box">
+              <i class="fa-brands fa-whatsapp"></i>
+            </div>
+            <div>
+              <div class="form-label">Instant WhatsApp</div>
+              <a href="https://wa.me/+917001023356" target="_blank" rel="noreferrer" style="font-family: var(--font-mono); font-size: 13.5px; color: #fff;">
+                +91 7001023356
+              </a>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon-box">
+              <i class="fa-solid fa-location-dot"></i>
+            </div>
+            <div>
+              <div class="form-label">Operating Location</div>
+              <div style="font-family: var(--font-mono); font-size: 13.5px; color: #fff;">
+                Arambagh &bull; Kolkata, West Bengal, India
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon-box">
+              <i class="fa-brands fa-github"></i>
+            </div>
+            <div>
+              <div class="form-label">Open Source &amp; Code</div>
+              <a href="https://github.com/subhajit-io" target="_blank" rel="noreferrer" style="font-family: var(--font-mono); font-size: 13.5px; color: var(--accent-cyan);">
+                github.com/subhajit-io
+              </a>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon-box">
+              <i class="fa-brands fa-linkedin"></i>
+            </div>
+            <div>
+              <div class="form-label">Professional Network</div>
+              <a href="https://www.linkedin.com/in/subhajit-das-4a5719345/" target="_blank" rel="noreferrer" style="font-family: var(--font-mono); font-size: 13.5px; color: var(--accent-cyan);">
+                linkedin.com/in/subhajit-das-4a5719345
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       MINIMALIST FOOTER
+       ========================================================================== -->
+  <footer>
+    <div class="container footer-inner">
+      <div class="footer-copy">
+        &copy; 2026 SUBHAJIT DAS. ALL RIGHTS RESERVED. SOVEREIGN ARCHITECTURE.
+      </div>
+
+      <div style="display: flex; gap: 16px; align-items: center;">
+        <a href="https://solutionsdrawer.pages.dev" target="_blank" rel="noreferrer" class="btn-nothing btn-pill" style="font-size: 10.5px;">
+          <i class="fa-solid fa-shield-halved" style="color: var(--nothing-red);"></i>
+          <span>SOLUTIONS DRAWER</span>
+        </a>
+        <a href="https://letusfindrr.pages.dev" target="_blank" rel="noreferrer" class="btn-nothing btn-pill" style="font-size: 10.5px;">
+          <i class="fa-solid fa-wallet" style="color: var(--accent-green);"></i>
+          <span>FINDRR</span>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function handleContactSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('contact-name').value;
+      const email = document.getElementById('contact-email').value;
+      const message = document.getElementById('contact-message').value;
+
+      const subject = encodeURIComponent(`Portfolio Inquiry from ${name}`);
+      const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nProposal/Message:\n${message}`);
+
+      const mailtoUrl = `https://mail.google.com/mail/?view=cm&to=arambaghsubhajitdas0@gmail.com&su=${subject}&body=${body}`;
+      window.open(mailtoUrl, '_blank');
+    }
+  </script>
 </body>
 </html>
