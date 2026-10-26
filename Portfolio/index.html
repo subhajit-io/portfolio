@@ -36,6 +36,9 @@
       --nothing-red: #d71921;
       --nothing-red-glow: rgba(215, 25, 33, 0.45);
       --accent-green: #00e676;
+      --accent-green-dim: rgba(0, 230, 118, 0.15);
+      --accent-green-glow: rgba(0, 230, 118, 0.45);
+      --accent-green-border: rgba(0, 230, 118, 0.35);
       --accent-cyan: #38bdf8;
       
       --text-main: #ffffff;
@@ -74,7 +77,7 @@
     }
 
     ::selection {
-      background: var(--nothing-red);
+      background: rgba(0, 230, 118, 0.35);
       color: #ffffff;
     }
 
@@ -143,12 +146,23 @@
       margin-bottom: 10px;
     }
 
+    .section-eyebrow.eyebrow-green {
+      color: var(--accent-green);
+    }
+
     .section-eyebrow .led {
       width: 6px;
       height: 6px;
       border-radius: 50%;
       background: var(--nothing-red);
       box-shadow: 0 0 8px var(--nothing-red);
+    }
+
+    .section-eyebrow.eyebrow-green .led,
+    .led.led-green,
+    .led-green {
+      background: var(--accent-green) !important;
+      box-shadow: 0 0 8px var(--accent-green) !important;
     }
 
     .section-title {
@@ -204,6 +218,20 @@
       background: #e51d26;
       border-color: #ff3840;
       box-shadow: 0 0 24px var(--nothing-red-glow), 0 4px 14px rgba(0, 0, 0, 0.8);
+      transform: translateY(-2px);
+    }
+
+    .btn-nothing-green {
+      background: #032b17;
+      border-color: var(--accent-green);
+      color: #00e676;
+    }
+
+    .btn-nothing-green:hover {
+      background: var(--accent-green);
+      border-color: #55ff99;
+      color: #000000;
+      box-shadow: 0 0 24px var(--accent-green-glow), 0 4px 14px rgba(0, 0, 0, 0.8);
       transform: translateY(-2px);
     }
 
@@ -314,13 +342,18 @@
       width: 6px;
       height: 6px;
       border-radius: 50%;
-      background: #444444;
+      background: rgba(0, 230, 118, 0.45);
       transition: all 0.2s ease;
     }
 
+    .terminal-toggle-btn:hover .term-led {
+      background: var(--accent-green);
+      box-shadow: 0 0 6px var(--accent-green);
+    }
+
     .terminal-toggle-btn.active .term-led {
-      background: var(--nothing-red);
-      box-shadow: 0 0 8px var(--nothing-red);
+      background: var(--accent-green);
+      box-shadow: 0 0 10px var(--accent-green);
     }
 
     .status-pill {
@@ -494,6 +527,11 @@
       box-shadow: 0 0 6px var(--nothing-red);
     }
 
+    .chassis-dots span.green {
+      background: var(--accent-green);
+      box-shadow: 0 0 6px var(--accent-green);
+    }
+
     .chassis-image-box {
       width: 100%;
       height: 385px;
@@ -562,6 +600,11 @@
       height: 6px;
       border-radius: 50%;
       background: var(--nothing-red);
+    }
+
+    .ticker-item .dot.dot-green {
+      background: var(--accent-green);
+      box-shadow: 0 0 6px rgba(0, 230, 118, 0.7);
     }
 
     @keyframes tickerLoop {
@@ -661,6 +704,15 @@
       transform: translateY(-2px);
     }
 
+    .pref-card.pref-green {
+      border-color: rgba(0, 230, 118, 0.28);
+    }
+
+    .pref-card.pref-green:hover {
+      border-color: var(--accent-green);
+      box-shadow: 0 12px 36px rgba(0, 230, 118, 0.15);
+    }
+
     .pref-card-badge {
       display: inline-flex;
       align-items: center;
@@ -741,6 +793,15 @@
     .flagship-card.featured-accent:hover {
       border-color: var(--nothing-red);
       box-shadow: 0 16px 48px rgba(215, 25, 33, 0.22);
+    }
+
+    .flagship-card.featured-green {
+      border-color: rgba(0, 230, 118, 0.35);
+    }
+
+    .flagship-card.featured-green:hover {
+      border-color: var(--accent-green);
+      box-shadow: 0 16px 48px rgba(0, 230, 118, 0.22);
     }
 
     .flagship-inner {
@@ -921,7 +982,13 @@
     }
 
     .journey-card.featured-edu {
-      border-left: 4px solid var(--nothing-red);
+      border-left: 4px solid var(--accent-green);
+    }
+
+    .journey-card.featured-edu:hover {
+      border-color: rgba(0, 230, 118, 0.3);
+      border-left-color: var(--accent-green);
+      box-shadow: 0 12px 32px rgba(0, 230, 118, 0.1);
     }
 
     .journey-meta {
@@ -1028,6 +1095,19 @@
       border-color: #ffffff;
       background: #181818;
       color: #ffffff;
+    }
+
+    .chip.chip-green {
+      border-color: rgba(0, 230, 118, 0.3);
+      background: rgba(0, 230, 118, 0.05);
+      color: #ffffff;
+    }
+
+    .chip.chip-green:hover {
+      border-color: var(--accent-green);
+      background: rgba(0, 230, 118, 0.12);
+      color: var(--accent-green);
+      box-shadow: 0 0 12px rgba(0, 230, 118, 0.25);
     }
 
     .chip i {
@@ -1388,9 +1468,9 @@
     }
 
     .term-quick-btn:hover {
-      background: #1c1c1c;
-      color: #ffffff;
-      border-color: #555555;
+      background: #062a17;
+      color: var(--accent-green);
+      border-color: rgba(0, 230, 118, 0.5);
     }
 
     /* ==========================================================================
@@ -1526,7 +1606,7 @@
       <div class="hero-grid">
         <div>
           <div class="hero-tag">
-            <i class="fa-solid fa-microchip"></i>
+            <span class="led led-green"></span>
             <span>SOFTWARE ENGINEER &bull; AIML ARCHITECT</span>
           </div>
 
@@ -1556,7 +1636,7 @@
 
           <div class="hero-stats-strip">
             <div class="hero-stat-card">
-              <div class="hero-stat-number">8.43</div>
+              <div class="hero-stat-number" style="color: var(--accent-green);">8.43</div>
               <div class="hero-stat-label">B.Tech CGPA</div>
             </div>
             <div class="hero-stat-card">
@@ -1576,7 +1656,7 @@
             <div class="chassis-header">
               <span>SUBHAJIT_DAS_PORTRAIT.RAW</span>
               <div class="chassis-dots">
-                <span class="red"></span><span></span><span></span>
+                <span class="red"></span><span class="green"></span><span></span>
               </div>
             </div>
             <div class="chassis-image-box">
@@ -1598,24 +1678,24 @@
   <div class="ticker-wrap">
     <div class="ticker-track">
       <div class="ticker-item"><span>Solutions Drawer</span><span class="dot"></span></div>
-      <div class="ticker-item"><span>Findrr Finance Vault</span><span class="dot"></span></div>
-      <div class="ticker-item"><span>Brainware University (AIML)</span><span class="dot"></span></div>
+      <div class="ticker-item"><span>Findrr Finance Vault</span><span class="dot dot-green"></span></div>
+      <div class="ticker-item"><span>Brainware University (AIML)</span><span class="dot dot-green"></span></div>
       <div class="ticker-item"><span>Zero-Trust Architecture</span><span class="dot"></span></div>
-      <div class="ticker-item"><span>On-Device Machine Learning</span><span class="dot"></span></div>
+      <div class="ticker-item"><span>On-Device Machine Learning</span><span class="dot dot-green"></span></div>
       <div class="ticker-item"><span>Prompt Engineering</span><span class="dot"></span></div>
-      <div class="ticker-item"><span>Customer Experience (CX)</span><span class="dot"></span></div>
+      <div class="ticker-item"><span>Customer Experience (CX)</span><span class="dot dot-green"></span></div>
       <div class="ticker-item"><span>Python &bull; C++ &bull; Flutter</span><span class="dot"></span></div>
-      <div class="ticker-item"><span>Cloudflare Edge &bull; SQLite</span><span class="dot"></span></div>
+      <div class="ticker-item"><span>Cloudflare Edge &bull; SQLite</span><span class="dot dot-green"></span></div>
       <!-- Duplicate for infinite loop -->
       <div class="ticker-item"><span>Solutions Drawer</span><span class="dot"></span></div>
-      <div class="ticker-item"><span>Findrr Finance Vault</span><span class="dot"></span></div>
-      <div class="ticker-item"><span>Brainware University (AIML)</span><span class="dot"></span></div>
+      <div class="ticker-item"><span>Findrr Finance Vault</span><span class="dot dot-green"></span></div>
+      <div class="ticker-item"><span>Brainware University (AIML)</span><span class="dot dot-green"></span></div>
       <div class="ticker-item"><span>Zero-Trust Architecture</span><span class="dot"></span></div>
-      <div class="ticker-item"><span>On-Device Machine Learning</span><span class="dot"></span></div>
+      <div class="ticker-item"><span>On-Device Machine Learning</span><span class="dot dot-green"></span></div>
       <div class="ticker-item"><span>Prompt Engineering</span><span class="dot"></span></div>
-      <div class="ticker-item"><span>Customer Experience (CX)</span><span class="dot"></span></div>
+      <div class="ticker-item"><span>Customer Experience (CX)</span><span class="dot dot-green"></span></div>
       <div class="ticker-item"><span>Python &bull; C++ &bull; Flutter</span><span class="dot"></span></div>
-      <div class="ticker-item"><span>Cloudflare Edge &bull; SQLite</span><span class="dot"></span></div>
+      <div class="ticker-item"><span>Cloudflare Edge &bull; SQLite</span><span class="dot dot-green"></span></div>
     </div>
   </div>
 
@@ -1709,9 +1789,9 @@
           </div>
         </div>
 
-        <div class="pref-card">
+        <div class="pref-card pref-green">
           <div class="pref-card-badge">
-            <span class="led" style="background: var(--accent-green); box-shadow: 0 0 8px var(--accent-green);"></span>
+            <span class="led led-green"></span>
             <span>AVAILABILITY // MODEL</span>
           </div>
           <div class="pref-card-title">
@@ -1826,10 +1906,10 @@
         </article>
 
         <!-- FLAGSHIP 2: FINDRR -->
-        <article class="flagship-card">
+        <article class="flagship-card featured-green">
           <div class="flagship-inner">
             <div>
-              <div class="flagship-badge">
+              <div class="flagship-badge" style="border-color: rgba(0, 230, 118, 0.35); background: rgba(0, 230, 118, 0.08);">
                 <i class="fa-solid fa-wallet" style="color: var(--accent-green);"></i>
                 <span>FLAGSHIP 02 &bull; ON-DEVICE PRIVACY</span>
               </div>
@@ -1862,7 +1942,7 @@
               </div>
 
               <div style="display: flex; gap: 12px; flex-wrap: wrap;">
-                <a href="https://letusfindrr.pages.dev" target="_blank" rel="noreferrer" class="btn-nothing btn-nothing-red">
+                <a href="https://letusfindrr.pages.dev" target="_blank" rel="noreferrer" class="btn-nothing btn-nothing-green">
                   <i class="fa-solid fa-arrow-up-right-from-square"></i>
                   <span>EXPLORE FINDRR</span>
                 </a>
@@ -1891,8 +1971,8 @@
   <section id="journey">
     <div class="container">
       <div class="section-header">
-        <div class="section-eyebrow">
-          <span class="led"></span>
+        <div class="section-eyebrow eyebrow-green">
+          <span class="led led-green"></span>
           <span>ACADEMIC FOUNDATION &amp; MILESTONES</span>
         </div>
         <h2 class="section-title">MY JOURNEY</h2>
@@ -1905,10 +1985,10 @@
         
         <!-- COLLEGE / UNIVERSITY -->
         <div class="journey-card featured-edu">
-          <div class="journey-meta">
+          <div class="journey-meta" style="color: var(--accent-green);">
             2025 &mdash; 2029
             <span class="sub" style="color: var(--accent-green); font-weight: 700;">CURRENT DEGREE</span>
-            <span class="sub">Higher Education</span>
+            <span class="sub">Higher Education &bull; 8.43 CGPA</span>
           </div>
           <div class="journey-content">
             <h3>Brainware University</h3>
@@ -2147,11 +2227,11 @@
         <div class="skills-category-card">
           <h3><i class="fa-solid fa-brain" style="color: var(--nothing-red);"></i> AI &amp; MACHINE LEARNING</h3>
           <div class="chips-flex">
-            <span class="chip"><i class="devicon-python-plain"></i> PyTorch</span>
+            <span class="chip chip-green"><i class="devicon-python-plain" style="color: var(--accent-green);"></i> PyTorch</span>
             <span class="chip"><i class="devicon-numpy-original"></i> NumPy</span>
             <span class="chip">Prompt Engineering</span>
             <span class="chip">RAG Pipelines</span>
-            <span class="chip">Local LLMs (Qwen/Llama)</span>
+            <span class="chip chip-green">Local LLMs (Qwen/Llama)</span>
             <span class="chip">Deep Learning</span>
             <span class="chip">Tokenization (BPE)</span>
           </div>
@@ -2173,9 +2253,9 @@
           <h3><i class="fa-solid fa-server" style="color: var(--accent-green);"></i> WEB &amp; CLOUD INFRA</h3>
           <div class="chips-flex">
             <span class="chip"><i class="devicon-nextjs-plain"></i> Next.js</span>
-            <span class="chip">PWA / WebAPK</span>
-            <span class="chip"><i class="devicon-sqlite-plain"></i> SQLite On-Device</span>
-            <span class="chip">Cloudflare D1 / Workers</span>
+            <span class="chip chip-green">PWA / WebAPK</span>
+            <span class="chip chip-green"><i class="devicon-sqlite-plain" style="color: var(--accent-green);"></i> SQLite On-Device</span>
+            <span class="chip chip-green">Cloudflare D1 / Workers</span>
             <span class="chip">AWS S3 Presigned</span>
             <span class="chip"><i class="devicon-git-plain"></i> Git &bull; GitHub</span>
           </div>
@@ -2324,11 +2404,11 @@
       </div>
 
       <div style="display: flex; gap: 16px; align-items: center;">
-        <a href="https://solutionsdrawer.pages.dev" target="_blank" rel="noreferrer" class="btn-nothing btn-pill" style="font-size: 10.5px;">
+        <a href="https://solutionsdrawer.pages.dev" target="_blank" rel="noreferrer" class="btn-nothing btn-pill" style="font-size: 10.5px; border-color: rgba(215, 25, 33, 0.3);">
           <i class="fa-solid fa-shield-halved" style="color: var(--nothing-red);"></i>
           <span>SOLUTIONS DRAWER</span>
         </a>
-        <a href="https://letusfindrr.pages.dev" target="_blank" rel="noreferrer" class="btn-nothing btn-pill" style="font-size: 10.5px;">
+        <a href="https://letusfindrr.pages.dev" target="_blank" rel="noreferrer" class="btn-nothing btn-pill" style="font-size: 10.5px; border-color: rgba(0, 230, 118, 0.3);">
           <i class="fa-solid fa-wallet" style="color: var(--accent-green);"></i>
           <span>FINDRR</span>
         </a>
