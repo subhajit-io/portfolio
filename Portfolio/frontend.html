@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <title>SUBHAJIT DAS — SOFTWARE ENGINEER & SOVEREIGN SYSTEM ARCHITECT</title>
-  <meta name="description" content="Portfolio of Subhajit Das (Krish) — Software Engineer & AI Builder. Creator of Solutions Drawer & Findrr. Specializing in On-Device AI, Sovereign Systems, and Zero-Trust Architectures.">
+  <meta name="description" content="Subhajit Das (Krish) — Software Engineer & AI Architect. Creator of Solutions Drawer & Findrr. B.Tech CSE (AIML) at Brainware University.">
   <meta name="theme-color" content="#000000">
 
   <!-- Icons -->
@@ -27,20 +27,20 @@
     :root {
       --bg-primary: #000000;
       --bg-card: #080808;
-      --bg-card-hover: #0f0f0f;
-      --bg-elevated: #121212;
+      --bg-card-hover: #111111;
+      --bg-elevated: #141414;
       --border-subtle: #1c1c1c;
-      --border-medium: #262626;
-      --border-strong: #383838;
+      --border-medium: #282828;
+      --border-strong: #3e3e3e;
       
       --nothing-red: #d71921;
-      --nothing-red-glow: rgba(215, 25, 33, 0.4);
+      --nothing-red-glow: rgba(215, 25, 33, 0.45);
       --accent-green: #00e676;
       --accent-cyan: #38bdf8;
       
       --text-main: #ffffff;
-      --text-dim: #9e9e9e;
-      --text-muted: #5e5e5e;
+      --text-dim: #a1a1a1;
+      --text-muted: #666666;
 
       --font-dots: 'Doto', sans-serif;
       --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -114,21 +114,21 @@
     }
 
     /* ==========================================================================
-       LAYOUT & CONTAINERS
+       LAYOUT & CONTAINERS (COMPACT TOP SPACING)
        ========================================================================== */
     .container {
-      max-width: 1180px;
+      max-width: 1200px;
       margin: 0 auto;
       padding: 0 24px;
     }
 
     section {
-      padding: 90px 0;
+      padding: 70px 0;
       position: relative;
     }
 
     .section-header {
-      margin-bottom: 48px;
+      margin-bottom: 40px;
     }
 
     .section-eyebrow {
@@ -140,7 +140,7 @@
       text-transform: uppercase;
       letter-spacing: 0.15em;
       color: var(--nothing-red);
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
 
     .section-eyebrow .led {
@@ -162,7 +162,7 @@
       color: var(--text-dim);
       font-size: 1.05rem;
       margin-top: 8px;
-      max-width: 65ch;
+      max-width: 70ch;
     }
 
     /* ==========================================================================
@@ -173,13 +173,13 @@
       align-items: center;
       justify-content: center;
       gap: 10px;
-      padding: 10px 18px;
+      padding: 10px 20px;
       border-radius: 8px;
       border: 1px solid var(--border-medium);
       background: #080808;
       color: #ffffff;
       font-family: var(--font-dots);
-      font-size: 12.5px;
+      font-size: 13px;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.04em;
@@ -191,7 +191,7 @@
       background: #141414;
       border-color: #ffffff;
       transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7);
     }
 
     .btn-nothing-red {
@@ -214,13 +214,13 @@
     }
 
     /* ==========================================================================
-       NAVBAR
+       NAVBAR (STICKY & COMPACT)
        ========================================================================== */
     .navbar-wrap {
       position: sticky;
       top: 0;
       z-index: 1000;
-      background: rgba(0, 0, 0, 0.82);
+      background: rgba(0, 0, 0, 0.88);
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
       border-bottom: 1px solid var(--border-subtle);
@@ -230,7 +230,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      height: 70px;
+      height: 58px;
     }
 
     .nav-brand {
@@ -258,7 +258,7 @@
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 24px;
+      gap: 22px;
     }
 
     .nav-links a {
@@ -302,15 +302,18 @@
     }
 
     /* ==========================================================================
-       HERO SECTION
+       HERO SECTION (TIGHTENED GAP UNDER HEADER + ENLARGED PICTURE)
        ========================================================================== */
+    .hero {
+      padding-top: 14px;
+      padding-bottom: 40px;
+    }
+
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.25fr 0.85fr;
-      gap: 60px;
-      align-items: center;
-      min-height: calc(85vh - 70px);
-      padding: 40px 0;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 36px;
+      align-items: start;
     }
 
     .hero-tag {
@@ -321,18 +324,18 @@
       border: 1px solid rgba(215, 25, 33, 0.3);
       color: #ff525a;
       font-family: var(--font-mono);
-      font-size: 11.5px;
+      font-size: 11px;
       padding: 4px 12px;
       border-radius: 999px;
-      margin-bottom: 24px;
+      margin-bottom: 12px;
     }
 
     .hero-title {
       font-family: var(--font-dots);
-      font-size: clamp(2.8rem, 6.5vw, 4.6rem);
-      line-height: 1.05;
+      font-size: clamp(2.5rem, 5.2vw, 4rem);
+      line-height: 1.06;
       letter-spacing: -0.01em;
-      margin-bottom: 24px;
+      margin-bottom: 14px;
       text-transform: uppercase;
     }
 
@@ -341,30 +344,30 @@
     }
 
     .hero-lead {
-      font-size: 1.15rem;
+      font-size: 1.1rem;
       color: var(--text-dim);
-      margin-bottom: 32px;
-      line-height: 1.7;
+      margin-bottom: 22px;
+      line-height: 1.65;
     }
 
     .hero-lead strong {
       color: #ffffff;
-      font-weight: 500;
+      font-weight: 600;
     }
 
     .hero-cta-group {
       display: flex;
-      gap: 14px;
+      gap: 12px;
       align-items: center;
       flex-wrap: wrap;
-      margin-bottom: 36px;
+      margin-bottom: 24px;
     }
 
     .hero-stats-strip {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-      padding-top: 28px;
+      gap: 12px;
+      padding-top: 20px;
       border-top: 1px solid var(--border-subtle);
     }
 
@@ -384,17 +387,19 @@
 
     .hero-stat-label {
       font-family: var(--font-mono);
-      font-size: 10.5px;
+      font-size: 10px;
       color: var(--text-muted);
       text-transform: uppercase;
       margin-top: 2px;
     }
 
-    /* Hero Portrait / Chassis Frame */
+    /* Subhajit's Portrait Chassis Frame (ENLARGED & CRISP) */
     .hero-visual {
       position: relative;
       display: flex;
       justify-content: center;
+      align-items: flex-start;
+      width: 100%;
     }
 
     .chassis-wrapper {
@@ -403,8 +408,8 @@
       background: #090909;
       border: 1px solid var(--border-medium);
       padding: 12px;
-      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.9), 0 0 0 1px rgba(255, 255, 255, 0.05);
-      max-width: 360px;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.95), 0 0 0 1px rgba(255, 255, 255, 0.06);
+      max-width: 490px;
       width: 100%;
     }
 
@@ -412,9 +417,9 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 6px 8px 12px;
+      padding: 4px 8px 10px;
       border-bottom: 1px solid var(--border-subtle);
-      margin-bottom: 12px;
+      margin-bottom: 10px;
       font-family: var(--font-mono);
       font-size: 10px;
       color: var(--text-muted);
@@ -429,34 +434,42 @@
       width: 6px;
       height: 6px;
       border-radius: 50%;
-      background: #222;
+      background: #2a2a2a;
+    }
+
+    .chassis-dots span.red {
+      background: var(--nothing-red);
+      box-shadow: 0 0 6px var(--nothing-red);
     }
 
     .chassis-image-box {
-      aspect-ratio: 1/1;
+      width: 100%;
+      height: 520px;
       border-radius: 8px;
       overflow: hidden;
       background: #141414;
       border: 1px solid var(--border-subtle);
+      position: relative;
     }
 
     .chassis-image-box img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      filter: grayscale(15%) contrast(1.05);
-      transition: filter 0.3s ease;
+      object-position: center 12%;
+      filter: none; /* Keep natural crisp colors */
+      transition: transform 0.4s ease;
     }
 
-    .chassis-image-box img:hover {
-      filter: grayscale(0%) contrast(1.1);
+    .chassis-image-box:hover img {
+      transform: scale(1.02);
     }
 
     .chassis-footer {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      margin-top: 12px;
+      margin-top: 10px;
       padding-top: 8px;
       font-family: var(--font-mono);
       font-size: 11px;
@@ -464,28 +477,28 @@
     }
 
     /* ==========================================================================
-       NOTHING OS TICKER / MARQUEE
+       TICKER / MARQUEE STRIP
        ========================================================================== */
     .ticker-wrap {
       border-top: 1px solid var(--border-subtle);
       border-bottom: 1px solid var(--border-subtle);
       background: #040404;
-      padding: 18px 0;
+      padding: 16px 0;
       overflow: hidden;
       white-space: nowrap;
     }
 
     .ticker-track {
       display: inline-flex;
-      animation: tickerLoop 32s linear infinite;
+      animation: tickerLoop 30s linear infinite;
     }
 
     .ticker-item {
       display: inline-flex;
       align-items: center;
-      gap: 18px;
+      gap: 16px;
       font-family: var(--font-dots);
-      font-size: 15px;
+      font-size: 14.5px;
       text-transform: uppercase;
       letter-spacing: 0.08em;
       color: var(--text-dim);
@@ -502,6 +515,71 @@
     @keyframes tickerLoop {
       0% { transform: translateX(0); }
       100% { transform: translateX(-50%); }
+    }
+
+    /* ==========================================================================
+       ABOUT ME / BIO SECTION (DETAILED STORY)
+       ========================================================================== */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 40px;
+      align-items: start;
+    }
+
+    .about-bio-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 12px;
+      padding: 32px;
+    }
+
+    .about-bio-card p {
+      font-size: 1.05rem;
+      margin-bottom: 20px;
+      line-height: 1.75;
+    }
+
+    .about-bio-card p strong {
+      color: #ffffff;
+    }
+
+    .identity-table {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 12px;
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .identity-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .identity-row:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .identity-key {
+      font-family: var(--font-mono);
+      font-size: 11.5px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+    }
+
+    .identity-val {
+      font-family: var(--font-mono);
+      font-size: 13px;
+      color: #ffffff;
+      font-weight: 500;
+      text-align: right;
     }
 
     /* ==========================================================================
@@ -691,61 +769,84 @@
     }
 
     /* ==========================================================================
-       TIMELINE & EXPERIENCE / EDUCATION
+       MY JOURNEY & EDUCATION (SCHOOL + COLLEGE HIGHLIGHTS)
        ========================================================================== */
-    .timeline-wrap {
+    .journey-timeline-grid {
       display: flex;
       flex-direction: column;
-      gap: 16px;
+      gap: 20px;
     }
 
-    .timeline-item {
+    .journey-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 12px;
+      padding: 30px;
       display: grid;
       grid-template-columns: 240px 1fr;
       gap: 32px;
-      padding: 24px;
-      background: var(--bg-card);
-      border: 1px solid var(--border-subtle);
-      border-radius: 8px;
-      transition: border-color 0.2s ease;
+      transition: all 0.2s ease;
     }
 
-    .timeline-item:hover {
+    .journey-card:hover {
       border-color: var(--border-strong);
+      background: var(--bg-card-hover);
     }
 
-    .timeline-meta {
+    .journey-card.featured-edu {
+      border-left: 4px solid var(--nothing-red);
+    }
+
+    .journey-meta {
       font-family: var(--font-mono);
       font-size: 12px;
       color: var(--nothing-red);
       font-weight: 600;
     }
 
-    .timeline-meta span.sub {
+    .journey-meta span.sub {
       display: block;
       color: var(--text-muted);
       font-size: 11px;
-      margin-top: 4px;
+      margin-top: 6px;
       font-weight: 400;
     }
 
-    .timeline-content h3 {
+    .journey-content h3 {
       font-family: var(--font-heading);
-      font-size: 1.3rem;
+      font-size: 1.4rem;
       color: #fff;
       margin-bottom: 4px;
     }
 
-    .timeline-role {
+    .journey-role {
       font-family: var(--font-mono);
-      font-size: 12px;
+      font-size: 12.5px;
       color: var(--accent-cyan);
       margin-bottom: 12px;
     }
 
-    .timeline-content p {
-      font-size: 0.96rem;
-      line-height: 1.6;
+    .journey-content p {
+      font-size: 0.98rem;
+      line-height: 1.7;
+      margin-bottom: 12px;
+    }
+
+    .journey-highlights {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 14px;
+    }
+
+    .journey-tag {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      padding: 3px 10px;
+      border-radius: 4px;
+      background: #141414;
+      border: 1px solid #282828;
+      color: var(--text-dim);
     }
 
     /* ==========================================================================
@@ -818,7 +919,7 @@
       border-bottom: 1px solid var(--border-subtle);
       padding: 36px 40px;
       border-radius: 0 10px 10px 0;
-      margin: 40px 0;
+      margin: 20px 0 40px;
     }
 
     .quote-text {
@@ -839,7 +940,7 @@
     }
 
     /* ==========================================================================
-       CONTACT FORM
+       CONTACT FORM & CONNECT
        ========================================================================== */
     .contact-grid {
       display: grid;
@@ -946,19 +1047,18 @@
        RESPONSIVE BREAKPOINTS
        ========================================================================== */
     @media (max-width: 900px) {
-      .hero-grid, .flagship-inner, .contact-grid {
+      .hero-grid, .flagship-inner, .about-grid, .journey-card, .contact-grid {
         grid-template-columns: 1fr;
-        gap: 40px;
+        gap: 36px;
       }
       .hero-visual {
         order: -1;
       }
       .chassis-wrapper {
-        max-width: 280px;
+        max-width: 400px;
       }
-      .timeline-item {
-        grid-template-columns: 1fr;
-        gap: 12px;
+      .chassis-image-box {
+        height: 440px;
       }
       .nav-links {
         display: none;
@@ -983,8 +1083,8 @@
       <nav class="nav-links">
         <a href="#about">About</a>
         <a href="#flagships">Flagships</a>
+        <a href="#journey">Journey</a>
         <a href="#projects">Works</a>
-        <a href="#experience">Experience</a>
         <a href="#toolkit">Toolkit</a>
         <a href="#contact">Contact</a>
       </nav>
@@ -997,8 +1097,8 @@
   </header>
 
   <!-- ==========================================================================
-       HERO SECTION
-       ========================================================================== */
+       HERO SECTION (TIGHTENED GAP & PROMINENT PORTRAIT)
+       ========================================================================== -->
   <section class="hero" id="about">
     <div class="container">
       <div class="hero-grid">
@@ -1014,7 +1114,7 @@
           </h1>
 
           <p class="hero-lead">
-            Hi, I&apos;m <strong>Subhajit Das (Krish)</strong>. I design and build privacy-first, on-device software architectures and intelligent AI pipelines. Creator of <strong>Solutions Drawer</strong> and <strong>Findrr</strong>. Pursuing B.Tech in CSE (AIML) at Brainware University.
+            Hi, I&apos;m <strong>Subhajit Das (Krish)</strong>. I design and engineer privacy-first on-device software, zero-trust cloud architectures, and intelligent AI pipelines. Creator of <strong>Solutions Drawer</strong> and <strong>Findrr</strong>. Pursuing B.Tech in CSE (AIML) at Brainware University.
           </p>
 
           <div class="hero-cta-group">
@@ -1028,7 +1128,7 @@
             </a>
             <a href="#contact" class="btn-nothing">
               <i class="fa-solid fa-paper-plane"></i>
-              <span>CONTACT</span>
+              <span>CONTACT ME</span>
             </a>
           </div>
 
@@ -1048,20 +1148,21 @@
           </div>
         </div>
 
+        <!-- Big, Crisp Portrait Chassis -->
         <div class="hero-visual">
           <div class="chassis-wrapper">
             <div class="chassis-header">
-              <span>SUBHAJIT_PROFILE_CHASSIS</span>
+              <span>SUBHAJIT_DAS_PORTRAIT.RAW</span>
               <div class="chassis-dots">
-                <span></span><span></span><span></span>
+                <span class="red"></span><span></span><span></span>
               </div>
             </div>
             <div class="chassis-image-box">
-              <img src="assets/145341.jpg" alt="Subhajit Das" onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&auto=format&fit=crop'">
+              <img src="assets/145341.jpg" alt="Subhajit Das (Krish)" onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&auto=format&fit=crop'">
             </div>
             <div class="chassis-footer">
-              <span class="font-mono">&bull; SOVEREIGN_ID_OK</span>
-              <span class="font-dots" style="color: var(--nothing-red);">ONLINE</span>
+              <span class="font-mono">&bull; B.TECH AIML &bull; BUILDER</span>
+              <span class="font-dots" style="color: var(--accent-green);">ACTIVE</span>
             </div>
           </div>
         </div>
@@ -1076,6 +1177,7 @@
     <div class="ticker-track">
       <div class="ticker-item"><span>Solutions Drawer</span><span class="dot"></span></div>
       <div class="ticker-item"><span>Findrr Finance Vault</span><span class="dot"></span></div>
+      <div class="ticker-item"><span>Brainware University (AIML)</span><span class="dot"></span></div>
       <div class="ticker-item"><span>Zero-Trust Architecture</span><span class="dot"></span></div>
       <div class="ticker-item"><span>On-Device Machine Learning</span><span class="dot"></span></div>
       <div class="ticker-item"><span>Prompt Engineering</span><span class="dot"></span></div>
@@ -1085,6 +1187,7 @@
       <!-- Duplicate for infinite loop -->
       <div class="ticker-item"><span>Solutions Drawer</span><span class="dot"></span></div>
       <div class="ticker-item"><span>Findrr Finance Vault</span><span class="dot"></span></div>
+      <div class="ticker-item"><span>Brainware University (AIML)</span><span class="dot"></span></div>
       <div class="ticker-item"><span>Zero-Trust Architecture</span><span class="dot"></span></div>
       <div class="ticker-item"><span>On-Device Machine Learning</span><span class="dot"></span></div>
       <div class="ticker-item"><span>Prompt Engineering</span><span class="dot"></span></div>
@@ -1093,6 +1196,69 @@
       <div class="ticker-item"><span>Cloudflare Edge &bull; SQLite</span><span class="dot"></span></div>
     </div>
   </div>
+
+  <!-- ==========================================================================
+       ABOUT ME: PERSONAL STORY & BACKGROUND
+       ========================================================================== -->
+  <section id="bio">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-eyebrow">
+          <span class="led"></span>
+          <span>BACKGROUND &amp; IDENTITY</span>
+        </div>
+        <h2 class="section-title">THE ARCHITECT'S STORY</h2>
+        <p class="section-subtitle">
+          From self-taught experimentation to architecting sovereign systems and neural pipelines.
+        </p>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-bio-card">
+          <p>
+            I am deeply fascinated by the intersection of <strong>artificial intelligence</strong>, <strong>human-computer interaction</strong>, and <strong>privacy sovereignty</strong>. I don&apos;t just study computer science theory; I learn by building complete, production-grade applications that solve genuine real-world friction.
+          </p>
+          <p>
+            As a self-taught prompt engineer and AI developer, I orchestrate multi-agent LLM systems and local models. In parallel, my training in <strong>Customer Experience (CX)</strong> ensures that the software I engineer is not just functionally robust, but deeply empathetic and effortless for end users.
+          </p>
+          <p>
+            My daily engineering toolkit spans Python, C++, TypeScript, Next.js, and Flutter, backed by machine learning libraries like PyTorch and NumPy, and deployed to on-device SQLite and edge cloud runtimes.
+          </p>
+        </div>
+
+        <div class="identity-table">
+          <div class="identity-row">
+            <span class="identity-key">Full Name</span>
+            <span class="identity-val">Subhajit Das</span>
+          </div>
+          <div class="identity-row">
+            <span class="identity-key">Known As</span>
+            <span class="identity-val" style="color: var(--nothing-red); font-weight: 700;">Krish</span>
+          </div>
+          <div class="identity-row">
+            <span class="identity-key">Hometown</span>
+            <span class="identity-val">Arambagh, West Bengal</span>
+          </div>
+          <div class="identity-row">
+            <span class="identity-key">Current Base</span>
+            <span class="identity-val">Kolkata, WB, India</span>
+          </div>
+          <div class="identity-row">
+            <span class="identity-key">Languages</span>
+            <span class="identity-val">English &bull; Hindi &bull; Bengali</span>
+          </div>
+          <div class="identity-row">
+            <span class="identity-key">Work Model</span>
+            <span class="identity-val" style="color: var(--accent-green);">Remote &bull; High Ownership</span>
+          </div>
+          <div class="identity-row">
+            <span class="identity-key">Academic Status</span>
+            <span class="identity-val">B.Tech CSE AIML (8.43 CGPA)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- ==========================================================================
        PRIMARY FLAGSHIPS: SOLUTIONS DRAWER & FINDRR
@@ -1230,6 +1396,138 @@
   </section>
 
   <!-- ==========================================================================
+       MY JOURNEY: COLLEGE, SCHOOL & MILESTONES (DETAILED)
+       ========================================================================== -->
+  <section id="journey">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-eyebrow">
+          <span class="led"></span>
+          <span>ACADEMIC FOUNDATION &amp; MILESTONES</span>
+        </div>
+        <h2 class="section-title">MY JOURNEY</h2>
+        <p class="section-subtitle">
+          From my foundational schooling in Arambagh to university engineering and national technical hackathons.
+        </p>
+      </div>
+
+      <div class="journey-timeline-grid">
+        
+        <!-- COLLEGE / UNIVERSITY -->
+        <div class="journey-card featured-edu">
+          <div class="journey-meta">
+            2025 &mdash; 2029
+            <span class="sub" style="color: var(--accent-green); font-weight: 700;">CURRENT DEGREE</span>
+            <span class="sub">Higher Education</span>
+          </div>
+          <div class="journey-content">
+            <h3>Brainware University</h3>
+            <div class="journey-role">B.Tech in Computer Science &amp; Engineering (AIML) &bull; CGPA: 8.43</div>
+            <p>
+              Pursuing my undergraduate degree with a specialization in Artificial Intelligence and Machine Learning. Consistently maintaining high academic ranking with a current CGPA of <strong>8.43</strong>. Coursework focuses on mathematical algorithms, neural architectures, distributed computing, and artificial intelligence safety.
+            </p>
+            <div class="journey-highlights">
+              <span class="journey-tag">Neural Networks</span>
+              <span class="journey-tag">Deep Learning</span>
+              <span class="journey-tag">Data Structures &amp; Algorithms</span>
+              <span class="journey-tag">Discrete Mathematics</span>
+              <span class="journey-tag">Optimization Techniques</span>
+            </div>
+            <div style="margin-top: 14px;">
+              <a href="https://maps.app.goo.gl/hvu5bNGFRF4MAfDh6" target="_blank" rel="noreferrer" style="font-family: var(--font-mono); font-size: 11.5px; color: var(--accent-cyan);">
+                <i class="fa-solid fa-location-dot" style="margin-right: 6px;"></i>View University Campus (Barasat, Kolkata)
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- SCHOOL / HIGHER SECONDARY -->
+        <div class="journey-card">
+          <div class="journey-meta">
+            HIGHER SECONDARY
+            <span class="sub">Schooling Milestone</span>
+            <span class="sub">Arambagh, Hooghly</span>
+          </div>
+          <div class="journey-content">
+            <h3>Arambagh High School</h3>
+            <div class="journey-role">Higher Secondary (Class XI &amp; XII) &bull; Pure Science &amp; Mathematics</div>
+            <p>
+              Completed my higher secondary education with a rigorous academic curriculum focused on advanced mathematics, physics, and chemistry. Developed analytical rigor and fundamental problem-solving principles that form the bedrock of my engineering journey.
+            </p>
+            <div class="journey-highlights">
+              <span class="journey-tag">Advanced Mathematics</span>
+              <span class="journey-tag">Physics</span>
+              <span class="journey-tag">Chemistry</span>
+              <span class="journey-tag">Computer Application</span>
+            </div>
+            <div style="margin-top: 14px;">
+              <a href="https://maps.app.goo.gl/FpSGdfTFCS8upqmZ8" target="_blank" rel="noreferrer" style="font-family: var(--font-mono); font-size: 11.5px; color: var(--accent-cyan);">
+                <i class="fa-solid fa-location-dot" style="margin-right: 6px;"></i>View School Location (Arambagh, Hooghly)
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- NATIONAL HACKATHON: SIH -->
+        <div class="journey-card">
+          <div class="journey-meta">
+            2026 &mdash; PRESENT
+            <span class="sub">National Competition</span>
+          </div>
+          <div class="journey-content">
+            <h3>Smart India Hackathon (SIH)</h3>
+            <div class="journey-role">Societal Innovation Collaboration Portal</div>
+            <p>
+              Building a centralized, AI-enabled digital platform to connect citizens reporting local community issues with Higher Education Institutions (HEIs) and industry partners. Features automated problem categorization, intelligent routing, and workflow verification.
+            </p>
+            <div class="journey-highlights">
+              <span class="journey-tag">AI Categorization</span>
+              <span class="journey-tag">Public HEI Portal</span>
+              <span class="journey-tag">Civic Tech</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- HP CX CERTIFICATION -->
+        <div class="journey-card">
+          <div class="journey-meta">
+            CERTIFICATION
+            <span class="sub">Enterprise CX Strategy</span>
+          </div>
+          <div class="journey-content">
+            <h3>HP Customer Experience (CX)</h3>
+            <div class="journey-role">Customer Journey &amp; Retention Architecture</div>
+            <p>
+              Mastered Net Promoter Score (NPS) telemetry to protect at-risk client accounts, mapping friction points across user touchpoints to design software that delivers empathetic, effortless customer journeys.
+            </p>
+            <div style="margin-top: 14px;">
+              <a href="https://www.life-global.org/certificate/4438a77d-669b-41f9-ac61-955cb9058235" target="_blank" rel="noreferrer" style="font-family: var(--font-mono); font-size: 11.5px; color: var(--accent-cyan);">
+                <i class="fa-solid fa-link" style="margin-right: 6px;"></i>View Credential Verification
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- FORAGE AI SIMULATION -->
+        <div class="journey-card">
+          <div class="journey-meta">
+            JOB SIMULATION
+            <span class="sub">AI Engineering</span>
+          </div>
+          <div class="journey-content">
+            <h3>Partnering with AI (Forage)</h3>
+            <div class="journey-role">Prompt Engineering &amp; AI-Assisted Debugging</div>
+            <p>
+              Developed advanced competencies in writing high-leverage prompts, orchestrating multimodal AI tools for design synthesis, and leveraging AI models for automated code review and debugging.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
        ADDITIONAL WORKS & AI SYSTEMS
        ========================================================================== -->
   <section id="projects">
@@ -1337,90 +1635,6 @@
       <div class="quote-author">&mdash; Subhajit Das &bull; Personal Engineering Philosophy</div>
     </div>
   </div>
-
-  <!-- ==========================================================================
-       EXPERIENCE & EDUCATION TIMELINE
-       ========================================================================== -->
-  <section id="experience">
-    <div class="container">
-      <div class="section-header">
-        <div class="section-eyebrow">
-          <span class="led"></span>
-          <span>MILESTONES &amp; JOURNEY</span>
-        </div>
-        <h2 class="section-title">EXPERIENCE &amp; EDUCATION</h2>
-        <p class="section-subtitle">
-          Academic foundation in Artificial Intelligence coupled with practical hackathons and customer experience leadership.
-        </p>
-      </div>
-
-      <div class="timeline-wrap">
-        
-        <div class="timeline-item">
-          <div class="timeline-meta">
-            2026 &mdash; PRESENT
-            <span class="sub">National Initiative</span>
-          </div>
-          <div class="timeline-content">
-            <h3>Smart India Hackathon (SIH)</h3>
-            <div class="timeline-role">Societal Innovation Collaboration Portal</div>
-            <p>
-              Building a centralized, AI-enabled digital platform to connect citizens reporting local community issues with Higher Education Institutions (HEIs) and industry partners. Features automated problem categorization, intelligent routing, and workflow verification.
-            </p>
-          </div>
-        </div>
-
-        <div class="timeline-item">
-          <div class="timeline-meta">
-            2025 &mdash; 2029
-            <span class="sub">Higher Education</span>
-          </div>
-          <div class="timeline-content">
-            <h3>Brainware University</h3>
-            <div class="timeline-role">B.Tech in Computer Science &amp; Engineering (AIML) &bull; CGPA 8.43</div>
-            <p>
-              Pursuing a rigorous degree specializing in Artificial Intelligence and Machine Learning. Consistently maintaining high academic excellence with in-depth study of algorithms, neural architectures, and software engineering principles.
-            </p>
-            <a href="https://maps.app.goo.gl/hvu5bNGFRF4MAfDh6" target="_blank" rel="noreferrer" style="font-family: var(--font-mono); font-size: 11px; color: var(--accent-cyan); display: inline-block; margin-top: 8px;">
-              <i class="fa-solid fa-location-dot" style="margin-right: 6px;"></i>View Campus Location
-            </a>
-          </div>
-        </div>
-
-        <div class="timeline-item">
-          <div class="timeline-meta">
-            CERTIFICATION
-            <span class="sub">Enterprise Simulation</span>
-          </div>
-          <div class="timeline-content">
-            <h3>HP Customer Experience (CX)</h3>
-            <div class="timeline-role">Customer Journey &amp; Retention Architecture</div>
-            <p>
-              Mastered Net Promoter Score (NPS) telemetry to protect at-risk client accounts, mapping friction points across user touchpoints to design software that delivers empathetic, effortless customer journeys.
-            </p>
-            <a href="https://www.life-global.org/certificate/4438a77d-669b-41f9-ac61-955cb9058235" target="_blank" rel="noreferrer" style="font-family: var(--font-mono); font-size: 11px; color: var(--accent-cyan); display: inline-block; margin-top: 8px;">
-              <i class="fa-solid fa-link" style="margin-right: 6px;"></i>View Credential
-            </a>
-          </div>
-        </div>
-
-        <div class="timeline-item">
-          <div class="timeline-meta">
-            JOB SIMULATION
-            <span class="sub">AI Collaboration</span>
-          </div>
-          <div class="timeline-content">
-            <h3>Partnering with AI (Forage)</h3>
-            <div class="timeline-role">Prompt Engineering &amp; AI-Assisted Debugging</div>
-            <p>
-              Developed advanced competencies in writing high-leverage prompts, orchestrating multimodal AI tools for design synthesis, and leveraging AI models for automated code review and debugging.
-            </p>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
 
   <!-- ==========================================================================
        TECHNICAL TOOLKIT
