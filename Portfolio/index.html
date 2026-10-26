@@ -2507,5 +2507,12 @@ Status   : Open for Software Engineering Roles & AI Collaborations`,
         }
       }
     });
+
+    // Explicit global exposure for inline HTML onclick handlers
+    window.toggleTerminalMode = toggleTerminalMode;
+    window.runTerminalCommand = runTerminalCommand;
+    window.handleTerminalOverlayClick = handleTerminalOverlayClick;
+    window.handleContactSubmit = handleContactSubmit;
+  </script>
 </body>
 </html>
