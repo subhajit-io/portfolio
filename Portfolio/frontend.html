@@ -15,14 +15,14 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
 
-  <!-- Google Fonts: Doto (Nothing OS Dot Matrix), Inter, Space Grotesk, JetBrains Mono -->
+  <!-- Google Fonts: Doto (Dot Matrix), Inter, Space Grotesk, JetBrains Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Doto:wght,ROND@400..900,100&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
     /* ==========================================================================
-       SOLUTIONS DRAWER DESIGN SYSTEM — NOTHING OS MINIMALIST PALETTE
+       SOLUTIONS DRAWER DESIGN SYSTEM — INDUSTRIAL MINIMALIST PALETTE
        ========================================================================== */
     :root {
       --bg-primary: #000000;
@@ -33,8 +33,8 @@
       --border-medium: #282828;
       --border-strong: #3e3e3e;
       
-      --nothing-red: #d71921;
-      --nothing-red-glow: rgba(215, 25, 33, 0.45);
+      --accent-red: #d71921;
+      --accent-red-glow: rgba(215, 25, 33, 0.45);
       --accent-green: #00e676;
       --accent-green-dim: rgba(0, 230, 118, 0.15);
       --accent-green-glow: rgba(0, 230, 118, 0.45);
@@ -70,7 +70,7 @@
       font-weight: 400;
       line-height: 1.6;
       overflow-x: hidden;
-      /* Nothing OS subtle dot-matrix canvas texture */
+      /* Subtle dot-matrix canvas texture */
       background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
       background-size: 24px 24px;
       background-attachment: fixed;
@@ -142,7 +142,7 @@
       font-size: 11px;
       text-transform: uppercase;
       letter-spacing: 0.15em;
-      color: var(--nothing-red);
+      color: var(--accent-red);
       margin-bottom: 10px;
     }
 
@@ -154,8 +154,8 @@
       width: 6px;
       height: 6px;
       border-radius: 50%;
-      background: var(--nothing-red);
-      box-shadow: 0 0 8px var(--nothing-red);
+      background: var(--accent-red);
+      box-shadow: 0 0 8px var(--accent-red);
     }
 
     .section-eyebrow.eyebrow-green .led,
@@ -180,9 +180,9 @@
     }
 
     /* ==========================================================================
-       NOTHING OS BUTTONS
+       MINIMALIST INDUSTRIAL BUTTONS
        ========================================================================== */
-    .btn-nothing {
+    .btn-minimal {
       display: inline-flex;
       align-items: center;
       justify-content: center;
@@ -201,33 +201,33 @@
       transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
-    .btn-nothing:hover {
+    .btn-minimal:hover {
       background: #141414;
       border-color: #ffffff;
       transform: translateY(-2px);
       box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7);
     }
 
-    .btn-nothing-red {
-      background: var(--nothing-red);
-      border-color: var(--nothing-red);
+    .btn-minimal-red {
+      background: var(--accent-red);
+      border-color: var(--accent-red);
       color: #ffffff;
     }
 
-    .btn-nothing-red:hover {
+    .btn-minimal-red:hover {
       background: #e51d26;
       border-color: #ff3840;
-      box-shadow: 0 0 24px var(--nothing-red-glow), 0 4px 14px rgba(0, 0, 0, 0.8);
+      box-shadow: 0 0 24px var(--accent-red-glow), 0 4px 14px rgba(0, 0, 0, 0.8);
       transform: translateY(-2px);
     }
 
-    .btn-nothing-green {
+    .btn-minimal-green {
       background: #032b17;
       border-color: var(--accent-green);
       color: #00e676;
     }
 
-    .btn-nothing-green:hover {
+    .btn-minimal-green:hover {
       background: var(--accent-green);
       border-color: #55ff99;
       color: #000000;
@@ -280,7 +280,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      color: var(--nothing-red);
+      color: var(--accent-red);
       font-size: 11px;
     }
 
@@ -333,9 +333,9 @@
 
     .terminal-toggle-btn.active {
       background: rgba(215, 25, 33, 0.16);
-      border-color: var(--nothing-red);
+      border-color: var(--accent-red);
       color: #ffffff;
-      box-shadow: 0 0 14px var(--nothing-red-glow);
+      box-shadow: 0 0 14px var(--accent-red-glow);
     }
 
     .terminal-toggle-btn .term-led {
@@ -425,7 +425,7 @@
     }
 
     .hero-title span.accent-red {
-      color: var(--nothing-red);
+      color: var(--accent-red);
     }
 
     .hero-lead {
@@ -523,8 +523,8 @@
     }
 
     .chassis-dots span.red {
-      background: var(--nothing-red);
-      box-shadow: 0 0 6px var(--nothing-red);
+      background: var(--accent-red);
+      box-shadow: 0 0 6px var(--accent-red);
     }
 
     .chassis-dots span.green {
@@ -599,7 +599,7 @@
       width: 6px;
       height: 6px;
       border-radius: 50%;
-      background: var(--nothing-red);
+      background: var(--accent-red);
     }
 
     .ticker-item .dot.dot-green {
@@ -791,7 +791,7 @@
     }
 
     .flagship-card.featured-accent:hover {
-      border-color: var(--nothing-red);
+      border-color: var(--accent-red);
       box-shadow: 0 16px 48px rgba(215, 25, 33, 0.22);
     }
 
@@ -994,7 +994,7 @@
     .journey-meta {
       font-family: var(--font-mono);
       font-size: 12px;
-      color: var(--nothing-red);
+      color: var(--accent-red);
       font-weight: 600;
     }
 
@@ -1044,7 +1044,7 @@
     }
 
     /* ==========================================================================
-       TOOLKIT & SKILLS (NOTHING OS CHIPS)
+       TOOLKIT & SKILLS CHIPS
        ========================================================================== */
     .skills-grid {
       display: grid;
@@ -1120,7 +1120,7 @@
        ========================================================================== */
     .quote-card {
       background: #060606;
-      border-left: 3px solid var(--nothing-red);
+      border-left: 3px solid var(--accent-red);
       border-top: 1px solid var(--border-subtle);
       border-right: 1px solid var(--border-subtle);
       border-bottom: 1px solid var(--border-subtle);
@@ -1141,7 +1141,7 @@
     .quote-author {
       font-family: var(--font-mono);
       font-size: 11.5px;
-      color: var(--nothing-red);
+      color: var(--accent-red);
       text-transform: uppercase;
       letter-spacing: 0.1em;
     }
@@ -1223,7 +1223,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      color: var(--nothing-red);
+      color: var(--accent-red);
       flex-shrink: 0;
     }
 
@@ -1251,7 +1251,7 @@
     }
 
     /* ==========================================================================
-       NOTHING OS SOVEREIGN TERMINAL OVERLAY & DECK
+       SOVEREIGN TERMINAL OVERLAY & DECK
        ========================================================================== */
     .terminal-overlay {
       position: fixed;
@@ -1313,8 +1313,8 @@
     }
 
     .terminal-dots .dot-red {
-      background: var(--nothing-red);
-      box-shadow: 0 0 6px var(--nothing-red);
+      background: var(--accent-red);
+      box-shadow: 0 0 6px var(--accent-red);
     }
 
     .terminal-dots .dot-yellow {
@@ -1370,7 +1370,7 @@
     .terminal-ascii {
       font-size: 10px;
       line-height: 1.15;
-      color: var(--nothing-red);
+      color: var(--accent-red);
       margin-bottom: 10px;
       overflow-x: auto;
       user-select: none;
@@ -1379,7 +1379,7 @@
     .term-intro-text {
       color: var(--text-dim);
       font-size: 11.5px;
-      border-left: 2px solid var(--nothing-red);
+      border-left: 2px solid var(--accent-red);
       padding-left: 10px;
       margin-bottom: 16px;
       line-height: 1.6;
@@ -1416,7 +1416,7 @@
       color: #ffffff;
       font-family: 'JetBrains Mono', 'Consolas', monospace;
       font-size: 13px;
-      caret-color: var(--nothing-red);
+      caret-color: var(--accent-red);
     }
 
     .terminal-output-block {
@@ -1521,7 +1521,7 @@
 
       <div class="nav-right-group">
         <button id="terminal-toggle-btn" class="terminal-toggle-btn" onclick="toggleTerminalMode()" title="Toggle Solutions Drawer Terminal (Ctrl+` or Click)">
-          <i class="fa-solid fa-terminal" style="color: var(--nothing-red);"></i>
+          <i class="fa-solid fa-terminal" style="color: var(--accent-red);"></i>
           <span class="terminal-btn-label">TERMINAL</span>
           <span class="term-led"></span>
         </button>
@@ -1535,7 +1535,7 @@
   </header>
 
   <!-- ==========================================================================
-       SOLUTIONS DRAWER TERMINAL OVERLAY DECK (NOTHING OS INDUSTRIAL SHELL)
+       SOLUTIONS DRAWER TERMINAL OVERLAY DECK (INDUSTRIAL SHELL)
        ========================================================================== -->
   <div id="terminal-overlay" class="terminal-overlay" style="display: none;" onclick="handleTerminalOverlayClick(event)">
     <div class="terminal-window" onclick="event.stopPropagation()">
@@ -1546,7 +1546,7 @@
           <span class="dot-green"></span>
         </div>
         <div class="terminal-title">
-          <i class="fa-solid fa-terminal" style="color: var(--nothing-red);"></i>
+          <i class="fa-solid fa-terminal" style="color: var(--accent-red);"></i>
           <span>SUBHAJIT_OS // SOLUTIONS_DRAWER_TERMINAL_V2.6 &bull; BASH</span>
         </div>
         <button class="terminal-close-btn" onclick="toggleTerminalMode()" title="Close Terminal (ESC)">
@@ -1620,15 +1620,15 @@
           </p>
 
           <div class="hero-cta-group">
-            <a href="#flagships" class="btn-nothing btn-nothing-red">
+            <a href="#flagships" class="btn-minimal btn-minimal-red">
               <i class="fa-solid fa-layer-group"></i>
               <span>EXPLORE FLAGSHIPS</span>
             </a>
-            <a href="https://canva.link/cpc3vxhkdja03dc" target="_blank" rel="noreferrer" class="btn-nothing">
+            <a href="https://canva.link/cpc3vxhkdja03dc" target="_blank" rel="noreferrer" class="btn-minimal">
               <i class="fa-solid fa-file-pdf"></i>
               <span>VIEW RESUME</span>
             </a>
-            <a href="#contact" class="btn-nothing">
+            <a href="#contact" class="btn-minimal">
               <i class="fa-solid fa-paper-plane"></i>
               <span>CONTACT ME</span>
             </a>
@@ -1735,7 +1735,7 @@
           </div>
           <div class="identity-row">
             <span class="identity-key">Known As</span>
-            <span class="identity-val" style="color: var(--nothing-red); font-weight: 700;">Krish</span>
+            <span class="identity-val" style="color: var(--accent-red); font-weight: 700;">Krish</span>
           </div>
           <div class="identity-row">
             <span class="identity-key">Hometown</span>
@@ -1772,11 +1772,11 @@
       <div class="work-pref-deck">
         <div class="pref-card">
           <div class="pref-card-badge">
-            <span class="led" style="background: var(--nothing-red); box-shadow: 0 0 8px var(--nothing-red);"></span>
+            <span class="led" style="background: var(--accent-red); box-shadow: 0 0 8px var(--accent-red);"></span>
             <span>WORK STYLE // ENVIRONMENT</span>
           </div>
           <div class="pref-card-title">
-            <i class="fa-solid fa-rocket" style="color: var(--nothing-red); font-size: 1rem;"></i>
+            <i class="fa-solid fa-rocket" style="color: var(--accent-red); font-size: 1rem;"></i>
             Startup Leadership
           </div>
           <p class="pref-card-desc">
@@ -1853,12 +1853,12 @@
           <div class="flagship-inner">
             <div>
               <div class="flagship-badge">
-                <i class="fa-solid fa-shield-halved" style="color: var(--nothing-red);"></i>
+                <i class="fa-solid fa-shield-halved" style="color: var(--accent-red);"></i>
                 <span>FLAGSHIP 01 &bull; ANDROID ECOSYSTEM</span>
               </div>
               <h3 class="flagship-title">SOLUTIONS DRAWER</h3>
               <p class="flagship-desc">
-                A minimalist, sovereign Android Web App Store & PWA platform designed to eliminate Big Tech telemetry and monopoly control. Features client-side zero-trust security auditing, Nothing OS dot-matrix design, and high-speed verified binary distribution.
+                A minimalist, sovereign Android Web App Store & PWA platform designed to eliminate Big Tech telemetry and monopoly control. Features client-side zero-trust security auditing, precision dot-matrix design, and high-speed verified binary distribution.
               </p>
 
               <ul class="flagship-features">
@@ -1886,11 +1886,11 @@
               </div>
 
               <div style="display: flex; gap: 12px; flex-wrap: wrap;">
-                <a href="https://solutionsdrawer.pages.dev" target="_blank" rel="noreferrer" class="btn-nothing btn-nothing-red">
+                <a href="https://solutionsdrawer.pages.dev" target="_blank" rel="noreferrer" class="btn-minimal btn-minimal-red">
                   <i class="fa-solid fa-arrow-up-right-from-square"></i>
                   <span>LAUNCH STORE</span>
                 </a>
-                <a href="https://github.com/subhajit-io/solutionsdrawer" target="_blank" rel="noreferrer" class="btn-nothing">
+                <a href="https://github.com/subhajit-io/solutionsdrawer" target="_blank" rel="noreferrer" class="btn-minimal">
                   <i class="fa-brands fa-github"></i>
                   <span>SOURCE CODE</span>
                 </a>
@@ -1942,11 +1942,11 @@
               </div>
 
               <div style="display: flex; gap: 12px; flex-wrap: wrap;">
-                <a href="https://letusfindrr.pages.dev" target="_blank" rel="noreferrer" class="btn-nothing btn-nothing-green">
+                <a href="https://letusfindrr.pages.dev" target="_blank" rel="noreferrer" class="btn-minimal btn-minimal-green">
                   <i class="fa-solid fa-arrow-up-right-from-square"></i>
                   <span>EXPLORE FINDRR</span>
                 </a>
-                <a href="https://solutionsdrawer.pages.dev/app/com.solutionsdrawer.findrr/" target="_blank" rel="noreferrer" class="btn-nothing">
+                <a href="https://solutionsdrawer.pages.dev/app/com.solutionsdrawer.findrr/" target="_blank" rel="noreferrer" class="btn-minimal">
                   <i class="fa-solid fa-download"></i>
                   <span>STORE LISTING</span>
                 </a>
@@ -2133,7 +2133,7 @@
               <span class="tech-pill">Qwen2.5-1.5B</span>
               <span class="tech-pill">Local LLM</span>
             </div>
-            <a href="https://github.com/subhajit-io/Schegent" target="_blank" rel="noreferrer" class="btn-nothing" style="width: 100%;">
+            <a href="https://github.com/subhajit-io/Schegent" target="_blank" rel="noreferrer" class="btn-minimal" style="width: 100%;">
               <i class="fa-brands fa-github"></i>
               <span>VIEW REPO</span>
             </a>
@@ -2158,7 +2158,7 @@
               <span class="tech-pill">Big-O Analyzer</span>
               <span class="tech-pill">Secret Scan</span>
             </div>
-            <a href="https://github.com/subhajit-io/Cherm" target="_blank" rel="noreferrer" class="btn-nothing" style="width: 100%;">
+            <a href="https://github.com/subhajit-io/Cherm" target="_blank" rel="noreferrer" class="btn-minimal" style="width: 100%;">
               <i class="fa-brands fa-github"></i>
               <span>VIEW REPO</span>
             </a>
@@ -2183,7 +2183,7 @@
               <span class="tech-pill">BPE Algorithm</span>
               <span class="tech-pill">Interactive</span>
             </div>
-            <a href="https://github.com/subhajit-io/Visual-Tokenizer" target="_blank" rel="noreferrer" class="btn-nothing" style="width: 100%;">
+            <a href="https://github.com/subhajit-io/Visual-Tokenizer" target="_blank" rel="noreferrer" class="btn-minimal" style="width: 100%;">
               <i class="fa-brands fa-github"></i>
               <span>VIEW REPO</span>
             </a>
@@ -2225,7 +2225,7 @@
       <div class="skills-grid">
         
         <div class="skills-category-card">
-          <h3><i class="fa-solid fa-brain" style="color: var(--nothing-red);"></i> AI &amp; MACHINE LEARNING</h3>
+          <h3><i class="fa-solid fa-brain" style="color: var(--accent-red);"></i> AI &amp; MACHINE LEARNING</h3>
           <div class="chips-flex">
             <span class="chip chip-green"><i class="devicon-python-plain" style="color: var(--accent-green);"></i> PyTorch</span>
             <span class="chip"><i class="devicon-numpy-original"></i> NumPy</span>
@@ -2311,7 +2311,7 @@
             <textarea id="contact-message" class="form-textarea" rows="5" placeholder="How can we collaborate on intelligent systems?" required></textarea>
           </div>
 
-          <button type="submit" class="btn-nothing btn-nothing-red" style="align-self: flex-start;">
+          <button type="submit" class="btn-minimal btn-minimal-red" style="align-self: flex-start;">
             <i class="fa-solid fa-paper-plane"></i>
             <span>SEND TRANSMISSION</span>
           </button>
@@ -2403,12 +2403,16 @@
         &copy; 2026 SUBHAJIT DAS. ALL RIGHTS RESERVED. SOVEREIGN ARCHITECTURE.
       </div>
 
-      <div style="display: flex; gap: 16px; align-items: center;">
-        <a href="https://solutionsdrawer.pages.dev" target="_blank" rel="noreferrer" class="btn-nothing btn-pill" style="font-size: 10.5px; border-color: rgba(215, 25, 33, 0.3);">
-          <i class="fa-solid fa-shield-halved" style="color: var(--nothing-red);"></i>
+      <div style="display: flex; gap: 16px; align-items: center; flex-wrap: wrap;">
+        <a href="mailto:subhajit32das@gmail.com" class="btn-minimal btn-pill" style="font-size: 10.5px; border-color: rgba(56, 189, 248, 0.3);">
+          <i class="fa-solid fa-envelope" style="color: var(--accent-cyan);"></i>
+          <span>subhajit32das@gmail.com</span>
+        </a>
+        <a href="https://solutionsdrawer.pages.dev" target="_blank" rel="noreferrer" class="btn-minimal btn-pill" style="font-size: 10.5px; border-color: rgba(215, 25, 33, 0.3);">
+          <i class="fa-solid fa-shield-halved" style="color: var(--accent-red);"></i>
           <span>SOLUTIONS DRAWER</span>
         </a>
-        <a href="https://letusfindrr.pages.dev" target="_blank" rel="noreferrer" class="btn-nothing btn-pill" style="font-size: 10.5px; border-color: rgba(0, 230, 118, 0.3);">
+        <a href="https://letusfindrr.pages.dev" target="_blank" rel="noreferrer" class="btn-minimal btn-pill" style="font-size: 10.5px; border-color: rgba(0, 230, 118, 0.3);">
           <i class="fa-solid fa-wallet" style="color: var(--accent-green);"></i>
           <span>FINDRR</span>
         </a>
