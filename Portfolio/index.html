@@ -1,2874 +1,5904 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
+
   <meta charset="UTF-8">
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+
   <title>SUBHAJIT DAS — SOFTWARE ENGINEER & SOVEREIGN SYSTEM ARCHITECT</title>
+
   <meta name="description" content="Subhajit Das (Krish) — Software Engineer & AI Architect. Creator of Solutions Drawer, Findrr & Launup. B.Tech CSE (AIML) at Brainware University.">
+
   <meta name="theme-color" content="#000000">
 
+
+
   <!-- Icons -->
+
   <link rel="icon" type="image/svg+xml" href="assets/solutionsdrawer_icon.svg">
+
   <link rel="apple-touch-icon" href="assets/solutionsdrawer_logo.png">
 
+
+
   <!-- Font Awesome & Devicons -->
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
 
+
+
   <!-- Google Fonts: Doto (Dot Matrix), Inter, Space Grotesk, JetBrains Mono -->
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
+
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
   <link href="https://fonts.googleapis.com/css2?family=Doto:wght,ROND@400..900,100&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
+
+
   <style>
+
     /* ==========================================================================
+
        SOLUTIONS DRAWER DESIGN SYSTEM — INDUSTRIAL MINIMALIST PALETTE
+
        ========================================================================== */
+
     :root {
+
       --bg-primary: #000000;
+
       --bg-card: #080808;
+
       --bg-card-hover: #111111;
+
       --bg-elevated: #141414;
+
       --border-subtle: #1c1c1c;
+
       --border-medium: #282828;
+
       --border-strong: #3e3e3e;
+
       
+
       --accent-red: #d71921;
+
       --accent-red-glow: rgba(215, 25, 33, 0.45);
+
       --accent-green: #00e676;
+
       --accent-green-dim: rgba(0, 230, 118, 0.15);
+
       --accent-green-glow: rgba(0, 230, 118, 0.45);
+
       --accent-green-border: rgba(0, 230, 118, 0.35);
+
       --accent-cyan: #38bdf8;
+
       
+
       --text-main: #ffffff;
+
       --text-dim: #a1a1a1;
+
       --text-muted: #666666;
 
+
+
       --font-dots: 'Doto', sans-serif;
+
       --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+
       --font-mono: 'JetBrains Mono', monospace;
+
       --font-heading: 'Space Grotesk', sans-serif;
+
     }
+
+
 
     * {
+
       box-sizing: border-box;
+
       margin: 0;
+
       padding: 0;
+
     }
+
+
 
     html {
+
       scroll-behavior: smooth;
+
       background-color: var(--bg-primary);
+
       color-scheme: dark;
+
     }
+
+
 
     body {
+
       background-color: var(--bg-primary);
+
       color: var(--text-main);
+
       font-family: var(--font-body);
+
       font-weight: 400;
+
       line-height: 1.6;
+
       overflow-x: hidden;
+
       /* Subtle dot-matrix canvas texture */
+
       background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+
       background-size: 24px 24px;
+
       background-attachment: fixed;
+
     }
+
+
 
     ::selection {
+
       background: rgba(0, 230, 118, 0.35);
+
       color: #ffffff;
+
     }
 
+
+
     /* ==========================================================================
+
        TYPOGRAPHY UTILITIES
+
        ========================================================================== */
+
     .font-dots {
+
       font-family: var(--font-dots);
+
       font-feature-settings: "ss01" on, "cv01" on;
+
       letter-spacing: 0.03em;
+
     }
+
+
 
     .font-mono {
+
       font-family: var(--font-mono);
+
     }
+
+
 
     .font-heading {
+
       font-family: var(--font-heading);
+
     }
+
+
 
     h1, h2, h3, h4, h5 {
+
       color: var(--text-main);
+
       font-weight: 600;
+
       line-height: 1.2;
+
     }
+
+
 
     a {
+
       color: var(--text-main);
+
       text-decoration: none;
+
       transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+
     }
+
+
 
     p {
+
       color: var(--text-dim);
+
       font-size: 1rem;
+
       line-height: 1.7;
+
     }
 
+
+
     /* ==========================================================================
+
        LAYOUT & CONTAINERS (COMPACT TOP SPACING)
+
        ========================================================================== */
+
     .container {
+
       max-width: 1200px;
+
       margin: 0 auto;
+
       padding: 0 24px;
+
     }
+
+
 
     section {
+
       padding: 70px 0;
+
       position: relative;
+
     }
+
+
 
     .section-header {
+
       margin-bottom: 40px;
+
     }
+
+
 
     .section-eyebrow {
+
       display: inline-flex;
+
       align-items: center;
+
       gap: 8px;
+
       font-family: var(--font-mono);
+
       font-size: 11px;
+
       text-transform: uppercase;
+
       letter-spacing: 0.15em;
+
       color: var(--accent-red);
+
       margin-bottom: 10px;
+
     }
+
+
 
     .section-eyebrow.eyebrow-green {
+
       color: var(--accent-green);
+
     }
+
+
 
     .section-eyebrow .led {
+
       width: 6px;
+
       height: 6px;
+
       border-radius: 50%;
+
       background: var(--accent-red);
+
       box-shadow: 0 0 8px var(--accent-red);
+
     }
+
+
 
     .section-eyebrow.eyebrow-green .led,
+
     .led.led-green,
+
     .led-green {
+
       background: var(--accent-green) !important;
+
       box-shadow: 0 0 8px var(--accent-green) !important;
+
     }
+
+
 
     .section-title {
+
       font-family: var(--font-dots);
+
       font-size: clamp(1.8rem, 4vw, 2.8rem);
+
       letter-spacing: 0.02em;
+
       text-transform: uppercase;
+
     }
+
+
 
     .section-subtitle {
+
       color: var(--text-dim);
+
       font-size: 1.05rem;
+
       margin-top: 8px;
+
       max-width: 70ch;
+
     }
 
+
+
     /* ==========================================================================
+
        MINIMALIST INDUSTRIAL BUTTONS
+
        ========================================================================== */
+
     .btn-minimal {
+
       display: inline-flex;
+
       align-items: center;
+
       justify-content: center;
+
       gap: 10px;
+
       padding: 10px 20px;
+
       border-radius: 8px;
+
       border: 1px solid var(--border-medium);
+
       background: #080808;
+
       color: #ffffff;
+
       font-family: var(--font-dots);
+
       font-size: 13px;
+
       font-weight: 700;
+
       text-transform: uppercase;
+
       letter-spacing: 0.04em;
+
       cursor: pointer;
+
       transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+
     }
+
+
 
     .btn-minimal:hover {
+
       background: #141414;
+
       border-color: #ffffff;
+
       transform: translateY(-2px);
+
       box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7);
+
     }
+
+
 
     .btn-minimal-red {
+
       background: var(--accent-red);
+
       border-color: var(--accent-red);
+
       color: #ffffff;
+
     }
+
+
 
     .btn-minimal-red:hover {
+
       background: #e51d26;
+
       border-color: #ff3840;
+
       box-shadow: 0 0 24px var(--accent-red-glow), 0 4px 14px rgba(0, 0, 0, 0.8);
+
       transform: translateY(-2px);
+
     }
+
+
 
     .btn-minimal-green {
+
       background: #032b17;
+
       border-color: var(--accent-green);
+
       color: #00e676;
+
     }
+
+
 
     .btn-minimal-green:hover {
+
       background: var(--accent-green);
+
       border-color: #55ff99;
+
       color: #000000;
+
       box-shadow: 0 0 24px var(--accent-green-glow), 0 4px 14px rgba(0, 0, 0, 0.8);
+
       transform: translateY(-2px);
+
     }
+
+
 
     .btn-minimal-cyan {
+
       background: #022336;
+
       border-color: var(--accent-cyan);
+
       color: var(--accent-cyan);
+
     }
+
+
 
     .btn-minimal-cyan:hover {
+
       background: var(--accent-cyan);
+
       border-color: #67e8f9;
+
       color: #000000;
+
       box-shadow: 0 0 24px rgba(0, 194, 255, 0.4), 0 4px 14px rgba(0, 0, 0, 0.8);
+
       transform: translateY(-2px);
+
     }
+
+
 
     .btn-pill {
+
       border-radius: 999px;
+
       padding: 6px 14px;
+
       font-size: 11px;
+
     }
 
+
+
     /* ==========================================================================
+
        NAVBAR (STICKY & COMPACT)
+
        ========================================================================== */
+
     .navbar-wrap {
+
       position: sticky;
+
       top: 0;
+
       z-index: 1000;
+
       background: rgba(0, 0, 0, 0.88);
+
       backdrop-filter: blur(16px);
+
       -webkit-backdrop-filter: blur(16px);
+
       border-bottom: 1px solid var(--border-subtle);
+
     }
+
+
 
     .navbar {
+
       display: flex;
+
       align-items: center;
+
       justify-content: space-between;
+
       height: 48px;
+
     }
+
+
 
     .nav-brand {
+
       display: flex;
+
       align-items: center;
+
       gap: 10px;
+
       font-family: var(--font-dots);
+
       font-size: 13.5px;
+
       font-weight: 700;
+
       letter-spacing: 0.04em;
+
     }
+
+
 
     .nav-brand .brand-logo-badge {
+
       width: 26px;
+
       height: 26px;
+
       border-radius: 6px;
+
       background: #0d0d0d;
+
       border: 1px solid var(--border-medium);
+
       display: flex;
+
       align-items: center;
+
       justify-content: center;
+
       color: var(--accent-red);
+
       font-size: 11px;
+
     }
+
+
 
     .nav-links {
+
       display: flex;
+
       align-items: center;
+
       gap: 22px;
+
     }
+
+
 
     .nav-links a {
+
       font-family: var(--font-dots);
+
       font-size: 11.5px;
+
       text-transform: uppercase;
+
       letter-spacing: 0.05em;
+
       color: var(--text-dim);
+
     }
+
+
 
     .nav-links a:hover {
+
       color: #ffffff;
+
     }
+
+
 
     .nav-right-group {
+
       display: flex;
+
       align-items: center;
+
       gap: 10px;
+
     }
+
+
 
     .terminal-toggle-btn {
+
       display: inline-flex;
+
       align-items: center;
+
       gap: 7px;
+
       padding: 4px 11px;
+
       border-radius: 999px;
+
       background: #0d0d0d;
+
       border: 1px solid var(--border-medium);
+
       color: #ffffff;
+
       font-family: var(--font-mono);
+
       font-size: 11px;
+
       font-weight: 600;
+
       letter-spacing: 0.05em;
+
       cursor: pointer;
+
       transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+
     }
+
+
 
     .terminal-toggle-btn:hover {
+
       background: #181818;
+
       border-color: #ffffff;
+
       transform: translateY(-1px);
+
     }
+
+
 
     .terminal-toggle-btn.active {
+
       background: rgba(215, 25, 33, 0.16);
+
       border-color: var(--accent-red);
+
       color: #ffffff;
+
       box-shadow: 0 0 14px var(--accent-red-glow);
+
     }
+
+
 
     .terminal-toggle-btn .term-led {
+
       width: 6px;
+
       height: 6px;
+
       border-radius: 50%;
+
       background: rgba(0, 230, 118, 0.45);
+
       transition: all 0.2s ease;
+
     }
+
+
 
     .terminal-toggle-btn:hover .term-led {
+
       background: var(--accent-green);
+
       box-shadow: 0 0 6px var(--accent-green);
+
     }
+
+
 
     .terminal-toggle-btn.active .term-led {
+
       background: var(--accent-green);
+
       box-shadow: 0 0 10px var(--accent-green);
+
     }
+
+
 
     .status-pill {
+
       display: inline-flex;
+
       align-items: center;
+
       gap: 8px;
+
       padding: 5px 12px;
+
       border-radius: 999px;
+
       background: rgba(0, 230, 118, 0.08);
+
       border: 1px solid rgba(0, 230, 118, 0.25);
+
       color: var(--accent-green);
+
       font-family: var(--font-mono);
+
       font-size: 11px;
+
       font-weight: 600;
+
     }
+
+
 
     .status-pill .pulse-dot {
+
       width: 6px;
+
       height: 6px;
+
       border-radius: 50%;
+
       background: var(--accent-green);
+
       box-shadow: 0 0 8px var(--accent-green);
+
       animation: pulse 2s infinite;
+
     }
+
+
 
     @keyframes pulse {
+
       0%, 100% { opacity: 1; transform: scale(1); }
+
       50% { opacity: 0.4; transform: scale(0.85); }
+
     }
 
+
+
     /* ==========================================================================
+
        HERO SECTION (BALANCED SUITABLE TOP GAP)
+
        ========================================================================== */
+
     .hero {
+
       padding-top: 22px;
+
       padding-bottom: 36px;
+
     }
+
+
 
     .hero-grid {
+
       display: grid;
+
       grid-template-columns: 1.15fr 0.85fr;
+
       gap: 32px;
+
       align-items: start;
+
       margin-top: 0;
+
     }
+
+
 
     .hero-tag {
+
       display: inline-flex;
+
       align-items: center;
+
       gap: 8px;
+
       background: rgba(215, 25, 33, 0.12);
+
       border: 1px solid rgba(215, 25, 33, 0.3);
+
       color: #ff525a;
+
       font-family: var(--font-mono);
+
       font-size: 10.5px;
+
       padding: 3px 10px;
+
       border-radius: 999px;
+
       margin-top: 0;
+
       margin-bottom: 8px;
+
     }
+
+
 
     .hero-title {
+
       font-family: var(--font-dots);
+
       font-size: clamp(2.4rem, 5vw, 3.8rem);
+
       line-height: 1.04;
+
       letter-spacing: -0.01em;
+
       margin-bottom: 10px;
+
       text-transform: uppercase;
+
     }
+
+
 
     .hero-title span.accent-red {
+
       color: var(--accent-red);
+
     }
+
+
 
     .hero-lead {
+
       font-size: 1.08rem;
+
       color: var(--text-dim);
+
       margin-bottom: 18px;
+
       line-height: 1.6;
+
     }
+
+
 
     .hero-lead strong {
+
       color: #ffffff;
+
       font-weight: 600;
+
     }
+
+
 
     .hero-cta-group {
+
       display: flex;
+
       gap: 12px;
+
       align-items: center;
+
       flex-wrap: wrap;
+
       margin-bottom: 20px;
+
     }
+
+
 
     .hero-stats-strip {
+
       display: grid;
+
       grid-template-columns: repeat(3, 1fr);
+
       gap: 12px;
+
       padding-top: 16px;
+
       border-top: 1px solid var(--border-subtle);
+
     }
+
+
 
     .hero-stat-card {
+
       background: var(--bg-card);
+
       border: 1px solid var(--border-subtle);
+
       border-radius: 8px;
+
       padding: 10px 12px;
+
     }
+
+
 
     .hero-stat-number {
+
       font-family: var(--font-dots);
+
       font-size: 1.2rem;
+
       color: #ffffff;
+
       font-weight: 700;
+
     }
+
+
 
     .hero-stat-label {
+
       font-family: var(--font-mono);
+
       font-size: 9.5px;
+
       color: var(--text-muted);
+
       text-transform: uppercase;
+
       margin-top: 2px;
+
     }
+
+
 
     /* Subhajit's Portrait Chassis Frame (REFINED & PROPORTIONATE) */
+
     .hero-visual {
+
       position: relative;
+
       display: flex;
+
       justify-content: center;
+
       align-items: flex-start;
+
       width: 100%;
+
     }
+
+
 
     .chassis-wrapper {
+
       position: relative;
+
       border-radius: 14px;
+
       background: #090909;
+
       border: 1px solid var(--border-medium);
+
       padding: 10px;
+
       box-shadow: 0 24px 60px rgba(0, 0, 0, 0.95), 0 0 0 1px rgba(255, 255, 255, 0.06);
+
       max-width: 390px;
+
       width: 100%;
+
     }
+
+
 
     .chassis-header {
+
       display: flex;
+
       align-items: center;
+
       justify-content: space-between;
+
       padding: 2px 6px 6px;
+
       border-bottom: 1px solid var(--border-subtle);
+
       margin-bottom: 6px;
+
       font-family: var(--font-mono);
+
       font-size: 10px;
+
       color: var(--text-muted);
+
     }
+
+
 
     .chassis-dots {
+
       display: flex;
+
       gap: 5px;
+
     }
+
+
 
     .chassis-dots span {
+
       width: 6px;
+
       height: 6px;
+
       border-radius: 50%;
+
       background: #2a2a2a;
+
     }
+
+
 
     .chassis-dots span.red {
+
       background: var(--accent-red);
+
       box-shadow: 0 0 6px var(--accent-red);
+
     }
+
+
 
     .chassis-dots span.green {
+
       background: var(--accent-green);
+
       box-shadow: 0 0 6px var(--accent-green);
+
     }
+
+
 
     .chassis-image-box {
+
       width: 100%;
+
       height: 385px;
+
       border-radius: 8px;
+
       overflow: hidden;
+
       background: #000000;
+
       border: 1px solid var(--border-subtle);
+
       position: relative;
+
     }
+
+
 
     .chassis-image-box img {
+
       width: 100%;
+
       height: 100%;
+
       object-fit: cover;
+
       object-position: center center;
+
       filter: none; /* Keep natural crisp colors */
+
       transition: transform 0.4s ease;
+
     }
+
+
 
     .chassis-image-box:hover img {
+
       transform: scale(1.02);
+
     }
+
+
 
     .chassis-footer {
+
       display: flex;
+
       align-items: center;
+
       justify-content: space-between;
+
       margin-top: 10px;
+
       padding-top: 8px;
+
       font-family: var(--font-mono);
+
       font-size: 11px;
+
       color: var(--text-dim);
+
     }
 
+
+
     /* ==========================================================================
+
        TICKER / MARQUEE STRIP
+
        ========================================================================== */
+
     .ticker-wrap {
+
       border-top: 1px solid var(--border-subtle);
+
       border-bottom: 1px solid var(--border-subtle);
+
       background: #040404;
+
       padding: 16px 0;
+
       overflow: hidden;
+
       white-space: nowrap;
+
     }
+
+
 
     .ticker-track {
+
       display: inline-flex;
+
       animation: tickerLoop 30s linear infinite;
+
     }
+
+
 
     .ticker-item {
+
       display: inline-flex;
+
       align-items: center;
+
       gap: 16px;
+
       font-family: var(--font-dots);
+
       font-size: 14.5px;
+
       text-transform: uppercase;
+
       letter-spacing: 0.08em;
+
       color: var(--text-dim);
+
       padding: 0 24px;
+
     }
+
+
 
     .ticker-item .dot {
+
       width: 6px;
+
       height: 6px;
+
       border-radius: 50%;
+
       background: var(--accent-red);
+
     }
+
+
 
     .ticker-item .dot.dot-green {
+
       background: var(--accent-green);
+
       box-shadow: 0 0 6px rgba(0, 230, 118, 0.7);
+
     }
+
+
 
     @keyframes tickerLoop {
+
       0% { transform: translateX(0); }
+
       100% { transform: translateX(-50%); }
+
     }
 
+
+
     /* ==========================================================================
+
        ABOUT ME / BIO SECTION (DETAILED STORY)
+
        ========================================================================== */
+
     .about-grid {
+
       display: grid;
+
       grid-template-columns: 1.15fr 0.85fr;
+
       gap: 40px;
+
       align-items: start;
+
     }
+
+
 
     .about-bio-card {
+
       background: var(--bg-card);
+
       border: 1px solid var(--border-subtle);
+
       border-radius: 12px;
+
       padding: 32px;
+
     }
+
+
 
     .about-bio-card p {
+
       font-size: 1.05rem;
+
       margin-bottom: 20px;
+
       line-height: 1.75;
+
     }
+
+
 
     .about-bio-card p strong {
+
       color: #ffffff;
+
     }
+
+
 
     .identity-table {
+
       background: var(--bg-card);
+
       border: 1px solid var(--border-subtle);
+
       border-radius: 12px;
+
       padding: 28px;
+
       display: flex;
+
       flex-direction: column;
+
       gap: 16px;
+
     }
+
+
 
     .identity-row {
+
       display: flex;
+
       justify-content: space-between;
+
       align-items: center;
+
       padding-bottom: 12px;
+
       border-bottom: 1px solid var(--border-subtle);
+
     }
+
+
 
     .identity-row:last-child {
+
       border-bottom: none;
+
       padding-bottom: 0;
+
     }
+
+
 
     .identity-key {
+
       font-family: var(--font-mono);
+
       font-size: 11.5px;
+
       color: var(--text-muted);
+
       text-transform: uppercase;
+
     }
+
+
 
     .identity-val {
+
       font-family: var(--font-mono);
+
       font-size: 13px;
+
       color: #ffffff;
+
       font-weight: 500;
+
       text-align: right;
+
     }
 
+
+
     /* ==========================================================================
+
        WORK PREFERENCES & ENGAGEMENT MODEL
+
        ========================================================================== */
+
     .work-pref-deck {
+
       margin-top: 36px;
+
       display: grid;
+
       grid-template-columns: repeat(3, 1fr);
+
       gap: 20px;
+
     }
+
+
 
     .pref-card {
+
       background: var(--bg-card);
+
       border: 1px solid var(--border-subtle);
+
       border-radius: 12px;
+
       padding: 24px;
+
       position: relative;
+
       transition: all 0.25s ease;
+
       display: flex;
+
       flex-direction: column;
+
     }
+
+
 
     .pref-card:hover {
+
       border-color: var(--border-medium);
+
       background: var(--bg-card-hover);
+
       transform: translateY(-2px);
+
     }
+
+
 
     .pref-card.pref-green {
+
       border-color: rgba(0, 230, 118, 0.28);
+
     }
+
+
 
     .pref-card.pref-green:hover {
+
       border-color: var(--accent-green);
+
       box-shadow: 0 12px 36px rgba(0, 230, 118, 0.15);
+
     }
+
+
 
     .pref-card-badge {
+
       display: inline-flex;
+
       align-items: center;
+
       gap: 8px;
+
       font-family: var(--font-mono);
+
       font-size: 11px;
+
       color: var(--text-muted);
+
       letter-spacing: 0.08em;
+
       text-transform: uppercase;
+
       margin-bottom: 12px;
+
     }
+
+
 
     .pref-card-title {
+
       font-family: var(--font-heading);
+
       font-size: 1.1rem;
+
       font-weight: 700;
+
       color: #ffffff;
+
       margin-bottom: 10px;
+
       letter-spacing: -0.01em;
+
       display: flex;
+
       align-items: center;
+
       gap: 8px;
+
     }
+
+
 
     .pref-card-desc {
+
       font-size: 0.95rem;
+
       color: var(--text-secondary);
+
       line-height: 1.6;
+
       margin-bottom: 14px;
+
       flex-grow: 1;
+
     }
+
+
 
     .pref-card-tags {
+
       display: flex;
+
       flex-wrap: wrap;
+
       gap: 6px;
+
     }
+
+
 
     .pref-tag {
+
       font-family: var(--font-mono);
+
       font-size: 11px;
+
       padding: 3px 8px;
+
       border-radius: 4px;
+
       background: rgba(255, 255, 255, 0.04);
+
       border: 1px solid var(--border-subtle);
+
       color: #dedede;
+
     }
 
+
+
     /* ==========================================================================
+
        FLAGSHIP PROJECTS (HERO FEATURED CARDS)
+
        ========================================================================== */
+
     .flagship-grid {
+
       display: grid;
+
       grid-template-columns: 1fr;
+
       gap: 36px;
+
     }
+
+
 
     .flagship-card {
+
       background: var(--bg-card);
+
       border: 1px solid var(--border-medium);
+
       border-radius: 12px;
+
       padding: 36px;
+
       position: relative;
+
       overflow: hidden;
+
       transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+
     }
+
+
 
     .flagship-card:hover {
+
       border-color: var(--border-strong);
+
       background: var(--bg-card-hover);
+
       box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
+
     }
+
+
 
     .flagship-card.featured-accent {
+
       border-color: rgba(215, 25, 33, 0.35);
+
     }
+
+
 
     .flagship-card.featured-accent:hover {
+
       border-color: var(--accent-red);
+
       box-shadow: 0 16px 48px rgba(215, 25, 33, 0.22);
+
     }
+
+
 
     .flagship-card.featured-green {
+
       border-color: rgba(0, 230, 118, 0.35);
+
     }
+
+
 
     .flagship-card.featured-green:hover {
+
       border-color: var(--accent-green);
+
       box-shadow: 0 16px 48px rgba(0, 230, 118, 0.22);
+
     }
+
+
 
     .flagship-card.featured-cyan {
+
       border-color: rgba(0, 194, 255, 0.35);
+
     }
+
+
 
     .flagship-card.featured-cyan:hover {
+
       border-color: var(--accent-cyan);
+
       box-shadow: 0 16px 48px rgba(0, 194, 255, 0.22);
+
     }
+
+
 
     .flagship-inner {
+
       display: grid;
+
       grid-template-columns: 1.15fr 0.85fr;
+
       gap: 40px;
+
       align-items: center;
+
     }
+
+
 
     .flagship-badge {
+
       display: inline-flex;
+
       align-items: center;
+
       gap: 6px;
+
       font-family: var(--font-mono);
+
       font-size: 10.5px;
+
       padding: 3px 10px;
+
       border-radius: 999px;
+
       background: #141414;
+
       border: 1px solid #2b2b2b;
+
       color: #fff;
+
       margin-bottom: 14px;
+
     }
+
+
 
     .flagship-title {
+
       font-family: var(--font-dots);
+
       font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+
       margin-bottom: 12px;
+
       text-transform: uppercase;
+
       letter-spacing: 0.02em;
+
     }
+
+
 
     .flagship-desc {
+
       font-size: 1.02rem;
+
       color: var(--text-dim);
+
       margin-bottom: 24px;
+
       line-height: 1.7;
+
     }
+
+
 
     .flagship-features {
+
       list-style: none;
+
       display: flex;
+
       flex-direction: column;
+
       gap: 10px;
+
       margin-bottom: 28px;
+
     }
+
+
 
     .flagship-features li {
+
       font-size: 13.5px;
+
       color: #cccccc;
+
       display: flex;
+
       align-items: flex-start;
+
       gap: 10px;
+
     }
+
+
 
     .flagship-features li i {
+
       color: var(--accent-green);
+
       margin-top: 3px;
+
       font-size: 13px;
+
     }
+
+
 
     .tech-pill-row {
+
       display: flex;
+
       flex-wrap: wrap;
+
       gap: 8px;
+
       margin-bottom: 28px;
+
     }
+
+
 
     .tech-pill {
+
       font-family: var(--font-mono);
+
       font-size: 11px;
+
       padding: 4px 10px;
+
       border-radius: 6px;
+
       background: #111111;
+
       border: 1px solid #262626;
+
       color: var(--text-dim);
+
     }
+
+
 
     .flagship-preview-box {
+
       border-radius: 10px;
+
       overflow: hidden;
+
       border: 1px solid var(--border-medium);
+
       background: #000;
+
       aspect-ratio: 16/10;
+
       position: relative;
+
     }
+
+
 
     .flagship-preview-box img {
+
       width: 100%;
+
       height: 100%;
+
       object-fit: cover;
+
       display: block;
+
       transition: transform 0.3s ease;
+
     }
+
+
 
     .flagship-card:hover .flagship-preview-box img {
+
       transform: scale(1.02);
+
     }
+
+
 
     /* Secondary Projects Grid */
+
     .projects-grid {
+
       display: grid;
+
       grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+
       gap: 24px;
+
       margin-top: 36px;
+
     }
+
+
 
     .project-card {
+
       background: var(--bg-card);
+
       border: 1px solid var(--border-subtle);
+
       border-radius: 10px;
+
       padding: 24px;
+
       display: flex;
+
       flex-direction: column;
+
       justify-content: space-between;
+
       transition: all 0.2s ease;
+
     }
+
+
 
     .project-card:hover {
+
       border-color: var(--border-strong);
+
       background: var(--bg-card-hover);
+
       transform: translateY(-2px);
+
     }
+
+
 
     .project-card h3 {
+
       font-family: var(--font-dots);
+
       font-size: 1.35rem;
+
       margin-bottom: 10px;
+
       text-transform: uppercase;
+
     }
+
+
 
     .project-card p {
+
       font-size: 0.95rem;
+
       margin-bottom: 20px;
+
       flex-grow: 1;
+
     }
+
+
 
     .project-media-frame {
+
       width: 100%;
+
       aspect-ratio: 16/9;
+
       background: #000;
+
       border-radius: 6px;
+
       overflow: hidden;
+
       margin-bottom: 18px;
+
       border: 1px solid var(--border-subtle);
+
     }
+
+
 
     .project-media-frame iframe,
+
     .project-media-frame img {
+
       width: 100%;
+
       height: 100%;
+
       border: none;
+
       object-fit: cover;
+
     }
 
+
+
     /* ==========================================================================
+
        MY JOURNEY & EDUCATION (SCHOOL + COLLEGE HIGHLIGHTS)
+
        ========================================================================== */
+
     .journey-timeline-grid {
+
       display: flex;
+
       flex-direction: column;
+
       gap: 20px;
+
     }
+
+
 
     .journey-card {
+
       background: var(--bg-card);
+
       border: 1px solid var(--border-subtle);
+
       border-radius: 12px;
+
       padding: 30px;
+
       display: grid;
+
       grid-template-columns: 240px 1fr;
+
       gap: 32px;
+
       transition: all 0.2s ease;
+
     }
+
+
 
     .journey-card:hover {
+
       border-color: var(--border-strong);
+
       background: var(--bg-card-hover);
+
     }
+
+
 
     .journey-card.featured-edu {
+
       border-left: 4px solid var(--accent-green);
+
     }
+
+
 
     .journey-card.featured-edu:hover {
+
       border-color: rgba(0, 230, 118, 0.3);
+
       border-left-color: var(--accent-green);
+
       box-shadow: 0 12px 32px rgba(0, 230, 118, 0.1);
+
     }
+
+
 
     .journey-meta {
+
       font-family: var(--font-mono);
+
       font-size: 12px;
+
       color: var(--accent-red);
+
       font-weight: 600;
+
     }
+
+
 
     .journey-meta span.sub {
+
       display: block;
+
       color: var(--text-muted);
+
       font-size: 11px;
+
       margin-top: 6px;
+
       font-weight: 400;
+
     }
+
+
 
     .journey-content h3 {
+
       font-family: var(--font-heading);
+
       font-size: 1.4rem;
+
       color: #fff;
+
       margin-bottom: 4px;
+
     }
+
+
 
     .journey-role {
+
       font-family: var(--font-mono);
+
       font-size: 12.5px;
+
       color: var(--accent-cyan);
+
       margin-bottom: 12px;
+
     }
+
+
 
     .journey-content p {
+
       font-size: 0.98rem;
+
       line-height: 1.7;
+
       margin-bottom: 12px;
+
     }
+
+
 
     .journey-highlights {
+
       display: flex;
+
       flex-wrap: wrap;
+
       gap: 8px;
+
       margin-top: 14px;
+
     }
+
+
 
     .journey-tag {
+
       font-family: var(--font-mono);
+
       font-size: 11px;
+
       padding: 3px 10px;
+
       border-radius: 4px;
+
       background: #141414;
+
       border: 1px solid #282828;
+
       color: var(--text-dim);
+
     }
 
+
+
     /* ==========================================================================
+
        TOOLKIT & SKILLS CHIPS
+
        ========================================================================== */
+
     .skills-grid {
+
       display: grid;
+
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+
       gap: 24px;
+
     }
+
+
 
     .skills-category-card {
+
       background: var(--bg-card);
+
       border: 1px solid var(--border-subtle);
+
       border-radius: 10px;
+
       padding: 24px;
+
     }
+
+
 
     .skills-category-card h3 {
+
       font-family: var(--font-dots);
+
       font-size: 12.5px;
+
       text-transform: uppercase;
+
       letter-spacing: 0.05em;
+
       color: var(--text-dim);
+
       margin-bottom: 18px;
+
       display: flex;
+
       align-items: center;
+
       gap: 8px;
+
     }
+
+
 
     .chips-flex {
+
       display: flex;
+
       flex-wrap: wrap;
+
       gap: 8px;
+
     }
+
+
 
     .chip {
+
       display: inline-flex;
+
       align-items: center;
+
       gap: 6px;
+
       padding: 6px 12px;
+
       background: #101010;
+
       border: 1px solid var(--border-medium);
+
       border-radius: 6px;
+
       font-family: var(--font-mono);
+
       font-size: 11.5px;
+
       color: #eaeaea;
+
       transition: all 0.2s ease;
+
     }
+
+
 
     .chip:hover {
+
       border-color: #ffffff;
+
       background: #181818;
+
       color: #ffffff;
+
     }
+
+
 
     .chip.chip-green {
+
       border-color: rgba(0, 230, 118, 0.3);
+
       background: rgba(0, 230, 118, 0.05);
+
       color: #ffffff;
+
     }
+
+
 
     .chip.chip-green:hover {
+
       border-color: var(--accent-green);
+
       background: rgba(0, 230, 118, 0.12);
+
       color: var(--accent-green);
+
       box-shadow: 0 0 12px rgba(0, 230, 118, 0.25);
+
     }
+
+
 
     .chip i {
+
       font-size: 13px;
+
       color: var(--text-dim);
+
     }
 
+
+
     /* ==========================================================================
+
        PHILOSOPHY QUOTE
+
        ========================================================================== */
+
     .quote-card {
+
       background: #060606;
+
       border-left: 3px solid var(--accent-red);
+
       border-top: 1px solid var(--border-subtle);
+
       border-right: 1px solid var(--border-subtle);
+
       border-bottom: 1px solid var(--border-subtle);
+
       padding: 36px 40px;
+
       border-radius: 0 10px 10px 0;
+
       margin: 20px 0 40px;
+
     }
+
+
 
     .quote-text {
+
       font-family: var(--font-heading);
+
       font-size: clamp(1.2rem, 2.5vw, 1.7rem);
+
       color: #ffffff;
+
       line-height: 1.5;
+
       font-weight: 500;
+
       margin-bottom: 16px;
+
     }
+
+
 
     .quote-author {
+
       font-family: var(--font-mono);
+
       font-size: 11.5px;
+
       color: var(--accent-red);
+
       text-transform: uppercase;
+
       letter-spacing: 0.1em;
+
     }
 
+
+
     /* ==========================================================================
+
        CONTACT FORM & CONNECT
+
        ========================================================================== */
+
     .contact-grid {
+
       display: grid;
+
       grid-template-columns: 1fr 1fr;
+
       gap: 48px;
+
       align-items: start;
+
     }
+
+
 
     .contact-form {
+
       display: flex;
+
       flex-direction: column;
+
       gap: 16px;
+
     }
+
+
 
     .form-group {
+
       display: flex;
+
       flex-direction: column;
+
       gap: 6px;
+
     }
+
+
 
     .form-label {
+
       font-family: var(--font-mono);
+
       font-size: 11px;
+
       text-transform: uppercase;
+
       letter-spacing: 0.05em;
+
       color: var(--text-muted);
+
     }
+
+
 
     .form-input, .form-textarea {
+
       width: 100%;
+
       background: #090909;
+
       border: 1px solid var(--border-medium);
+
       border-radius: 8px;
+
       padding: 12px 16px;
+
       color: #ffffff;
+
       font-family: var(--font-body);
+
       font-size: 14px;
+
       transition: all 0.2s ease;
+
       outline: none;
+
     }
+
+
 
     .form-input:focus, .form-textarea:focus {
+
       border-color: #ffffff;
+
       background: #111111;
+
       box-shadow: 0 0 0 1px #ffffff;
+
     }
+
+
 
     .contact-info-card {
+
       background: var(--bg-card);
+
       border: 1px solid var(--border-subtle);
+
       border-radius: 10px;
+
       padding: 32px;
+
     }
+
+
 
     .contact-item {
+
       display: flex;
+
       align-items: flex-start;
+
       gap: 14px;
+
       padding: 14px 0;
+
       border-bottom: 1px solid var(--border-subtle);
+
     }
+
+
 
     .contact-item:last-child {
+
       border-bottom: none;
+
     }
+
+
 
     .contact-icon-box {
+
       width: 36px;
+
       height: 36px;
+
       border-radius: 8px;
+
       background: #121212;
+
       border: 1px solid #282828;
+
       display: flex;
+
       align-items: center;
+
       justify-content: center;
+
       color: var(--accent-red);
+
       flex-shrink: 0;
+
     }
 
+
+
     /* ==========================================================================
+
        FOOTER
+
        ========================================================================== */
+
     footer {
+
       border-top: 1px solid var(--border-subtle);
+
       padding: 40px 0;
+
       background: #040404;
+
     }
+
+
 
     .footer-inner {
+
       display: flex;
+
       justify-content: space-between;
+
       align-items: center;
+
       flex-wrap: wrap;
+
       gap: 20px;
+
     }
+
+
 
     .footer-copy {
+
       font-family: var(--font-mono);
+
       font-size: 11px;
+
       color: var(--text-muted);
+
     }
 
+
+
     /* ==========================================================================
+
        SOVEREIGN TERMINAL OVERLAY & DECK
+
        ========================================================================== */
+
     .terminal-overlay {
+
       position: fixed;
+
       top: 48px;
+
       left: 0;
+
       right: 0;
+
       bottom: 0;
+
       z-index: 9999;
+
       background: rgba(0, 0, 0, 0.82);
+
       backdrop-filter: blur(14px);
+
       -webkit-backdrop-filter: blur(14px);
+
       display: flex;
+
       justify-content: center;
+
       align-items: flex-start;
+
       padding: 18px 16px;
+
       animation: termFadeIn 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+
     }
+
+
 
     @keyframes termFadeIn {
+
       from { opacity: 0; transform: translateY(-8px); }
+
       to { opacity: 1; transform: translateY(0); }
+
     }
+
+
 
     .terminal-window {
+
       width: 100%;
+
       max-width: 860px;
+
       max-height: calc(100vh - 84px);
+
       display: flex;
+
       flex-direction: column;
+
       background: #080808;
+
       border: 1px solid var(--border-medium);
+
       border-radius: 12px;
+
       box-shadow: 0 32px 80px rgba(0, 0, 0, 0.95), 0 0 0 1px rgba(255, 255, 255, 0.08), 0 0 35px rgba(215, 25, 33, 0.12);
+
       overflow: hidden;
+
       font-family: var(--font-mono);
+
     }
+
+
 
     .terminal-titlebar {
+
       display: flex;
+
       align-items: center;
+
       justify-content: space-between;
+
       padding: 8px 14px;
+
       background: #0e0e0e;
+
       border-bottom: 1px solid var(--border-subtle);
+
     }
+
+
 
     .terminal-dots {
+
       display: flex;
+
       gap: 6px;
+
       align-items: center;
+
     }
+
+
 
     .terminal-dots span {
+
       width: 10px;
+
       height: 10px;
+
       border-radius: 50%;
+
       display: inline-block;
+
       cursor: pointer;
+
     }
+
+
 
     .terminal-dots .dot-red {
+
       background: var(--accent-red);
+
       box-shadow: 0 0 6px var(--accent-red);
+
     }
+
+
 
     .terminal-dots .dot-yellow {
+
       background: #e5a93c;
+
     }
+
+
 
     .terminal-dots .dot-green {
+
       background: var(--accent-green);
+
     }
+
+
 
     .terminal-title {
+
       font-family: var(--font-mono);
+
       font-size: 11px;
+
       color: var(--text-dim);
+
       letter-spacing: 0.06em;
+
       text-transform: uppercase;
+
       display: flex;
+
       align-items: center;
+
       gap: 6px;
+
     }
+
+
 
     .terminal-close-btn {
+
       background: transparent;
+
       border: none;
+
       color: var(--text-dim);
+
       font-size: 13px;
+
       cursor: pointer;
+
       padding: 4px 8px;
+
       border-radius: 4px;
+
       transition: all 0.15s ease;
+
       display: flex;
+
       align-items: center;
+
       gap: 4px;
+
       font-family: var(--font-mono);
+
     }
+
+
 
     .terminal-close-btn:hover {
+
       color: #ffffff;
+
       background: #1e1e1e;
+
     }
+
+
 
     .terminal-body {
+
       padding: 16px 20px;
+
       overflow-y: auto;
+
       flex: 1;
+
       font-family: 'JetBrains Mono', 'Consolas', monospace;
+
       font-size: 12.5px;
+
       line-height: 1.6;
+
       color: #e5e5e5;
+
       background: radial-gradient(circle at 50% 50%, rgba(25, 25, 25, 0.4), transparent 85%), #060606;
+
     }
+
+
 
     .terminal-ascii {
+
       font-size: 10px;
+
       line-height: 1.15;
+
       color: var(--accent-red);
+
       margin-bottom: 10px;
+
       overflow-x: auto;
+
       user-select: none;
+
     }
+
+
 
     .term-intro-text {
+
       color: var(--text-dim);
+
       font-size: 11.5px;
+
       border-left: 2px solid var(--accent-red);
+
       padding-left: 10px;
+
       margin-bottom: 16px;
+
       line-height: 1.6;
+
     }
+
+
 
     .term-highlight {
+
       color: #ffffff;
+
       background: #141414;
+
       padding: 1px 5px;
+
       border-radius: 3px;
+
       border: 1px solid #2a2a2a;
+
     }
+
+
 
     .terminal-prompt-line {
+
       display: flex;
+
       align-items: center;
+
       gap: 8px;
+
       margin-top: 8px;
+
     }
+
+
 
     .terminal-prompt-user {
+
       color: var(--accent-green);
+
       font-weight: 700;
+
       font-size: 12.5px;
+
       white-space: nowrap;
+
       font-family: var(--font-mono);
+
     }
+
+
 
     .terminal-input {
+
       flex: 1;
+
       background: transparent;
+
       border: none;
+
       outline: none;
+
       color: #ffffff;
+
       font-family: 'JetBrains Mono', 'Consolas', monospace;
+
       font-size: 13px;
+
       caret-color: var(--accent-red);
+
     }
+
+
 
     .terminal-output-block {
+
       margin-bottom: 12px;
+
     }
+
+
 
     .terminal-output-cmd {
+
       color: var(--accent-cyan);
+
       margin-bottom: 3px;
+
       font-weight: 600;
+
     }
+
+
 
     .terminal-output-text {
+
       color: #cccccc;
+
       white-space: pre-wrap;
+
       word-break: break-word;
+
       font-size: 12px;
+
       line-height: 1.65;
+
     }
+
+
 
     .terminal-output-text a {
+
       color: var(--accent-cyan);
+
       text-decoration: underline;
+
     }
+
+
 
     .terminal-quick-bar {
+
       display: flex;
+
       align-items: center;
+
       gap: 6px;
+
       padding: 6px 14px;
+
       background: #0a0a0a;
+
       border-top: 1px solid var(--border-subtle);
+
       overflow-x: auto;
+
       font-size: 10.5px;
+
       color: var(--text-muted);
+
     }
+
+
 
     .term-quick-btn {
+
       background: #121212;
+
       border: 1px solid var(--border-medium);
+
       color: var(--text-dim);
+
       border-radius: 4px;
+
       padding: 2px 7px;
+
       font-family: inherit;
+
       font-size: 10.5px;
+
       cursor: pointer;
+
       transition: all 0.15s ease;
+
       white-space: nowrap;
+
     }
+
+
 
     .term-quick-btn:hover {
+
       background: #062a17;
+
       color: var(--accent-green);
+
       border-color: rgba(0, 230, 118, 0.5);
+
     }
+
+
 
     /* ==========================================================================
+
        RESPONSIVE BREAKPOINTS
+
        ========================================================================== */
+
     @media (max-width: 900px) {
+
       .hero-grid, .flagship-inner, .about-grid, .journey-card, .contact-grid, .work-pref-deck {
+
         grid-template-columns: 1fr;
+
         gap: 24px;
+
       }
+
       .hero-visual {
+
         order: -1;
+
       }
+
       .chassis-wrapper {
+
         max-width: 300px;
+
       }
+
       .chassis-image-box {
+
         height: 320px;
+
       }
+
       .nav-links {
+
         display: none;
+
       }
+
     }
+
   </style>
+
 </head>
+
 <body>
 
+
+
   <!-- ==========================================================================
+
        STICKY TOP NAVIGATION BAR
+
        ========================================================================== -->
+
   <header class="navbar-wrap">
+
     <div class="container navbar">
+
       <a href="#" class="nav-brand">
+
         <div class="brand-logo-badge">
+
           <i class="fa-solid fa-cube"></i>
+
         </div>
+
         <span>SUBHAJIT DAS</span>
+
       </a>
 
+
+
       <nav class="nav-links">
+
         <a href="#about">About</a>
+
         <a href="#flagships">Flagships</a>
+
         <a href="#journey">Journey</a>
+
         <a href="#projects">Works</a>
+
         <a href="#toolkit">Toolkit</a>
+
         <a href="#contact">Contact</a>
+
       </nav>
 
+
+
       <div class="nav-right-group">
+
         <button id="terminal-toggle-btn" class="terminal-toggle-btn" onclick="toggleTerminalMode()" title="Toggle Solutions Drawer Terminal (Ctrl+` or Click)">
+
           <i class="fa-solid fa-terminal" style="color: var(--accent-red);"></i>
+
           <span class="terminal-btn-label">TERMINAL</span>
+
           <span class="term-led"></span>
+
         </button>
+
+
 
         <div class="status-pill">
+
           <span class="pulse-dot"></span>
+
           <span>OPEN FOR ROLES</span>
+
         </div>
+
       </div>
+
     </div>
+
   </header>
 
+
+
   <!-- ==========================================================================
+
        SOLUTIONS DRAWER TERMINAL OVERLAY DECK (INDUSTRIAL SHELL)
+
        ========================================================================== -->
+
   <div id="terminal-overlay" class="terminal-overlay" style="display: none;" onclick="handleTerminalOverlayClick(event)">
+
     <div class="terminal-window" onclick="event.stopPropagation()">
+
       <div class="terminal-titlebar">
+
         <div class="terminal-dots">
+
           <span class="dot-red" onclick="toggleTerminalMode()" title="Close Terminal"></span>
+
           <span class="dot-yellow"></span>
+
           <span class="dot-green"></span>
+
         </div>
+
         <div class="terminal-title">
+
           <i class="fa-solid fa-terminal" style="color: var(--accent-red);"></i>
+
           <span>SUBHAJIT_OS // SOLUTIONS_DRAWER_TERMINAL_V2.6 &bull; BASH</span>
+
         </div>
+
         <button class="terminal-close-btn" onclick="toggleTerminalMode()" title="Close Terminal (ESC)">
+
           <i class="fa-solid fa-xmark"></i>
+
           <span>ESC</span>
+
         </button>
+
       </div>
 
+
+
       <div class="terminal-body" id="terminal-body">
+
         <div class="terminal-banner">
+
 <pre class="terminal-ascii">
+
    _____       _     _             _ _ _     ____            
+
   / ____|     | |   | |           (_) (_)   |  _ \           
+
  | (___  _   _| |__ | |__   __ _   _ _| |_  | | | | __ _ ___ 
+
   \___ \| | | | '_ \| '_ \ / _` | | | | __| | | | |/ _` / __|
+
   ____) | |_| | |_) | | | | (_| | | | | |_  | |_| | (_| \__ \
+
  |_____/ \__,_|_.__/|_| |_|\__,_| |_| |\__| |____/ \__,_|___/
+
                                  _/ |                        
+
                                 |__/                         
+
 </pre>
+
           <div class="term-intro-text">
+
             <strong>SUBHAJIT DAS [KRISH] &bull; SOLUTIONS DRAWER ARCHITECT SHELL</strong><br>
+
             B.Tech in CSE (AIML) &bull; Brainware University (CGPA 8.43) &bull; Arambagh &amp; Kolkata<br>
+
             Type <span class="term-highlight">help</span> for command list, or click a quick-chip below. Press <span class="term-highlight">ESC</span> to exit.
+
           </div>
+
         </div>
+
+
 
         <div id="terminal-history"></div>
 
+
+
         <div class="terminal-prompt-line">
+
           <span class="terminal-prompt-user">krish@solutionsdrawer:~$</span>
+
           <input type="text" id="terminal-input" class="terminal-input" autocomplete="off" spellcheck="false" autofocus>
+
         </div>
+
       </div>
+
+
 
       <div class="terminal-quick-bar">
+
         <span style="letter-spacing: 0.05em; font-weight: 700;">COMMANDS:</span>
+
         <button class="term-quick-btn" onclick="runTerminalCommand('help')">help</button>
+
         <button class="term-quick-btn" onclick="runTerminalCommand('about')">about</button>
+
         <button class="term-quick-btn" onclick="runTerminalCommand('work')">work</button>
+
         <button class="term-quick-btn" onclick="runTerminalCommand('flagships')">flagships</button>
+
         <button class="term-quick-btn" onclick="runTerminalCommand('journey')">journey</button>
+
         <button class="term-quick-btn" onclick="runTerminalCommand('skills')">skills</button>
+
         <button class="term-quick-btn" onclick="runTerminalCommand('contact')">contact</button>
+
         <button class="term-quick-btn" onclick="runTerminalCommand('resume')">resume</button>
+
         <button class="term-quick-btn" onclick="runTerminalCommand('clear')">clear</button>
+
         <button class="term-quick-btn" onclick="runTerminalCommand('exit')">exit</button>
+
       </div>
+
     </div>
+
   </div>
 
+
+
   <!-- ==========================================================================
+
        HERO SECTION (TIGHTENED GAP & PROMINENT PORTRAIT)
+
        ========================================================================== -->
+
   <section class="hero" id="about">
+
     <div class="container">
+
       <div class="hero-grid">
+
         <div>
+
           <div class="hero-tag">
+
             <span class="led led-green"></span>
+
             <span>SOFTWARE ENGINEER &bull; AIML ARCHITECT</span>
+
           </div>
+
+
 
           <h1 class="hero-title">
+
             BUILDING <span class="accent-red">SOVEREIGN</span><br>
+
             INTELLIGENT SYSTEMS.
+
           </h1>
 
+
+
           <p class="hero-lead">
+
             Hi, I&apos;m <strong>Subhajit Das (Krish)</strong>. I design and engineer privacy-first on-device software, zero-trust cloud architectures, and intelligent AI pipelines. Creator of <strong>Solutions Drawer</strong>, <strong>Findrr</strong>, and <strong>Launup</strong>. Pursuing B.Tech in CSE (AIML) at Brainware University.
+
           </p>
+
+
 
           <div class="hero-cta-group">
+
             <a href="#flagships" class="btn-minimal btn-minimal-red">
+
               <i class="fa-solid fa-layer-group"></i>
+
               <span>EXPLORE FLAGSHIPS</span>
+
             </a>
+
             <a href="https://canva.link/cpc3vxhkdja03dc" target="_blank" rel="noreferrer" class="btn-minimal">
+
               <i class="fa-solid fa-file-pdf"></i>
+
               <span>VIEW RESUME</span>
+
             </a>
+
             <a href="#contact" class="btn-minimal">
+
               <i class="fa-solid fa-paper-plane"></i>
+
               <span>CONTACT ME</span>
+
             </a>
+
           </div>
+
+
 
           <div class="hero-stats-strip">
+
             <div class="hero-stat-card">
+
               <div class="hero-stat-number" style="color: var(--accent-green);">8.43</div>
+
               <div class="hero-stat-label">B.Tech CGPA</div>
+
             </div>
+
             <div class="hero-stat-card">
+
               <div class="hero-stat-number">2025&ndash;29</div>
+
               <div class="hero-stat-label">CSE (AIML) Batch</div>
+
             </div>
+
             <div class="hero-stat-card">
+
               <div class="hero-stat-number">3 SOVEREIGN</div>
+
               <div class="hero-stat-label">Live &amp; Upcoming Flagships</div>
+
             </div>
+
           </div>
+
         </div>
+
+
 
         <!-- Big, Crisp Portrait Chassis -->
+
         <div class="hero-visual">
+
           <div class="chassis-wrapper">
+
             <div class="chassis-header">
+
               <span>SUBHAJIT_DAS_PORTRAIT.RAW</span>
+
               <div class="chassis-dots">
+
                 <span class="red"></span><span class="green"></span><span></span>
+
               </div>
+
             </div>
+
             <div class="chassis-image-box">
+
               <img src="assets/subhajit_portrait.jpg" alt="Subhajit Das (Krish)" onerror="this.src='assets/145341.jpg'">
+
             </div>
+
             <div class="chassis-footer">
+
               <span class="font-mono">&bull; B.TECH AIML &bull; BUILDER</span>
+
               <span class="font-dots" style="color: var(--accent-green);">ACTIVE</span>
+
             </div>
+
           </div>
+
         </div>
+
       </div>
+
     </div>
+
   </section>
 
-  <!-- ==========================================================================
-       TICKER / MARQUEE STRIP
-       ========================================================================== -->
-  <div class="ticker-wrap">
-    <div class="ticker-track">
-      <div class="ticker-item"><span>Solutions Drawer</span><span class="dot"></span></div>
-      <div class="ticker-item"><span>Findrr Finance Vault</span><span class="dot dot-green"></span></div>
-      <div class="ticker-item"><span>Launup (Coming Soon)</span><span class="dot" style="background: var(--accent-cyan); box-shadow: 0 0 8px var(--accent-cyan);"></span></div>
-      <div class="ticker-item"><span>Brainware University (AIML)</span><span class="dot dot-green"></span></div>
-      <div class="ticker-item"><span>Zero-Trust Architecture</span><span class="dot"></span></div>
-      <div class="ticker-item"><span>On-Device Machine Learning</span><span class="dot dot-green"></span></div>
-      <div class="ticker-item"><span>Prompt Engineering</span><span class="dot"></span></div>
-      <div class="ticker-item"><span>Customer Experience (CX)</span><span class="dot dot-green"></span></div>
-      <div class="ticker-item"><span>Python &bull; C++ &bull; Flutter</span><span class="dot"></span></div>
-      <div class="ticker-item"><span>Cloudflare Edge &bull; SQLite</span><span class="dot dot-green"></span></div>
-      <!-- Duplicate for infinite loop -->
-      <div class="ticker-item"><span>Solutions Drawer</span><span class="dot"></span></div>
-      <div class="ticker-item"><span>Findrr Finance Vault</span><span class="dot dot-green"></span></div>
-      <div class="ticker-item"><span>Launup (Coming Soon)</span><span class="dot" style="background: var(--accent-cyan); box-shadow: 0 0 8px var(--accent-cyan);"></span></div>
-      <div class="ticker-item"><span>Brainware University (AIML)</span><span class="dot dot-green"></span></div>
-      <div class="ticker-item"><span>Zero-Trust Architecture</span><span class="dot"></span></div>
-      <div class="ticker-item"><span>On-Device Machine Learning</span><span class="dot dot-green"></span></div>
-      <div class="ticker-item"><span>Prompt Engineering</span><span class="dot"></span></div>
-      <div class="ticker-item"><span>Customer Experience (CX)</span><span class="dot dot-green"></span></div>
-      <div class="ticker-item"><span>Python &bull; C++ &bull; Flutter</span><span class="dot"></span></div>
-      <div class="ticker-item"><span>Cloudflare Edge &bull; SQLite</span><span class="dot dot-green"></span></div>
-    </div>
-  </div>
+
 
   <!-- ==========================================================================
-       ABOUT ME: PERSONAL STORY & BACKGROUND
+
+       TICKER / MARQUEE STRIP
+
        ========================================================================== -->
+
+  <div class="ticker-wrap">
+
+    <div class="ticker-track">
+
+      <div class="ticker-item"><span>Solutions Drawer</span><span class="dot"></span></div>
+
+      <div class="ticker-item"><span>Findrr Finance Vault</span><span class="dot dot-green"></span></div>
+
+      <div class="ticker-item"><span>Launup (Coming Soon)</span><span class="dot" style="background: var(--accent-cyan); box-shadow: 0 0 8px var(--accent-cyan);"></span></div>
+      <div class="ticker-item"><span>Memento (SIH 2026)</span><span class="dot" style="background: #2dd4bf; box-shadow: 0 0 8px #2dd4bf;"></span></div>
+
+      <div class="ticker-item"><span>Brainware University (AIML)</span><span class="dot dot-green"></span></div>
+
+      <div class="ticker-item"><span>Zero-Trust Architecture</span><span class="dot"></span></div>
+
+      <div class="ticker-item"><span>On-Device Machine Learning</span><span class="dot dot-green"></span></div>
+
+      <div class="ticker-item"><span>Prompt Engineering</span><span class="dot"></span></div>
+
+      <div class="ticker-item"><span>Customer Experience (CX)</span><span class="dot dot-green"></span></div>
+
+      <div class="ticker-item"><span>Python &bull; C++ &bull; Flutter</span><span class="dot"></span></div>
+
+      <div class="ticker-item"><span>Cloudflare Edge &bull; SQLite</span><span class="dot dot-green"></span></div>
+
+      <!-- Duplicate for infinite loop -->
+
+      <div class="ticker-item"><span>Solutions Drawer</span><span class="dot"></span></div>
+
+      <div class="ticker-item"><span>Findrr Finance Vault</span><span class="dot dot-green"></span></div>
+
+      <div class="ticker-item"><span>Launup (Coming Soon)</span><span class="dot" style="background: var(--accent-cyan); box-shadow: 0 0 8px var(--accent-cyan);"></span></div>
+      <div class="ticker-item"><span>Memento (SIH 2026)</span><span class="dot" style="background: #2dd4bf; box-shadow: 0 0 8px #2dd4bf;"></span></div>
+
+      <div class="ticker-item"><span>Brainware University (AIML)</span><span class="dot dot-green"></span></div>
+
+      <div class="ticker-item"><span>Zero-Trust Architecture</span><span class="dot"></span></div>
+
+      <div class="ticker-item"><span>On-Device Machine Learning</span><span class="dot dot-green"></span></div>
+
+      <div class="ticker-item"><span>Prompt Engineering</span><span class="dot"></span></div>
+
+      <div class="ticker-item"><span>Customer Experience (CX)</span><span class="dot dot-green"></span></div>
+
+      <div class="ticker-item"><span>Python &bull; C++ &bull; Flutter</span><span class="dot"></span></div>
+
+      <div class="ticker-item"><span>Cloudflare Edge &bull; SQLite</span><span class="dot dot-green"></span></div>
+
+    </div>
+
+  </div>
+
+
+
+  <!-- ==========================================================================
+
+       ABOUT ME: PERSONAL STORY & BACKGROUND
+
+       ========================================================================== -->
+
   <section id="bio">
+
     <div class="container">
+
       <div class="section-header">
+
         <div class="section-eyebrow">
+
           <span class="led"></span>
+
           <span>BACKGROUND &amp; IDENTITY</span>
+
         </div>
+
         <h2 class="section-title">THE ARCHITECT'S STORY</h2>
+
         <p class="section-subtitle">
+
           From self-taught experimentation to architecting sovereign systems and neural pipelines.
+
         </p>
+
       </div>
+
+
 
       <div class="about-grid">
+
         <div class="about-bio-card">
+
           <p>
+
             I am deeply fascinated by the intersection of <strong>artificial intelligence</strong>, <strong>human-computer interaction</strong>, and <strong>privacy sovereignty</strong>. I don&apos;t just study computer science theory; I learn by building complete, production-grade applications that solve genuine real-world friction.
+
           </p>
+
           <p>
+
             As a self-taught prompt engineer and AI developer, I orchestrate multi-agent LLM systems and local models. In parallel, my training in <strong>Customer Experience (CX)</strong> ensures that the software I engineer is not just functionally robust, but deeply empathetic and effortless for end users.
+
           </p>
+
           <p>
+
             My daily engineering toolkit spans Python, C++, TypeScript, Next.js, and Flutter, backed by machine learning libraries like PyTorch and NumPy, and deployed to on-device SQLite and edge cloud runtimes.
+
           </p>
+
         </div>
+
+
 
         <div class="identity-table">
+
           <div class="identity-row">
+
             <span class="identity-key">Full Name</span>
+
             <span class="identity-val">Subhajit Das</span>
+
           </div>
+
           <div class="identity-row">
+
             <span class="identity-key">Known As</span>
+
             <span class="identity-val" style="color: var(--accent-red); font-weight: 700;">Krish</span>
+
           </div>
+
           <div class="identity-row">
+
             <span class="identity-key">Hometown</span>
+
             <span class="identity-val">Arambagh, West Bengal</span>
+
           </div>
+
           <div class="identity-row">
+
             <span class="identity-key">Current Base</span>
+
             <span class="identity-val">Kolkata, WB, India</span>
+
           </div>
+
           <div class="identity-row">
+
             <span class="identity-key">Languages</span>
+
             <span class="identity-val">English &bull; Hindi &bull; Bengali</span>
+
           </div>
+
           <div class="identity-row">
+
             <span class="identity-key">Work Style</span>
+
             <span class="identity-val" style="color: var(--accent-green);">Remote &bull; Startup Leadership</span>
+
           </div>
+
           <div class="identity-row">
+
             <span class="identity-key">Availability</span>
+
             <span class="identity-val">Part-Time (Uncompromising Output)</span>
+
           </div>
+
           <div class="identity-row">
+
             <span class="identity-key">Open For</span>
+
             <span class="identity-val" style="color: var(--accent-cyan);">Internships &bull; Volunteer &bull; Collaborations</span>
+
           </div>
+
           <div class="identity-row">
+
             <span class="identity-key">Academic Status</span>
+
             <span class="identity-val">B.Tech CSE AIML (8.43 CGPA)</span>
+
           </div>
+
         </div>
+
       </div>
+
+
 
       <!-- WORK PREFERENCES & ENGAGEMENT MODEL -->
+
       <div class="work-pref-deck">
+
         <div class="pref-card">
+
           <div class="pref-card-badge">
+
             <span class="led" style="background: var(--accent-red); box-shadow: 0 0 8px var(--accent-red);"></span>
+
             <span>WORK STYLE // ENVIRONMENT</span>
+
           </div>
+
           <div class="pref-card-title">
+
             <i class="fa-solid fa-rocket" style="color: var(--accent-red); font-size: 1rem;"></i>
+
             Startup Leadership
+
           </div>
+
           <p class="pref-card-desc">
+
             I thrive in leadership roles within startup environments. I take end-to-end ownership from problem discovery to deployment, excelling in zero-to-one engineering, high-autonomy teams, and customer-first design.
+
           </p>
+
           <div class="pref-card-tags">
+
             <span class="pref-tag">Startup Environments</span>
+
             <span class="pref-tag">Technical Leadership</span>
+
             <span class="pref-tag">Full Ownership</span>
+
           </div>
+
         </div>
+
+
 
         <div class="pref-card pref-green">
+
           <div class="pref-card-badge">
+
             <span class="led led-green"></span>
+
             <span>AVAILABILITY // MODEL</span>
+
           </div>
+
           <div class="pref-card-title">
+
             <i class="fa-solid fa-globe" style="color: var(--accent-green); font-size: 1rem;"></i>
+
             Remote &bull; Part-Time
+
           </div>
+
           <p class="pref-card-desc">
+
             100% focused on remote work and currently available for part-time commitments, delivering uncompromising output while sustaining academic rigor in B.Tech CSE AIML (8.43 CGPA).
+
           </p>
+
           <div class="pref-card-tags">
+
             <span class="pref-tag">100% Remote</span>
+
             <span class="pref-tag">Part-Time Commitments</span>
+
             <span class="pref-tag">Uncompromising Output</span>
+
           </div>
+
         </div>
+
+
 
         <div class="pref-card">
+
           <div class="pref-card-badge">
+
             <span class="led" style="background: var(--accent-cyan); box-shadow: 0 0 8px var(--accent-cyan);"></span>
+
             <span>COLLABORATION // OPEN ROLES</span>
+
           </div>
+
           <div class="pref-card-title">
+
             <i class="fa-solid fa-handshake" style="color: var(--accent-cyan); font-size: 1rem;"></i>
+
             Open For Engagements
+
           </div>
+
           <p class="pref-card-desc">
+
             Actively open to internships, high-impact volunteer work, and startup business collaborations building scalable, sovereign, and privacy-preserving software solutions.
+
           </p>
+
           <div class="pref-card-tags">
+
             <span class="pref-tag">Internships</span>
+
             <span class="pref-tag">Volunteer Engineering</span>
+
             <span class="pref-tag">Business Collaborations</span>
+
           </div>
+
         </div>
+
       </div>
+
     </div>
+
   </section>
 
+
+
   <!-- ==========================================================================
+
        PRIMARY FLAGSHIPS: SOLUTIONS DRAWER & FINDRR
+
        ========================================================================== -->
+
   <section id="flagships">
+
     <div class="container">
+
       <div class="section-header">
+
         <div class="section-eyebrow">
+
           <span class="led"></span>
+
           <span>FLAGSHIP ARCHITECTURES</span>
+
         </div>
+
         <h2 class="section-title">SOVEREIGN ECOSYSTEM</h2>
+
         <p class="section-subtitle">
+
           Independent software engineering projects built with uncompromising privacy, aesthetic precision, and zero corporate lock-in.
+
         </p>
+
       </div>
+
+
 
       <div class="flagship-grid">
+
         
+
         <!-- FLAGSHIP 1: SOLUTIONS DRAWER -->
+
         <article class="flagship-card featured-accent">
+
           <div class="flagship-inner">
+
             <div>
+
               <div class="flagship-badge">
+
                 <i class="fa-solid fa-shield-halved" style="color: var(--accent-red);"></i>
+
                 <span>FLAGSHIP 01 &bull; ANDROID ECOSYSTEM</span>
+
               </div>
+
               <h3 class="flagship-title">SOLUTIONS DRAWER</h3>
+
               <p class="flagship-desc">
+
                 A minimalist, sovereign Android Web App Store & PWA platform designed to eliminate Big Tech telemetry and monopoly control. Features client-side zero-trust security auditing, precision dot-matrix design, and high-speed verified binary distribution.
+
               </p>
 
+
+
               <ul class="flagship-features">
+
                 <li>
+
                   <i class="fa-solid fa-circle-check"></i>
+
                   <span><strong>Drawer Protect:</strong> Client-side Web Crypto SHA-256 binary scanner cross-verifying signatures and malware signatures.</span>
+
                 </li>
+
                 <li>
+
                   <i class="fa-solid fa-circle-check"></i>
+
                   <span><strong>Over-The-Air Mini Updates:</strong> Full PWA service worker with delta update notifications that don&apos;t waste user cellular data.</span>
+
                 </li>
+
                 <li>
+
                   <i class="fa-solid fa-circle-check"></i>
+
                   <span><strong>Distributed Storage Architecture:</strong> Resilient binary routing backed by AWS S3 public buckets and Cloudflare D1 edge database.</span>
+
                 </li>
+
               </ul>
 
+
+
               <div class="tech-pill-row">
+
                 <span class="tech-pill">Next.js 16</span>
+
                 <span class="tech-pill">TypeScript</span>
+
                 <span class="tech-pill">PWA / WebAPK</span>
+
                 <span class="tech-pill">Cloudflare D1</span>
+
                 <span class="tech-pill">AWS S3</span>
+
                 <span class="tech-pill">Android 8.0+ Oreo</span>
+
               </div>
+
+
 
               <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+
                 <a href="https://solutionsdrawer.pages.dev" target="_blank" rel="noreferrer" class="btn-minimal btn-minimal-red">
+
                   <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
                   <span>LAUNCH STORE</span>
+
                 </a>
+
                 <a href="https://github.com/subhajit-io/solutionsdrawer" target="_blank" rel="noreferrer" class="btn-minimal">
+
                   <i class="fa-brands fa-github"></i>
+
                   <span>SOURCE CODE</span>
+
                 </a>
+
               </div>
+
             </div>
 
+
+
             <div>
+
               <div class="flagship-preview-box">
+
                 <img src="assets/solutionsdrawer_logo.png" alt="Solutions Drawer Platform Logo" onerror="this.src='assets/solutionsdrawer_icon.svg'">
+
               </div>
+
             </div>
+
           </div>
+
         </article>
+
+
 
         <!-- FLAGSHIP 2: FINDRR -->
+
         <article class="flagship-card featured-green">
+
           <div class="flagship-inner">
+
             <div>
+
               <div class="flagship-badge" style="border-color: rgba(0, 230, 118, 0.35); background: rgba(0, 230, 118, 0.08);">
+
                 <i class="fa-solid fa-wallet" style="color: var(--accent-green);"></i>
+
                 <span>FLAGSHIP 02 &bull; ON-DEVICE PRIVACY</span>
+
               </div>
+
               <h3 class="flagship-title">FINDRR</h3>
+
               <p class="flagship-desc">
+
                 A 100% on-device personal financial vault and discipline arena engineered to eliminate money tracking anxiety. Built with zero SMS scraping permissions and zero cloud lock-in, keeping financial records encrypted solely on the phone.
+
               </p>
 
+
+
               <ul class="flagship-features">
+
                 <li>
+
                   <i class="fa-solid fa-circle-check"></i>
+
                   <span><strong>Unified Available Money:</strong> Real-time aggregated balance of bank accounts, digital wallets &amp; physical cash with 1-Tap UPI quick launcher.</span>
+
                 </li>
+
                 <li>
+
                   <i class="fa-solid fa-circle-check"></i>
+
                   <span><strong>5-Second Mindful QR Pause:</strong> Behavioral impulse pause vault converting shopping urges into wealth compounding.</span>
+
                 </li>
+
                 <li>
+
                   <i class="fa-solid fa-circle-check"></i>
+
                   <span><strong>Zero-SMS Encryption:</strong> On-device SQLite ledger encrypted client-side with AES-256; zero external data leaks.</span>
+
                 </li>
+
               </ul>
 
+
+
               <div class="tech-pill-row">
+
                 <span class="tech-pill">Android Native / Kotlin</span>
+
                 <span class="tech-pill">SQLite On-Device</span>
+
                 <span class="tech-pill">AES-256</span>
+
                 <span class="tech-pill">Zero Cloud Telemetry</span>
+
                 <span class="tech-pill">UPI Deep Link</span>
+
               </div>
+
+
 
               <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+
                 <a href="https://letusfindrr.pages.dev" target="_blank" rel="noreferrer" class="btn-minimal btn-minimal-green">
+
                   <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
                   <span>EXPLORE FINDRR</span>
+
                 </a>
+
                 <a href="https://solutionsdrawer.pages.dev/app/com.solutionsdrawer.findrr/" target="_blank" rel="noreferrer" class="btn-minimal">
+
                   <i class="fa-solid fa-download"></i>
+
                   <span>STORE LISTING</span>
+
                 </a>
+
               </div>
+
             </div>
 
+
+
             <div>
+
               <div class="flagship-preview-box" style="display: flex; align-items: center; justify-content: center; background: #000; padding: 18px;">
+
                 <img src="assets/findrr_app_icon.png" alt="Findrr Sovereign Financial Vault" style="width: auto; height: 100%; max-height: 220px; object-fit: contain; border-radius: 18px; box-shadow: 0 10px 30px rgba(0,0,0,0.6);" onerror="this.src='assets/findrr_dashboard.jpg'">
+
               </div>
+
             </div>
+
           </div>
+
         </article>
+
+
 
         <!-- FLAGSHIP 3: LAUNUP (COMING SOON) -->
+
         <article class="flagship-card featured-cyan">
+
           <div class="flagship-inner">
+
             <div>
+
               <div class="flagship-badge" style="border-color: rgba(0, 194, 255, 0.4); background: rgba(0, 194, 255, 0.08);">
+
                 <i class="fa-solid fa-rocket" style="color: var(--accent-cyan);"></i>
+
                 <span>FLAGSHIP 03 &bull; PROBLEM DISCOVERY &amp; MVP LAUNCHPAD &bull; COMING SOON</span>
+
               </div>
+
               <h3 class="flagship-title">LAUNUP <span style="font-size: 0.85rem; font-family: var(--font-mono); color: var(--accent-cyan); font-weight: 500; vertical-align: middle; border: 1px solid rgba(0,194,255,0.4); padding: 2px 8px; border-radius: 9999px; background: rgba(0,194,255,0.1);">COMING SOON</span></h3>
+
               <p class="flagship-desc">
+
                 <em>&ldquo;You tell your problems. We&apos;ll handle the rest.&rdquo;</em> A zero-URL problem-first software discovery engine and &#8377;0 MVP launchpad. Founders claim persistent sovereign handles (@name.launup) backed by Solutions Drawer sovereign identity and database, deploying single-file tools directly into client-side sandboxes.
+
               </p>
 
+
+
               <ul class="flagship-features">
+
                 <li>
+
                   <i class="fa-solid fa-circle-check"></i>
+
                   <span><strong>Zero-URL Handle Resolution:</strong> Visitors jump straight to functional web apps by typing @handle.launup in search, with zero external URL redirection anxiety.</span>
+
                 </li>
+
                 <li>
+
                   <i class="fa-solid fa-circle-check"></i>
+
                   <span><strong>Solutions Drawer Sovereign Sync:</strong> Real-time account verification and database catalog persistence directly via the Solutions Drawer sovereign ledger.</span>
+
                 </li>
+
                 <li>
+
                   <i class="fa-solid fa-circle-check"></i>
+
                   <span><strong>On-Device Simulator Sandbox:</strong> Run code in an isolated 1080p chassis container with local memory persistence and instant &#8377;0 deployment.</span>
+
                 </li>
+
               </ul>
 
+
+
               <div class="tech-pill-row">
+
                 <span class="tech-pill">Next.js 15</span>
+
                 <span class="tech-pill">Solutions Drawer DB</span>
+
                 <span class="tech-pill">PBKDF2-SHA512</span>
+
                 <span class="tech-pill">Client-Side Sandbox</span>
+
                 <span class="tech-pill">Zero-URL Stage</span>
+
                 <span class="tech-pill">Tailwind CSS</span>
+
               </div>
+
+
 
               <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+
                 <a href="http://localhost:3000" target="_blank" rel="noreferrer" class="btn-minimal btn-minimal-cyan">
+
                   <i class="fa-solid fa-bolt"></i>
+
                   <span>PREVIEW LAUNUP STAGE</span>
+
                 </a>
+
                 <span class="btn-minimal" style="cursor: default; opacity: 0.85; border-color: rgba(0, 194, 255, 0.3);">
+
                   <i class="fa-solid fa-clock" style="color: var(--accent-cyan);"></i>
+
                   <span>LAUNCHING Q1 2027</span>
+
                 </span>
+
               </div>
+
             </div>
 
+
+
             <div>
+
               <div class="flagship-preview-box" style="display: flex; flex-direction: column; align-items: center; justify-content: center; background: radial-gradient(circle at center, rgba(0,194,255,0.14) 0%, rgba(5,7,19,0.95) 100%); border: 1px solid rgba(0,194,255,0.3); padding: 32px 20px; border-radius: 16px; min-height: 240px; text-align: center;">
+
                 <div style="width: 64px; height: 64px; border-radius: 16px; background: rgba(0,194,255,0.15); border: 1px solid rgba(0,194,255,0.4); display: flex; align-items: center; justify-content: center; font-size: 2rem; color: #00c2ff; margin-bottom: 14px; box-shadow: 0 0 25px rgba(0,194,255,0.3);">
+
                   <i class="fa-solid fa-rocket"></i>
+
                 </div>
+
                 <div style="font-family: var(--font-mono); font-size: 1.15rem; font-weight: 800; color: #ffffff; letter-spacing: -0.02em;">LAUNUP</div>
+
                 <div style="font-family: var(--font-mono); font-size: 0.72rem; color: #00c2ff; margin-top: 4px; letter-spacing: 0.08em; text-transform: uppercase;">@startup.launup Discovery</div>
+
                 <div style="display: inline-flex; align-items: center; gap: 6px; margin-top: 14px; padding: 4px 12px; border-radius: 9999px; background: rgba(0,194,255,0.12); border: 1px solid rgba(0,194,255,0.3); font-size: 0.75rem; font-family: var(--font-mono); color: #7dd3fc;">
+
                   <span style="width: 6px; height: 6px; border-radius: 50%; background: #00c2ff; box-shadow: 0 0 8px #00c2ff;"></span>
+
                   <span>COMING SOON</span>
+
                 </div>
+
               </div>
+
             </div>
+
           </div>
+
         </article>
 
+
+
       </div>
+
     </div>
+
   </section>
 
+
+
   <!-- ==========================================================================
+
        MY JOURNEY: COLLEGE, SCHOOL & MILESTONES (DETAILED)
+
        ========================================================================== -->
+
   <section id="journey">
+
     <div class="container">
+
       <div class="section-header">
+
         <div class="section-eyebrow eyebrow-green">
+
           <span class="led led-green"></span>
+
           <span>ACADEMIC FOUNDATION &amp; MILESTONES</span>
+
         </div>
+
         <h2 class="section-title">MY JOURNEY</h2>
+
         <p class="section-subtitle">
+
           From my foundational schooling in Arambagh to university engineering and national technical hackathons.
+
         </p>
+
       </div>
+
+
 
       <div class="journey-timeline-grid">
+
         
+
         <!-- COLLEGE / UNIVERSITY -->
+
         <div class="journey-card featured-edu">
+
           <div class="journey-meta" style="color: var(--accent-green);">
+
             2025 &mdash; 2029
+
             <span class="sub" style="color: var(--accent-green); font-weight: 700;">CURRENT DEGREE</span>
+
             <span class="sub">Higher Education &bull; 8.43 CGPA</span>
+
           </div>
+
           <div class="journey-content">
+
             <h3>Brainware University</h3>
+
             <div class="journey-role">B.Tech in Computer Science &amp; Engineering (AIML) &bull; CGPA: 8.43</div>
+
             <p>
+
               Pursuing my undergraduate degree with a specialization in Artificial Intelligence and Machine Learning. Consistently maintaining high academic ranking with a current CGPA of <strong>8.43</strong>. Coursework focuses on mathematical algorithms, neural architectures, distributed computing, and artificial intelligence safety.
+
             </p>
+
             <div class="journey-highlights">
+
               <span class="journey-tag">Neural Networks</span>
+
               <span class="journey-tag">Deep Learning</span>
+
               <span class="journey-tag">Data Structures &amp; Algorithms</span>
+
               <span class="journey-tag">Discrete Mathematics</span>
+
               <span class="journey-tag">Optimization Techniques</span>
+
             </div>
+
             <div style="margin-top: 14px;">
+
               <a href="https://maps.app.goo.gl/hvu5bNGFRF4MAfDh6" target="_blank" rel="noreferrer" style="font-family: var(--font-mono); font-size: 11.5px; color: var(--accent-cyan);">
+
                 <i class="fa-solid fa-location-dot" style="margin-right: 6px;"></i>View University Campus (Barasat, Kolkata)
+
               </a>
+
             </div>
+
           </div>
+
         </div>
+
+
 
         <!-- SCHOOL / HIGHER SECONDARY -->
+
         <div class="journey-card">
+
           <div class="journey-meta">
+
             HIGHER SECONDARY
+
             <span class="sub">Schooling Milestone</span>
+
             <span class="sub">Arambagh, Hooghly</span>
+
           </div>
+
           <div class="journey-content">
+
             <h3>Arambagh High School</h3>
+
             <div class="journey-role">Higher Secondary (Class XI &amp; XII) &bull; Pure Science &amp; Mathematics</div>
+
             <p>
+
               Completed my higher secondary education with a rigorous academic curriculum focused on advanced mathematics, physics, and chemistry. Developed analytical rigor and fundamental problem-solving principles that form the bedrock of my engineering journey.
+
             </p>
+
             <div class="journey-highlights">
+
               <span class="journey-tag">Advanced Mathematics</span>
+
               <span class="journey-tag">Physics</span>
+
               <span class="journey-tag">Chemistry</span>
+
               <span class="journey-tag">Computer Application</span>
+
             </div>
+
             <div style="margin-top: 14px;">
+
               <a href="https://maps.app.goo.gl/FpSGdfTFCS8upqmZ8" target="_blank" rel="noreferrer" style="font-family: var(--font-mono); font-size: 11.5px; color: var(--accent-cyan);">
+
                 <i class="fa-solid fa-location-dot" style="margin-right: 6px;"></i>View School Location (Arambagh, Hooghly)
+
               </a>
+
             </div>
+
           </div>
+
         </div>
+
+
 
         <!-- NATIONAL HACKATHON: SIH -->
+
         <div class="journey-card">
+
           <div class="journey-meta">
+
             2026 &mdash; PRESENT
+
             <span class="sub">National Competition</span>
+
+            <span class="sub" style="color: #2dd4bf; font-weight: 700;">Problem Statement 43</span>
+
           </div>
+
           <div class="journey-content">
-            <h3>Smart India Hackathon (SIH)</h3>
-            <div class="journey-role">Societal Innovation Collaboration Portal</div>
+
+            <h3>Smart India Hackathon (SIH 2026) &bull; Memento</h3>
+
+            <div class="journey-role">Team Engineering &bull; Problem Statement 43</div>
+
             <p>
-              Building a centralized, AI-enabled digital platform to connect citizens reporting local community issues with Higher Education Institutions (HEIs) and industry partners. Features automated problem categorization, intelligent routing, and workflow verification.
+
+              Co-engineered <strong>Memento</strong> as part of a 6-member hackathon squad (with Sambu Chowdhury, Rana Tarafdar, Mousumi Bag, Yuvraj Shaw, Masum Aktar, and Subhajit Das) tackling SIH 2026 Problem Statement 43. Features centralized civic problem reporting, automated categorization, and institutional collaboration routing.
+
             </p>
+
             <div class="journey-highlights">
-              <span class="journey-tag">AI Categorization</span>
-              <span class="journey-tag">Public HEI Portal</span>
+
+              <span class="journey-tag">SIH 2026 PS-43</span>
+
+              <span class="journey-tag">Team Collaboration</span>
+
               <span class="journey-tag">Civic Tech</span>
+
+              <span class="journey-tag">Workflow Verification</span>
+
             </div>
+
+            <div style="margin-top: 14px;">
+
+              <a href="https://sih-26-memento-teal.vercel.app/" target="_blank" rel="noreferrer" style="font-family: var(--font-mono); font-size: 11.5px; color: #2dd4bf; text-decoration: none; display: inline-flex; align-items: center; gap: 6px;">
+
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>Launch Memento Deployment
+
+              </a>
+
+            </div>
+
           </div>
+
         </div>
+
+
 
         <!-- HP CX CERTIFICATION -->
+
         <div class="journey-card">
+
           <div class="journey-meta">
+
             CERTIFICATION
+
             <span class="sub">Enterprise CX Strategy</span>
+
           </div>
+
           <div class="journey-content">
+
             <h3>HP Customer Experience (CX)</h3>
+
             <div class="journey-role">Customer Journey &amp; Retention Architecture</div>
+
             <p>
+
               Mastered Net Promoter Score (NPS) telemetry to protect at-risk client accounts, mapping friction points across user touchpoints to design software that delivers empathetic, effortless customer journeys.
+
             </p>
+
             <div style="margin-top: 14px;">
+
               <a href="https://www.life-global.org/certificate/4438a77d-669b-41f9-ac61-955cb9058235" target="_blank" rel="noreferrer" style="font-family: var(--font-mono); font-size: 11.5px; color: var(--accent-cyan);">
+
                 <i class="fa-solid fa-link" style="margin-right: 6px;"></i>View Credential Verification
+
               </a>
+
             </div>
+
           </div>
+
         </div>
+
+
 
         <!-- FORAGE AI SIMULATION -->
+
         <div class="journey-card">
+
           <div class="journey-meta">
+
             JOB SIMULATION
+
             <span class="sub">AI Engineering</span>
+
           </div>
+
           <div class="journey-content">
+
             <h3>Partnering with AI (Forage)</h3>
+
             <div class="journey-role">Prompt Engineering &amp; AI-Assisted Debugging</div>
+
             <p>
+
               Developed advanced competencies in writing high-leverage prompts, orchestrating multimodal AI tools for design synthesis, and leveraging AI models for automated code review and debugging.
+
             </p>
+
           </div>
+
+        </div>
+
+
+
+        <!-- WORK 4: MEMENTO (SIH 2026) -->
+
+        <div class="project-card" style="border-color: rgba(45, 212, 191, 0.25);">
+
+          <div>
+
+            <div class="project-media-frame" style="background: radial-gradient(circle at center, rgba(45, 212, 191, 0.15) 0%, #060e10 100%); display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; border: 1px solid rgba(45, 212, 191, 0.35); text-align: center; padding: 22px;">
+
+              <div style="width: 50px; height: 50px; border-radius: 12px; background: rgba(45, 212, 191, 0.15); border: 1px solid rgba(45, 212, 191, 0.4); display: flex; align-items: center; justify-content: center; color: #2dd4bf; font-size: 1.4rem; margin-bottom: 8px; box-shadow: 0 0 20px rgba(45, 212, 191, 0.25);">
+
+                <i class="fa-solid fa-people-group"></i>
+
+              </div>
+
+              <div style="font-family: var(--font-dots); font-size: 1.15rem; color: #ffffff; letter-spacing: 0.05em;">MEMENTO</div>
+
+              <div style="font-family: var(--font-mono); font-size: 0.72rem; color: #2dd4bf; margin-top: 3px;">SIH 2026 &bull; PROBLEM STATEMENT 43</div>
+
+              <span style="position: absolute; top: 8px; right: 8px; font-family: var(--font-mono); font-size: 9px; padding: 2px 7px; border-radius: 999px; background: rgba(45, 212, 191, 0.18); border: 1px solid rgba(45, 212, 191, 0.35); color: #5eead4;">HACKATHON TEAM</span>
+
+            </div>
+
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px;">
+
+              <h3 style="margin-bottom: 0;">MEMENTO</h3>
+
+              <span style="font-family: var(--font-mono); font-size: 10px; color: #2dd4bf; background: rgba(45, 212, 191, 0.12); border: 1px solid rgba(45, 212, 191, 0.3); padding: 2px 8px; border-radius: 4px;">PS-43 &bull; SIH 2026</span>
+
+            </div>
+
+            <p>
+
+              Collaborative societal innovation platform engineered for <strong>Smart India Hackathon 2026 (Problem Statement 43)</strong>. Built as a team to streamline civic issue reporting, institutional research collaboration, and automated workflow routing.
+
+            </p>
+
+            <!-- Team Members Deck -->
+
+            <div style="margin-bottom: 18px; padding: 12px; border-radius: 8px; background: #0c0c0c; border: 1px solid #1f1f1f;">
+
+              <div style="font-family: var(--font-mono); font-size: 10.5px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px; display: flex; align-items: center; gap: 6px;">
+
+                <i class="fa-solid fa-users" style="color: #2dd4bf;"></i>
+
+                <span>Team Engineering (SIH 2026):</span>
+
+              </div>
+
+              <div style="display: flex; flex-wrap: wrap; gap: 6px;">
+
+                <a href="https://github.com/chowdhurysambu10-alt" target="_blank" rel="noreferrer" class="pref-tag" style="display: inline-flex; align-items: center; gap: 4px; text-decoration: none; color: #d4d4d4; transition: color 0.2s;" onmouseover="this.style.color='#2dd4bf'" onmouseout="this.style.color='#d4d4d4'">
+
+                  <i class="fa-brands fa-github" style="font-size: 10px;"></i>
+
+                  <span>Sambu Chowdhury</span>
+
+                </a>
+
+                <a href="https://github.com/rana-tarafdar" target="_blank" rel="noreferrer" class="pref-tag" style="display: inline-flex; align-items: center; gap: 4px; text-decoration: none; color: #d4d4d4; transition: color 0.2s;" onmouseover="this.style.color='#2dd4bf'" onmouseout="this.style.color='#d4d4d4'">
+
+                  <i class="fa-brands fa-github" style="font-size: 10px;"></i>
+
+                  <span>Rana Tarafdar</span>
+
+                </a>
+
+                <a href="https://github.com/mousumibag" target="_blank" rel="noreferrer" class="pref-tag" style="display: inline-flex; align-items: center; gap: 4px; text-decoration: none; color: #d4d4d4; transition: color 0.2s;" onmouseover="this.style.color='#2dd4bf'" onmouseout="this.style.color='#d4d4d4'">
+
+                  <i class="fa-brands fa-github" style="font-size: 10px;"></i>
+
+                  <span>Mousumi Bag</span>
+
+                </a>
+
+                <a href="https://github.com/Yuvi187" target="_blank" rel="noreferrer" class="pref-tag" style="display: inline-flex; align-items: center; gap: 4px; text-decoration: none; color: #d4d4d4; transition: color 0.2s;" onmouseover="this.style.color='#2dd4bf'" onmouseout="this.style.color='#d4d4d4'">
+
+                  <i class="fa-brands fa-github" style="font-size: 10px;"></i>
+
+                  <span>Yuvraj Shaw</span>
+
+                </a>
+
+                <span class="pref-tag" style="display: inline-flex; align-items: center; gap: 4px; color: #9ca3af;">
+
+                  <i class="fa-solid fa-user" style="font-size: 10px;"></i>
+
+                  <span>Masum Aktar</span>
+
+                </span>
+
+                <span class="pref-tag" style="display: inline-flex; align-items: center; gap: 4px; color: #2dd4bf; border-color: rgba(45, 212, 191, 0.4); background: rgba(45, 212, 191, 0.08);">
+
+                  <i class="fa-solid fa-star" style="font-size: 10px;"></i>
+
+                  <span>Subhajit Das (Krish)</span>
+
+                </span>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <div>
+
+            <div class="tech-pill-row" style="margin-bottom: 16px;">
+
+              <span class="tech-pill">Next.js / React</span>
+
+              <span class="tech-pill">SIH 2026</span>
+
+              <span class="tech-pill">Problem Statement 43</span>
+
+              <span class="tech-pill">Team Project</span>
+
+              <span class="tech-pill">Civic Tech</span>
+
+            </div>
+
+            <a href="https://sih-26-memento-teal.vercel.app/" target="_blank" rel="noreferrer" class="btn-minimal" style="width: 100%; border-color: rgba(45, 212, 191, 0.45); color: #5eead4; background: rgba(45, 212, 191, 0.08);">
+
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+              <span>LAUNCH MEMENTO LIVE</span>
+
+            </a>
+
+          </div>
+
         </div>
 
       </div>
+
     </div>
+
   </section>
 
+
+
   <!-- ==========================================================================
+
        ADDITIONAL WORKS & AI SYSTEMS
+
        ========================================================================== -->
+
   <section id="projects">
+
     <div class="container">
+
       <div class="section-header">
+
         <div class="section-eyebrow">
+
           <span class="led"></span>
+
           <span>SPECIALIZED PIPELINES</span>
+
         </div>
+
         <h2 class="section-title">SELECTED WORKS</h2>
+
         <p class="section-subtitle">
+
           Intelligent systems, developer terminal interfaces, and machine learning visualizers.
+
         </p>
+
       </div>
+
+
 
       <div class="projects-grid">
+
         
+
         <!-- WORK 1: SCHEGENT -->
+
         <div class="project-card">
+
           <div>
+
             <div class="project-media-frame">
+
               <img src="assets/180617.png" alt="Schegent" onerror="this.src='https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600&auto=format&fit=crop'">
+
             </div>
+
             <h3>SCHEGENT</h3>
+
             <p>
+
               A specialized Retrieval-Augmented Generation (RAG) pipeline designed to manage calendar and schedule data with absolute precision. Enables small, local LLMs like Qwen2.5-1.5B to resolve complex temporal queries without hallucination.
+
             </p>
+
           </div>
+
           <div>
+
             <div class="tech-pill-row" style="margin-bottom: 16px;">
+
               <span class="tech-pill">Python</span>
+
               <span class="tech-pill">RAG</span>
+
               <span class="tech-pill">Qwen2.5-1.5B</span>
+
               <span class="tech-pill">Local LLM</span>
+
             </div>
+
             <a href="https://github.com/subhajit-io/Schegent" target="_blank" rel="noreferrer" class="btn-minimal" style="width: 100%;">
+
               <i class="fa-brands fa-github"></i>
+
               <span>VIEW REPO</span>
+
             </a>
+
           </div>
+
         </div>
+
+
 
         <!-- WORK 2: CHERM -->
+
         <div class="project-card">
+
           <div>
+
             <div class="project-media-frame">
+
               <iframe src="https://www.youtube.com/embed/ZVqp7z1P8n8" title="Cherm Demo" allowfullscreen loading="lazy"></iframe>
+
             </div>
+
             <h3>CHERM</h3>
+
             <p>
+
               A high-performance Python-based TUI application bringing IDE-like capabilities to the terminal. Features a keyboard-navigable dashboard equipped with real-time Big-O complexity estimation and automated secret scanning.
+
             </p>
+
           </div>
+
           <div>
+
             <div class="tech-pill-row" style="margin-bottom: 16px;">
+
               <span class="tech-pill">Python</span>
+
               <span class="tech-pill">TUI Engine</span>
+
               <span class="tech-pill">Big-O Analyzer</span>
+
               <span class="tech-pill">Secret Scan</span>
+
             </div>
+
             <a href="https://github.com/subhajit-io/Cherm" target="_blank" rel="noreferrer" class="btn-minimal" style="width: 100%;">
+
               <i class="fa-brands fa-github"></i>
+
               <span>VIEW REPO</span>
+
             </a>
+
           </div>
+
         </div>
+
+
 
         <!-- WORK 3: VISUAL TOKENIZER -->
+
         <div class="project-card">
+
           <div>
+
             <div class="project-media-frame">
+
               <iframe src="https://www.youtube.com/embed/e515KjXbNYc" title="Visual Tokenizer Demo" allowfullscreen loading="lazy"></iframe>
+
             </div>
+
             <h3>VISUAL TOKENIZER</h3>
+
             <p>
+
               An interactive web application that visualizes the Byte Pair Encoding (BPE) algorithm used by modern Large Language Models. Users can step through the token-merging process with an interactive slider in real-time.
+
             </p>
+
           </div>
+
           <div>
+
             <div class="tech-pill-row" style="margin-bottom: 16px;">
+
               <span class="tech-pill">JavaScript</span>
+
               <span class="tech-pill">NLP Tokenization</span>
+
               <span class="tech-pill">BPE Algorithm</span>
+
               <span class="tech-pill">Interactive</span>
+
             </div>
+
             <a href="https://github.com/subhajit-io/Visual-Tokenizer" target="_blank" rel="noreferrer" class="btn-minimal" style="width: 100%;">
+
               <i class="fa-brands fa-github"></i>
+
               <span>VIEW REPO</span>
+
             </a>
+
           </div>
+
         </div>
 
+
+
       </div>
+
     </div>
+
   </section>
 
+
+
   <!-- ==========================================================================
+
        PHILOSOPHY QUOTE
+
        ========================================================================== -->
+
   <div class="container">
+
     <div class="quote-card">
+
       <p class="quote-text">
+
         &ldquo;I don&apos;t follow Ikigai, because tomorrow is never guaranteed. I refuse to let today&apos;s work wait for a future that isn&apos;t promised.&rdquo;
+
       </p>
+
       <div class="quote-author">&mdash; Subhajit Das &bull; Personal Engineering Philosophy</div>
+
     </div>
+
   </div>
 
+
+
   <!-- ==========================================================================
+
        TECHNICAL TOOLKIT
+
        ========================================================================== -->
+
   <section id="toolkit">
+
     <div class="container">
+
       <div class="section-header">
+
         <div class="section-eyebrow">
+
           <span class="led"></span>
+
           <span>STACK &amp; CAPABILITIES</span>
+
         </div>
+
         <h2 class="section-title">TECHNICAL TOOLKIT</h2>
+
         <p class="section-subtitle">
+
           Technologies, frameworks, and agentic environments I operate on a daily basis.
+
         </p>
+
       </div>
+
+
 
       <div class="skills-grid">
+
         
+
         <div class="skills-category-card">
+
           <h3><i class="fa-solid fa-brain" style="color: var(--accent-red);"></i> AI &amp; MACHINE LEARNING</h3>
+
           <div class="chips-flex">
+
             <span class="chip chip-green"><i class="devicon-python-plain" style="color: var(--accent-green);"></i> PyTorch</span>
+
             <span class="chip"><i class="devicon-numpy-original"></i> NumPy</span>
+
             <span class="chip">Prompt Engineering</span>
+
             <span class="chip">RAG Pipelines</span>
+
             <span class="chip chip-green">Local LLMs (Qwen/Llama)</span>
+
             <span class="chip">Deep Learning</span>
+
             <span class="chip">Tokenization (BPE)</span>
+
           </div>
+
         </div>
 
+
+
         <div class="skills-category-card">
+
           <h3><i class="fa-solid fa-code" style="color: var(--accent-cyan);"></i> LANGUAGES &amp; RUNTIMES</h3>
+
           <div class="chips-flex">
+
             <span class="chip"><i class="devicon-python-plain"></i> Python</span>
+
             <span class="chip"><i class="devicon-cplusplus-plain"></i> C++</span>
+
             <span class="chip"><i class="devicon-c-plain"></i> C</span>
+
             <span class="chip"><i class="devicon-java-plain"></i> Java</span>
+
             <span class="chip"><i class="devicon-typescript-plain"></i> TypeScript</span>
+
             <span class="chip"><i class="devicon-flutter-plain"></i> Flutter / Dart</span>
+
           </div>
+
         </div>
 
+
+
         <div class="skills-category-card">
+
           <h3><i class="fa-solid fa-server" style="color: var(--accent-green);"></i> WEB &amp; CLOUD INFRA</h3>
+
           <div class="chips-flex">
+
             <span class="chip"><i class="devicon-nextjs-plain"></i> Next.js</span>
+
             <span class="chip chip-green">PWA / WebAPK</span>
+
             <span class="chip chip-green"><i class="devicon-sqlite-plain" style="color: var(--accent-green);"></i> SQLite On-Device</span>
+
             <span class="chip chip-green">Cloudflare D1 / Workers</span>
+
             <span class="chip">AWS S3 Presigned</span>
+
             <span class="chip"><i class="devicon-git-plain"></i> Git &bull; GitHub</span>
+
           </div>
+
         </div>
 
+
+
         <div class="skills-category-card">
+
           <h3><i class="fa-solid fa-terminal" style="color: #ffb703;"></i> AGENTIC AI WORKSTATION</h3>
+
           <div class="chips-flex">
+
             <span class="chip">Antigravity IDE</span>
+
             <span class="chip">Claude 3.7 Sonnet</span>
+
             <span class="chip">Google Gemini 2.5 Pro</span>
+
             <span class="chip">Google AI Studio</span>
+
             <span class="chip">LMStudio</span>
+
             <span class="chip">VS Code</span>
+
             <span class="chip">Android Studio</span>
+
           </div>
+
         </div>
+
+
 
       </div>
+
     </div>
+
   </section>
 
+
+
   <!-- ==========================================================================
+
        CONTACT SECTION
+
        ========================================================================== -->
+
   <section id="contact">
+
     <div class="container">
+
       <div class="section-header">
+
         <div class="section-eyebrow">
+
           <span class="led"></span>
+
           <span>GET IN TOUCH</span>
+
         </div>
+
         <h2 class="section-title">START A CONVERSATION</h2>
+
         <p class="section-subtitle">
+
           I thrive in startup leadership roles and remote environments. Currently open to part-time commitments, internships, volunteer engineering, and business collaborations.
+
         </p>
+
       </div>
+
+
 
       <div class="contact-grid">
+
         <form class="contact-form" onsubmit="handleContactSubmit(event)">
+
           <div class="form-group">
+
             <label class="form-label">Full Name</label>
+
             <input type="text" id="contact-name" class="form-input" placeholder="Your name or organization" required>
+
           </div>
 
+
+
           <div class="form-group">
+
             <label class="form-label">Email Address</label>
+
             <input type="email" id="contact-email" class="form-input" placeholder="you@domain.com" required>
+
           </div>
 
+
+
           <div class="form-group">
+
             <label class="form-label">Message / Proposal</label>
+
             <textarea id="contact-message" class="form-textarea" rows="5" placeholder="How can we collaborate on intelligent systems?" required></textarea>
+
           </div>
+
+
 
           <button type="submit" class="btn-minimal btn-minimal-red" style="align-self: flex-start;">
+
             <i class="fa-solid fa-paper-plane"></i>
+
             <span>SEND TRANSMISSION</span>
+
           </button>
+
         </form>
 
+
+
         <div class="contact-info-card">
+
           <div class="contact-item">
+
             <div class="contact-icon-box">
+
               <i class="fa-solid fa-briefcase"></i>
+
             </div>
+
             <div>
+
               <div class="form-label">Engagement &amp; Work Style</div>
+
               <div style="font-family: var(--font-mono); font-size: 13.5px; color: var(--accent-green);">
+
                 100% Remote &bull; Startup Leadership &bull; Part-Time
+
               </div>
+
             </div>
+
           </div>
 
+
+
           <div class="contact-item">
+
             <div class="contact-icon-box">
+
               <i class="fa-solid fa-envelope"></i>
+
             </div>
+
             <div>
+
               <div class="form-label">Primary Communication</div>
+
               <a href="https://mail.google.com/mail/?view=cm&to=subhajit32das@gmail.com" target="_blank" rel="noreferrer" style="font-family: var(--font-mono); font-size: 13.5px; color: #fff;">
+
                 subhajit32das@gmail.com
+
               </a>
+
             </div>
+
           </div>
 
+
+
           <div class="contact-item">
+
             <div class="contact-icon-box">
+
               <i class="fa-brands fa-whatsapp"></i>
+
             </div>
+
             <div>
+
               <div class="form-label">Instant WhatsApp</div>
+
               <a href="https://wa.me/+917001023356" target="_blank" rel="noreferrer" style="font-family: var(--font-mono); font-size: 13.5px; color: #fff;">
+
                 +91 7001023356
+
               </a>
+
             </div>
+
           </div>
 
+
+
           <div class="contact-item">
+
             <div class="contact-icon-box">
+
               <i class="fa-solid fa-location-dot"></i>
+
             </div>
+
             <div>
+
               <div class="form-label">Operating Location</div>
+
               <div style="font-family: var(--font-mono); font-size: 13.5px; color: #fff;">
+
                 Arambagh &bull; Kolkata, West Bengal, India
+
               </div>
+
             </div>
+
           </div>
 
+
+
           <div class="contact-item">
+
             <div class="contact-icon-box">
+
               <i class="fa-brands fa-github"></i>
+
             </div>
+
             <div>
+
               <div class="form-label">Open Source &amp; Code</div>
+
               <a href="https://github.com/subhajit-io" target="_blank" rel="noreferrer" style="font-family: var(--font-mono); font-size: 13.5px; color: var(--accent-cyan);">
+
                 github.com/subhajit-io
+
               </a>
+
             </div>
+
           </div>
 
+
+
           <div class="contact-item">
+
             <div class="contact-icon-box">
+
               <i class="fa-brands fa-linkedin"></i>
+
             </div>
+
             <div>
+
               <div class="form-label">Professional Network</div>
+
               <a href="https://www.linkedin.com/in/findrrsubhajit/" target="_blank" rel="noreferrer" style="font-family: var(--font-mono); font-size: 13.5px; color: var(--accent-cyan);">
+
                 linkedin.com/in/findrrsubhajit
+
               </a>
+
             </div>
+
           </div>
+
         </div>
+
       </div>
+
     </div>
+
   </section>
 
+
+
   <!-- ==========================================================================
+
        MINIMALIST FOOTER
+
        ========================================================================== -->
+
   <footer>
+
     <div class="container footer-inner">
+
       <div class="footer-copy">
+
         &copy; 2026 SUBHAJIT DAS. ALL RIGHTS RESERVED. SOVEREIGN ARCHITECTURE.
+
       </div>
+
+
 
       <div style="display: flex; gap: 16px; align-items: center; flex-wrap: wrap;">
+
         <a href="mailto:subhajit32das@gmail.com" class="btn-minimal btn-pill" style="font-size: 10.5px; border-color: rgba(56, 189, 248, 0.3);">
+
           <i class="fa-solid fa-envelope" style="color: var(--accent-cyan);"></i>
+
           <span>subhajit32das@gmail.com</span>
+
         </a>
+
         <a href="https://solutionsdrawer.pages.dev" target="_blank" rel="noreferrer" class="btn-minimal btn-pill" style="font-size: 10.5px; border-color: rgba(215, 25, 33, 0.3);">
+
           <i class="fa-solid fa-shield-halved" style="color: var(--accent-red);"></i>
+
           <span>SOLUTIONS DRAWER</span>
+
         </a>
+
         <a href="https://letusfindrr.pages.dev" target="_blank" rel="noreferrer" class="btn-minimal btn-pill" style="font-size: 10.5px; border-color: rgba(0, 230, 118, 0.3);">
+
           <i class="fa-solid fa-wallet" style="color: var(--accent-green);"></i>
+
           <span>FINDRR</span>
+
         </a>
+
       </div>
+
     </div>
+
   </footer>
 
+
+
   <script>
+
     function handleContactSubmit(e) {
+
       e.preventDefault();
+
       const name = document.getElementById('contact-name').value;
+
       const email = document.getElementById('contact-email').value;
+
       const message = document.getElementById('contact-message').value;
 
+
+
       const subject = encodeURIComponent(`Portfolio Inquiry from ${name}`);
+
       const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nProposal/Message:\n${message}`);
 
+
+
       const mailtoUrl = `https://mail.google.com/mail/?view=cm&to=subhajit32das@gmail.com&su=${subject}&body=${body}`;
+
       window.open(mailtoUrl, '_blank');
+
     }
 
+
+
     /* ==========================================================================
+
        SOVEREIGN TERMINAL ENGINE (TEXT CLI WITH DEFAULT HELP MENU)
+
        ========================================================================== */
+
     const terminalState = {
+
       isOpen: false,
+
       history: [],
+
       historyIndex: -1
+
     };
 
+
+
     const terminalCommands = {
+
       help: () => `SOLUTIONS DRAWER SHELL v2.6 // AVAILABLE SYSTEM COMMANDS:
+
 ================================================================================
+
   about        - Architect profile, background, identity & philosophy
+
   work         - Work preferences, remote model, leadership & availability
+
   flagships    - Solutions Drawer & Findrr sovereign ecosystem & links
+
   journey      - Academic foundation: Brainware Univ (AIML) & Arambagh High
+
   skills       - Technical toolkit: AI/ML, languages & edge cloud runtimes
+
   contact      - Direct communications: Email, WhatsApp, GitHub, LinkedIn
+
   resume       - Open Subhajit's verified PDF resume in a new browser tab
+
   clear        - Clear console screen (restores clean help menu)
+
   exit         - Terminate terminal session (or press ESC)
+
 ================================================================================
+
 [TIP] Type any command above and press ENTER, or click the quick-chips below.`,
 
+
+
       about: () => `[ARCHITECT PROFILE]
+
 --------------------------------------------------------------------------------
+
 Full Name       : Subhajit Das
+
 Known As        : Krish
+
 Specialization  : Software Engineering & AIML Architecture
+
 Academic Degree : B.Tech CSE (AIML), Brainware University (2025 — 2029)
+
 Current GPA     : 8.43 / 10.0
+
 Hometown        : Arambagh, Hooghly, West Bengal, India
+
 Operating Base  : Kolkata, West Bengal, India
+
 Languages       : English, Hindi, Bengali
+
 Work Style      : Remote • Startup Leadership • Part-Time (Uncompromising Output)
+
 Open For        : Internships • Volunteer Work • Startup Collaborations
+
 Core Tenet      : "I refuse to let today's work wait for a future that isn't promised."`,
+
+
 
       whoami: () => terminalCommands.about(),
 
+
+
       work: () => `[WORK STYLE & ENGAGEMENT PREFERENCES]
+
 --------------------------------------------------------------------------------
+
 Work Style    : Startup Leadership & Full-Ownership Engineering
+
 Location Mode : 100% Remote (Async-first, global collaboration)
+
 Availability  : Part-Time Commitments (Delivering uncompromising output)
+
 Open For      : • Startup Business Collaborations
+
                 • Software & AIML Internships
+
                 • High-Impact Volunteer Engineering
+
 Philosophy    : "I thrive in leadership roles within startup environments. I am
+
                 focused on remote work and currently available for part-time
+
                 commitments, delivering uncompromising output."`,
 
+
+
       preferences: () => terminalCommands.work(),
+
       pref: () => terminalCommands.work(),
 
+
+
       flagships: () => `[FLAGSHIP ECOSYSTEM & PIPELINES]
+
 --------------------------------------------------------------------------------
+
 01. SOLUTIONS DRAWER
+
     Type        : Sovereign Android Web App Store & PWA Platform
+
     Description : Minimalist application store built to bypass corporate
+
                   app-monopolies and eliminate user tracking telemetry.
+
     Security    : "Drawer Protect" client-side SHA-256 binary validation.
+
     Stack       : Next.js 16, TypeScript, Cloudflare D1 edge database, AWS S3.
+
     Live URL    : <a href="https://solutionsdrawer.pages.dev" target="_blank" rel="noreferrer">https://solutionsdrawer.pages.dev</a>
+
     Repository  : <a href="https://github.com/subhajit-io/solutionsdrawer" target="_blank" rel="noreferrer">github.com/subhajit-io/solutionsdrawer</a>
 
+
+
 02. FINDRR
+
     Type        : 100% On-Device Financial Discipline Vault
+
     Description : Personal money management vault with zero SMS scraping
+
                   and zero cloud telemetry. Keeps sensitive logs on-device.
+
     Features    : Unified Available Money, 5-Second Mindful QR Impulse Pause.
+
     Stack       : Android Native, SQLite on-device, AES-256 encryption.
+
     Live URL    : <a href="https://letusfindrr.pages.dev" target="_blank" rel="noreferrer">https://letusfindrr.pages.dev</a>
 
+
+
 03. LAUNUP (COMING SOON)
+
     Type        : Problem-First Discovery & MVP Launchpad
+
     Tagline     : "You tell your problems. We'll handle the rest."
+
     Description : Zero-URL software discovery and ₹0 founder launchpad. Users
+
                   type @handle.launup to test tools directly inside client
+
                   sandboxes; synced with Solutions Drawer sovereign identity.
+
     Stack       : Next.js 15, Solutions Drawer DB, Zero-URL Sandbox, PBKDF2-SHA512.
+
     Status      : Coming Soon (Q1 2027) • Preview Stage Active
 
-04. ADDITIONAL PIPELINES
+
+
+04. ADDITIONAL PIPELINES & TEAM COLLABORATIONS
+
+    • Memento          : Smart India Hackathon (SIH 2026) Team Project (Problem Statement 43)
+                         Collaborators: Sambu Chowdhury, Rana Tarafdar, Mousumi Bag,
+                                        Yuvraj Shaw, Masum Aktar & Subhajit Das
+                         Live URL     : <a href="https://sih-26-memento-teal.vercel.app/" target="_blank" rel="noreferrer">https://sih-26-memento-teal.vercel.app/</a>
+
     • Schegent         : Local LLM (Qwen2.5) Calendar RAG System
+
                          <a href="https://github.com/subhajit-io/Schegent" target="_blank" rel="noreferrer">github.com/subhajit-io/Schegent</a>
+
     • Cherm            : High-Performance Terminal IDE with Big-O Complexity
+
                          <a href="https://github.com/subhajit-io/Cherm" target="_blank" rel="noreferrer">github.com/subhajit-io/Cherm</a>
+
     • Visual Tokenizer : Interactive Byte Pair Encoding (BPE) Visualizer
+
                          <a href="https://github.com/subhajit-io/Visual-Tokenizer" target="_blank" rel="noreferrer">github.com/subhajit-io/Visual-Tokenizer</a>`,
 
+
+
       projects: () => terminalCommands.flagships(),
+
       proj: () => terminalCommands.flagships(),
 
+
+
       journey: () => `[ACADEMIC FOUNDATION & MILESTONES]
+
 --------------------------------------------------------------------------------
+
 • BRAINWARE UNIVERSITY (2025 — 2029)
+
   Degree   : Bachelor of Technology (B.Tech)
+
   Major    : Computer Science & Engineering (AIML)
+
   Status   : In Progress • Current CGPA: 8.43 / 10.0
+
   Subjects : Neural Networks, Deep Learning, DSA, Discrete Mathematics, AI Safety
+
   Campus   : Barasat, Kolkata, West Bengal
+
   Map URL  : <a href="https://maps.app.goo.gl/hvu5bNGFRF4MAfDh6" target="_blank" rel="noreferrer">https://maps.app.goo.gl/hvu5bNGFRF4MAfDh6</a>
 
+
+
 • ARAMBAGH HIGH SCHOOL (HIGHER SECONDARY)
+
   Stage    : Class XI & Class XII
+
   Stream   : Pure Science & Advanced Mathematics
+
   Subjects : Physics, Chemistry, Advanced Mathematics, Computer Application
+
   Location : Arambagh, Hooghly, West Bengal
+
   Map URL  : <a href="https://maps.app.goo.gl/FpSGdfTFCS8upqmZ8" target="_blank" rel="noreferrer">https://maps.app.goo.gl/FpSGdfTFCS8upqmZ8</a>
 
-• SMART INDIA HACKATHON (SIH 2026)
-  Project  : Societal Innovation Collaboration Portal connecting citizens & HEIs
+
+
+• SMART INDIA HACKATHON (SIH 2026) — MEMENTO
+
+  Project    : Memento (Societal Innovation Collaboration Portal)
+  Category   : Problem Statement 43 (Team Engineering)
+  Team       : Sambu Chowdhury, Rana Tarafdar, Mousumi Bag, Yuvraj Shaw, Masum Aktar & Subhajit Das
+  Live Stage : <a href="https://sih-26-memento-teal.vercel.app/" target="_blank" rel="noreferrer">https://sih-26-memento-teal.vercel.app/</a>
+
+
 
 • HP CUSTOMER EXPERIENCE (CX) CERTIFICATION
+
   Role     : Customer Journey & Retention Architecture
+
   Verify   : <a href="https://www.life-global.org/certificate/4438a77d-669b-41f9-ac61-955cb9058235" target="_blank" rel="noreferrer">Verify HP CX Credential</a>
 
+
+
 • FORAGE AI JOB SIMULATION
+
   Track    : Partnering with AI — Prompt Engineering & AI-Assisted Debugging`,
 
+
+
       edu: () => terminalCommands.journey(),
+
       education: () => terminalCommands.journey(),
 
+
+
       skills: () => `[TECHNICAL TOOLKIT & CAPABILITIES]
+
 --------------------------------------------------------------------------------
+
 [AI & MACHINE LEARNING]
+
   • Core Frameworks : PyTorch, NumPy
+
   • LLM Architecture: Local LLMs (Qwen2.5, Llama), RAG Pipelines
+
   • Methodologies   : Prompt Engineering, Tokenization (BPE), Neural Networks
 
+
+
 [LANGUAGES & RUNTIMES]
+
   • Core Languages  : Python, C++, TypeScript, C, Java, Dart / Flutter
 
+
+
 [WEB, CLOUD & EDGE INFRA]
+
   • Frameworks      : Next.js, React, PWA / WebAPK
+
   • Storage & DB    : SQLite on-device, Cloudflare D1, AWS S3 Presigned
+
   • Cloud & Tooling : Git, GitHub, Cloudflare Pages, Linux CLI
 
+
+
 [AGENTIC AI WORKSTATIONS]
+
   • Environments    : Antigravity IDE, Claude 3.7 Sonnet, Gemini 2.5 Pro, LMStudio`,
+
+
 
       stack: () => terminalCommands.skills(),
 
+
+
       contact: () => `[COMMUNICATION DIRECTORY]
+
 --------------------------------------------------------------------------------
+
 Email    : <a href="https://mail.google.com/mail/?view=cm&to=subhajit32das@gmail.com" target="_blank" rel="noreferrer">subhajit32das@gmail.com</a>
+
 WhatsApp : <a href="https://wa.me/+917001023356" target="_blank" rel="noreferrer">+91 7001023356 (Click to Chat)</a>
+
 GitHub   : <a href="https://github.com/subhajit-io" target="_blank" rel="noreferrer">https://github.com/subhajit-io</a>
+
 LinkedIn : <a href="https://www.linkedin.com/in/findrrsubhajit/" target="_blank" rel="noreferrer">linkedin.com/in/findrrsubhajit</a>
+
 Location : Arambagh & Kolkata, West Bengal, India
+
 Status   : Open for Remote Part-Time Roles, Internships & Startup Partnerships`,
 
+
+
       resume: () => {
+
         window.open('https://canva.link/cpc3vxhkdja03dc', '_blank');
+
         return `[ACTION] Opening Subhajit's verified PDF resume in a new tab...\nURL: <a href="https://canva.link/cpc3vxhkdja03dc" target="_blank" rel="noreferrer">https://canva.link/cpc3vxhkdja03dc</a>`;
+
       },
+
+
 
       clear: () => {
+
         const historyDiv = document.getElementById('terminal-history');
+
         historyDiv.innerHTML = '';
+
         showHelpMenuByDefault();
+
         return null;
+
       },
+
       cls: () => terminalCommands.clear(),
 
+
+
       exit: () => {
+
         toggleTerminalMode();
+
         return `[SYSTEM] Terminal session closed.`;
+
       },
+
       quit: () => terminalCommands.exit()
+
     };
 
+
+
     function showHelpMenuByDefault() {
+
       const historyDiv = document.getElementById('terminal-history');
+
       const helpBlock = document.createElement('div');
+
       helpBlock.className = 'terminal-output-block';
+
       helpBlock.innerHTML = `
+
         <div class="terminal-output-cmd"><span style="color: var(--accent-green);">krish@solutionsdrawer:~$</span> help</div>
+
         <div class="terminal-output-text">${terminalCommands.help()}</div>
+
       `;
+
       historyDiv.appendChild(helpBlock);
+
     }
 
+
+
     function toggleTerminalMode() {
+
       const overlay = document.getElementById('terminal-overlay');
+
       const toggleBtn = document.getElementById('terminal-toggle-btn');
+
       const input = document.getElementById('terminal-input');
+
       const body = document.getElementById('terminal-body');
+
       const historyDiv = document.getElementById('terminal-history');
+
+
 
       terminalState.isOpen = !terminalState.isOpen;
 
+
+
       if (terminalState.isOpen) {
+
         overlay.style.display = 'flex';
+
         toggleBtn.classList.add('active');
+
         document.body.style.overflow = 'hidden';
 
+
+
         // Open with help menu by default if history is empty
+
         if (!historyDiv.hasChildNodes()) {
+
           showHelpMenuByDefault();
+
         }
 
+
+
         setTimeout(() => {
+
           input.focus();
+
           body.scrollTop = body.scrollHeight;
+
         }, 50);
+
       } else {
+
         overlay.style.display = 'none';
+
         toggleBtn.classList.remove('active');
+
         document.body.style.overflow = '';
+
       }
+
     }
+
+
 
     function handleTerminalOverlayClick(e) {
+
       if (e.target.id === 'terminal-overlay') {
+
         toggleTerminalMode();
+
       }
+
     }
+
+
 
     function runTerminalCommand(cmdString) {
+
       if (!terminalState.isOpen) {
+
         toggleTerminalMode();
+
       }
+
       executeTerminal(cmdString);
+
     }
 
+
+
     function executeTerminal(rawCommand) {
+
       const cmd = rawCommand.trim();
+
       const historyDiv = document.getElementById('terminal-history');
+
       const input = document.getElementById('terminal-input');
+
       const body = document.getElementById('terminal-body');
+
+
 
       if (!cmd) return;
 
+
+
       terminalState.history.push(cmd);
+
       terminalState.historyIndex = terminalState.history.length;
 
+
+
       const lowerCmd = cmd.toLowerCase().split(' ')[0];
+
       const cmdBlock = document.createElement('div');
+
       cmdBlock.className = 'terminal-output-block';
 
+
+
       const promptEcho = document.createElement('div');
+
       promptEcho.className = 'terminal-output-cmd';
+
       promptEcho.innerHTML = `<span style="color: var(--accent-green);">krish@solutionsdrawer:~$</span> <span style="color: #ffffff; font-weight: 700;">${escapeHtml(cmd)}</span>`;
+
       cmdBlock.appendChild(promptEcho);
 
+
+
       let outputContent = '';
+
       if (terminalCommands[lowerCmd]) {
+
         outputContent = terminalCommands[lowerCmd]();
+
       } else if (lowerCmd.startsWith('cat') || lowerCmd.startsWith('echo')) {
+
         const parts = cmd.split(' ');
+
         const arg = parts.length > 1 ? parts[1].toLowerCase() : '';
+
         if (arg && terminalCommands[arg]) {
+
           outputContent = terminalCommands[arg]();
+
         } else {
+
           outputContent = `cat: ${escapeHtml(cmd.replace(/^(cat|echo)\s*/, ''))}: No such file or directory. Type 'help' for command list.`;
+
         }
+
       } else {
+
         outputContent = `bash: command not found: '${escapeHtml(cmd)}'. Type 'help' to see available commands.`;
+
       }
+
+
 
       if (outputContent !== null) {
+
         const outDiv = document.createElement('div');
+
         outDiv.className = 'terminal-output-text';
+
         outDiv.innerHTML = outputContent;
+
         cmdBlock.appendChild(outDiv);
+
         historyDiv.appendChild(cmdBlock);
+
       }
+
+
 
       input.value = '';
+
       setTimeout(() => {
+
         body.scrollTop = body.scrollHeight;
+
         input.focus();
+
       }, 10);
+
     }
+
+
 
     function escapeHtml(str) {
+
       return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+
     }
 
+
+
     // Auto-focus input when clicking anywhere inside terminal body
+
     document.addEventListener('DOMContentLoaded', () => {
+
       const termBody = document.getElementById('terminal-body');
+
       if (termBody) {
+
         termBody.addEventListener('click', () => {
+
           const termInput = document.getElementById('terminal-input');
+
           if (termInput) termInput.focus();
+
         });
+
       }
+
     });
+
+
 
     // Global keyboard shortcuts for Terminal
+
     document.addEventListener('keydown', (e) => {
+
       // Toggle terminal on Ctrl+` or ` when not inside a text field
+
       if ((e.ctrlKey && e.key === '`') || (e.key === '`' && !['INPUT', 'TEXTAREA'].includes(document.activeElement.tagName))) {
+
         e.preventDefault();
+
         toggleTerminalMode();
+
         return;
+
       }
+
+
 
       // Close on ESC
+
       if (e.key === 'Escape' && terminalState.isOpen) {
+
         e.preventDefault();
+
         toggleTerminalMode();
+
         return;
+
       }
+
+
 
       // Terminal input navigation
+
       if (terminalState.isOpen && document.activeElement && document.activeElement.id === 'terminal-input') {
+
         const input = document.getElementById('terminal-input');
+
         if (e.key === 'Enter') {
+
           e.preventDefault();
+
           executeTerminal(input.value);
+
         } else if (e.key === 'ArrowUp') {
+
           e.preventDefault();
+
           if (terminalState.history.length > 0 && terminalState.historyIndex > 0) {
+
             terminalState.historyIndex--;
+
             input.value = terminalState.history[terminalState.historyIndex];
+
           }
+
         } else if (e.key === 'ArrowDown') {
+
           e.preventDefault();
+
           if (terminalState.historyIndex < terminalState.history.length - 1) {
+
             terminalState.historyIndex++;
+
             input.value = terminalState.history[terminalState.historyIndex];
+
           } else {
+
             terminalState.historyIndex = terminalState.history.length;
+
             input.value = '';
+
           }
+
         } else if (e.key === 'Tab') {
+
           e.preventDefault();
+
           const current = input.value.trim().toLowerCase();
+
           const matches = Object.keys(terminalCommands).filter(c => c.startsWith(current));
+
           if (matches.length === 1) {
+
             input.value = matches[0];
+
           }
+
         }
+
       }
+
     });
 
+
+
     // Explicit global exposure for inline HTML onclick handlers
+
     window.toggleTerminalMode = toggleTerminalMode;
+
     window.runTerminalCommand = runTerminalCommand;
+
     window.handleTerminalOverlayClick = handleTerminalOverlayClick;
+
     window.handleContactSubmit = handleContactSubmit;
+
   </script>
+
 </body>
+
 </html>
+
