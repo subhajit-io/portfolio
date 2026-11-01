@@ -1485,6 +1485,15 @@
       box-shadow: 0 16px 48px rgba(45, 212, 191, 0.2);
     }
 
+    .collab-card.featured-zuard {
+      border-color: rgba(59, 130, 246, 0.3);
+    }
+
+    .collab-card.featured-zuard:hover {
+      border-color: #3b82f6;
+      box-shadow: 0 16px 48px rgba(59, 130, 246, 0.2);
+    }
+
     .collab-badge {
       display: inline-flex;
       align-items: center;
@@ -3060,6 +3069,7 @@
       <div class="ticker-item"><span>Launup (Coming Soon)</span><span class="dot" style="background: var(--accent-cyan); box-shadow: 0 0 8px var(--accent-cyan);"></span></div>
 
       <div class="ticker-item"><span>Memento (SIH 2026)</span><span class="dot" style="background: #2dd4bf; box-shadow: 0 0 8px #2dd4bf;"></span></div>
+      <div class="ticker-item"><span>Zuard (Governance Engine)</span><span class="dot" style="background: #3b82f6; box-shadow: 0 0 8px #3b82f6;"></span></div>
 
       <div class="ticker-item"><span>Brainware University (AIML)</span><span class="dot dot-green"></span></div>
 
@@ -3085,6 +3095,7 @@
       <div class="ticker-item"><span>Launup (Coming Soon)</span><span class="dot" style="background: var(--accent-cyan); box-shadow: 0 0 8px var(--accent-cyan);"></span></div>
 
       <div class="ticker-item"><span>Memento (SIH 2026)</span><span class="dot" style="background: #2dd4bf; box-shadow: 0 0 8px #2dd4bf;"></span></div>
+      <div class="ticker-item"><span>Zuard (Governance Engine)</span><span class="dot" style="background: #3b82f6; box-shadow: 0 0 8px #3b82f6;"></span></div>
 
       <div class="ticker-item"><span>Brainware University (AIML)</span><span class="dot dot-green"></span></div>
 
@@ -3909,6 +3920,97 @@
               <i class="fa-solid fa-arrow-up-right-from-square"></i>
               <span>LAUNCH MEMENTO LIVE DEPLOYMENT</span>
             </a>
+          </div>
+        </article>
+
+      
+        <!-- COLLAB 3: ZUARD (REAL-TIME BRAND GOVERNANCE & MULTI-WORKER RAG) -->
+        <article class="collab-card featured-zuard">
+          <div>
+            <div class="collab-badge" style="border-color: rgba(59, 130, 246, 0.4); background: rgba(59, 130, 246, 0.08); color: #60a5fa;">
+              <i class="fa-solid fa-shield-halved"></i>
+              <span>BRAND GOVERNANCE &bull; MULTI-WORKER RAG ENGINE</span>
+            </div>
+
+            <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 10px; margin-bottom: 6px; flex-wrap: wrap;">
+              <h3 style="font-family: var(--font-dots); font-size: 1.55rem; color: #ffffff; letter-spacing: 0.04em; margin: 0;">
+                ZUARD
+              </h3>
+              <span style="font-family: var(--font-mono); font-size: 10px; padding: 2px 8px; border-radius: 999px; background: rgba(59, 130, 246, 0.14); border: 1px solid rgba(59, 130, 246, 0.4); color: #93c5fd;">
+                OPEN SOURCE &bull; FASTAPI
+              </span>
+            </div>
+
+            <div style="font-family: var(--font-mono); font-size: 12px; color: #93c5fd; margin-bottom: 12px;">
+              Real-Time Brand Governance, Sub-5ms Pre-Screening &amp; Branched Multimodal RAG
+            </div>
+
+            <p style="font-size: 13px; color: #a3a3a3; line-height: 1.65; margin-bottom: 16px;">
+              Co-engineered <strong>Zuard</strong> as a high-performance brand governance and compliance pre-screening engine for enterprise marketing and publishing workflows. Implements a high-velocity two-stage pipeline: <strong>4 concurrent deterministic static workers</strong> execute in parallel via <code>asyncio.gather</code> (&lt; 5ms, &#36;0 LLM cost) verifying lexical tone (Flesch-Kincaid &amp; Gunning Fog), terminology dictionaries, boundary-aware superlative claims, facts verification against SQLite, OpenCV K-Means visual harmony, and WCAG 2.1 accessibility contrast math. Flagged snippets are synthesized by a <strong>Delta-Only Synthesizer with Branched RAG</strong> citing exact guideline page and section references with zero hallucinations.
+            </p>
+
+            <ul class="flagship-features" style="margin-bottom: 18px;">
+              <li>
+                <i class="fa-solid fa-circle-check" style="color: #60a5fa;"></i>
+                <span><strong>Sub-5ms Deterministic Pre-Check:</strong> 4 parallel workers checking 90%+ mechanical compliance rules with zero LLM API cost.</span>
+              </li>
+              <li>
+                <i class="fa-solid fa-circle-check" style="color: #60a5fa;"></i>
+                <span><strong>Zero-Hallucination Branched RAG:</strong> PyMuPDF document hierarchy chunker with hybrid semantic TF-IDF retrieval citing exact page IDs.</span>
+              </li>
+              <li>
+                <i class="fa-solid fa-circle-check" style="color: #60a5fa;"></i>
+                <span><strong>Multi-Project Isolation:</strong> Isolated SQLite facts databases, dynamic guideline ingestion, and two-sided Creator vs Reviewer portals.</span>
+              </li>
+            </ul>
+
+            <!-- Collaborators Deck -->
+            <div style="margin-bottom: 18px; padding: 12px 14px; border-radius: 10px; background: #0c0c0c; border: 1px solid #1f1f1f;">
+              <div style="font-family: var(--font-mono); font-size: 10.5px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px; display: flex; align-items: center; gap: 6px;">
+                <i class="fa-solid fa-users" style="color: #60a5fa;"></i>
+                <span>Collaborative Engineering Squad:</span>
+              </div>
+              <div style="display: flex; flex-wrap: wrap; gap: 6px;">
+                <a href="https://github.com/chowdhurysambu10-alt" target="_blank" rel="noreferrer" class="pref-tag" style="display: inline-flex; align-items: center; gap: 4px; text-decoration: none; color: #d4d4d4; transition: color 0.2s;" onmouseover="this.style.color='#60a5fa'" onmouseout="this.style.color='#d4d4d4'">
+                  <i class="fa-brands fa-github" style="font-size: 10px;"></i>
+                  <span>Sambu Chowdhury</span>
+                </a>
+                <a href="https://github.com/mousumibag" target="_blank" rel="noreferrer" class="pref-tag" style="display: inline-flex; align-items: center; gap: 4px; text-decoration: none; color: #d4d4d4; transition: color 0.2s;" onmouseover="this.style.color='#60a5fa'" onmouseout="this.style.color='#d4d4d4'">
+                  <i class="fa-brands fa-github" style="font-size: 10px;"></i>
+                  <span>Mousumi Bag</span>
+                </a>
+                <a href="https://github.com/rana-tarafdar" target="_blank" rel="noreferrer" class="pref-tag" style="display: inline-flex; align-items: center; gap: 4px; text-decoration: none; color: #d4d4d4; transition: color 0.2s;" onmouseover="this.style.color='#60a5fa'" onmouseout="this.style.color='#d4d4d4'">
+                  <i class="fa-brands fa-github" style="font-size: 10px;"></i>
+                  <span>Rana Tarafdar</span>
+                </a>
+                <span class="pref-tag" style="display: inline-flex; align-items: center; gap: 4px; color: #60a5fa; border-color: rgba(59, 130, 246, 0.4); background: rgba(59, 130, 246, 0.08);">
+                  <i class="fa-solid fa-star" style="font-size: 10px;"></i>
+                  <span>Subhajit Das (Krish)</span>
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div class="tech-pill-row" style="margin-bottom: 16px;">
+              <span class="tech-pill">Python &bull; FastAPI</span>
+              <span class="tech-pill">Branched RAG</span>
+              <span class="tech-pill">asyncio Workers</span>
+              <span class="tech-pill">OpenCV &bull; CIELAB</span>
+              <span class="tech-pill">SQLite Multi-Tenant</span>
+              <span class="tech-pill">WCAG 2.1 Math</span>
+            </div>
+
+            <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+              <a href="https://github.com/subhajit-io/Zuard" target="_blank" rel="noreferrer" class="btn-minimal" style="flex: 1; justify-content: center; font-size: 11.5px; border-color: rgba(59, 130, 246, 0.4); color: #60a5fa;">
+                <i class="fa-brands fa-github"></i>
+                <span>ZUARD REPOSITORY</span>
+              </a>
+              <a href="https://zuard.onrender.com/api/docs" target="_blank" rel="noreferrer" class="btn-minimal" style="font-size: 11.5px;">
+                <i class="fa-solid fa-bolt"></i>
+                <span>API SWAGGER</span>
+              </a>
+            </div>
           </div>
         </article>
 
@@ -4825,7 +4927,7 @@
   work         - Work preferences, remote model, leadership & availability
 
   flagships    - Solutions Drawer, Findrr & Launup sovereign ecosystem
-  collab       - Collaborative ventures: UCAP (EdTech Startup) & Memento (SIH 2026)
+  collab       - Collaborative ventures: UCAP (EdTech Startup), Memento (SIH 2026) & Zuard (Brand Governance)
 
   journey      - Academic foundation: Brainware Univ (AIML) & Arambagh High
 
@@ -4993,9 +5095,21 @@ Philosophy    : "I thrive in leadership roles within startup environments. I am
                   Higher Education Institutions (HEIs) for research-driven
                   resolution with automated AI categorization and verification.
     Stack       : Next.js, React, Civic Tech, AI Routing, Tailwind CSS.
-    Live URL    : <a href="https://sih-26-memento-teal.vercel.app/" target="_blank" rel="noreferrer">https://sih-26-memento-teal.vercel.app/</a>`,
+    Live URL    : <a href="https://sih-26-memento-teal.vercel.app/" target="_blank" rel="noreferrer">https://sih-26-memento-teal.vercel.app/</a>
+
+03. ZUARD (REAL-TIME BRAND GOVERNANCE & PRE-SCREENING ENGINE)
+    Role        : Co-Engineer & Full-Stack Architect
+    Team        : Sambu Chowdhury, Mousumi Bag, Rana Tarafdar & Subhajit Das
+    Type        : Deterministic Pre-Screening & Branched Multimodal RAG Engine
+    Overview    : Sub-5ms parallel static workers verifying tone, terminology,
+                  SQLite metric facts, OpenCV visual contrast, and WCAG math,
+                  followed by zero-hallucination delta synthesis with page citations.
+    Stack       : Python, FastAPI, asyncio, SQLite, OpenCV, RAG, PyMuPDF.
+    Repository  : <a href="https://github.com/subhajit-io/Zuard" target="_blank" rel="noreferrer">github.com/subhajit-io/Zuard</a>
+    Swagger API : <a href="https://zuard.onrender.com/api/docs" target="_blank" rel="noreferrer">https://zuard.onrender.com/api/docs</a>`,
 
       collaborations: () => terminalCommands.collab(),
+      zuard: () => terminalCommands.collab(),
 
       journey: () => `[ACADEMIC FOUNDATION & MILESTONES]
 
