@@ -2905,6 +2905,8 @@
 
         <button class="term-quick-btn" onclick="runTerminalCommand('resume')">resume</button>
 
+        <button class="term-quick-btn" onclick="runTerminalCommand('substack')">substack</button>
+
         <button class="term-quick-btn" onclick="runTerminalCommand('clear')">clear</button>
 
         <button class="term-quick-btn" onclick="runTerminalCommand('exit')">exit</button>
@@ -3167,6 +3169,20 @@
 
           </p>
 
+          <div style="margin-top: 24px; display: flex; gap: 12px; flex-wrap: wrap;">
+
+            <a href="https://findrrsubhajit.substack.com" target="_blank" rel="noreferrer" class="btn-minimal btn-minimal-red">
+
+              <i class="fa-solid fa-book-open"></i>
+
+              <span>READ ABOUT ME</span>
+
+              <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 11px;"></i>
+
+            </a>
+
+          </div>
+
         </div>
 
         <div class="identity-table">
@@ -3240,6 +3256,20 @@
             <span class="identity-key">Academic Status</span>
 
             <span class="identity-val">B.Tech CSE AIML (8.43 CGPA)</span>
+
+          </div>
+
+          <div class="identity-row">
+
+            <span class="identity-key">Substack / Blog</span>
+
+            <a href="https://findrrsubhajit.substack.com" target="_blank" rel="noreferrer" class="identity-val" style="color: var(--accent-red); text-decoration: none; display: inline-flex; align-items: center; gap: 6px;">
+
+              <span>findrrsubhajit</span>
+
+              <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 10px;"></i>
+
+            </a>
 
           </div>
 
@@ -4925,6 +4955,8 @@
 
   resume       - Open Subhajit's verified PDF resume in a new browser tab
 
+  substack     - Read Subhajit's stories and writings on Substack
+
   clear        - Clear console screen (restores clean help menu)
 
   exit         - Terminate terminal session (or press ESC)
@@ -4957,9 +4989,19 @@ Work Style      : Remote • Startup Leadership • Part-Time (Uncompromising Ou
 
 Open For        : Internships • Volunteer Work • Startup Collaborations
 
+Substack        : https://findrrsubhajit.substack.com
+
 Core Tenet      : "I refuse to let today's work wait for a future that isn't promised."`,
 
       whoami: () => terminalCommands.about(),
+
+      substack: () => {
+
+        window.open('https://findrrsubhajit.substack.com', '_blank');
+
+        return `[DISPATCH] Redirecting to Substack: https://findrrsubhajit.substack.com ...`;
+
+      },
 
       work: () => `[WORK STYLE & ENGAGEMENT PREFERENCES]
 
